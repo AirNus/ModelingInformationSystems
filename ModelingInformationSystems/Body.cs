@@ -4,20 +4,15 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace ModelingInformationSystems
 {
-    public partial class Form1 : Form
+    public partial class Body : Form
     {
         int PredelAxisX;
         double[] dotes;
-        /// Метод простых конгруэнций
-        const int P = 140305;
-        const int A = 4081;
-        /// Распределение Лемераы
-        const int a = 45156;
-        const int c = 31502;
-        const int m = 171545;
+       
+        
         ///
         Random random = new Random();
-        public Form1()
+        public Body()
         {
             InitializeComponent();
             
@@ -46,7 +41,10 @@ namespace ModelingInformationSystems
         public void DrawGrafics(int intervals, double[] dotes, int PredelAxisX)
         {           
             chartGrafics.ChartAreas.Add(new ChartArea("UniformRasp"));
-            chartGrafics.ChartAreas[0].AxisX.Maximum = PredelAxisX;
+            if(PredelAxisX != 0)
+            {
+                chartGrafics.ChartAreas[0].AxisX.Maximum = PredelAxisX;
+            }
             Series mySeries = new Series("Uniform")
             {
                 ChartType = SeriesChartType.Column,
@@ -76,76 +74,29 @@ namespace ModelingInformationSystems
 
         }
 
-        /// <summary>
-        /// ///////////
-        /// </summary>
-        /// <param name="kol"></param>
-        /// <returns></returns>
-        public double[] GenerateRandNumber(int kol)
-        {                   
-            double[] dotes = new double[kol];           
-            for(int i = 0; i < kol; i ++)
-            {
-                dotes[i] = random.NextDouble();
-            }
-            return dotes;
-        }
-
-        public double[] GenerateRandNumberMethodCongruence(int kol)
-        {
-            
-            double[] dotes = new double[kol];
-            dotes[0] = random.Next() % P;
-            for(int i = 1; i < kol; i ++)
-            {
-                dotes[i] = (A * dotes[i - 1]) % P;
-            }
-            return dotes;
-        }
-
-        public double[] GenerateRandNumberMethodLemera(int kol)
-        {
-            
-            double[] dotes = new double[kol];
-            dotes[0] = random.Next() % m;
-            for(int i = 1; i < kol; i++)
-            {
-                dotes[i] = (a * dotes[i - 1] + c) % m;
-            }
-            return dotes;
-        }
-
-        /// <summary>
-        /// //
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        ///
         private void buttonStartDrawGrafics_Click(object sender, EventArgs e)
         {
-            chartGrafics.ChartAreas.Clear();
-            chartGrafics.Series.Clear();
-            if( textBoxPage1Kol.TextLength < 1 || textBoxPage1Intervals.TextLength < 1)
-            {
-                MessageBox.Show("Проверьте введены ли нужные данные\n(количество значений,количество интервалов)","Ошибка!");
+
+            if (CheckTextOnTextBoxInTabPage(tabPageFirstQuest))
                 return;
-            }
             int kol = Convert.ToInt32(textBoxPage1Kol.Text);
             int intervals = Convert.ToInt32(textBoxPage1Intervals.Text);
 
             if (radioButtonDefaultGeneration.Checked)
             {
                 PredelAxisX = 1;
-                dotes = GenerateRandNumber(kol);
+                dotes = Uniform.GenerateRandNumber(kol);
             }
             else if(radioButtonKongryen.Checked)
             {
-                PredelAxisX = P;
-                dotes = GenerateRandNumberMethodCongruence(kol);
+                PredelAxisX = Uniform.P;
+                dotes = Uniform.GenerateRandNumberMethodCongruence(kol);
             }
             else if(radioButtonMethodLemera.Checked)
             {
-                PredelAxisX = m;
-                dotes = GenerateRandNumberMethodLemera(kol);
+                PredelAxisX = Uniform.m;
+                dotes = Uniform.GenerateRandNumberMethodLemera(kol);
             }
             else
             {
@@ -154,10 +105,50 @@ namespace ModelingInformationSystems
             }
             DrawGrafics(intervals, dotes, PredelAxisX);
         }
-        /// 
-        /// 2 задание пошло 
-        /// 
+        private bool CheckTextOnTextBoxInTabPage(TabPage tabPage)
+        {
+            foreach(Control control in tabPage.Controls)
+            {
+                if (control.GetType() == typeof(System.Windows.Forms.TextBox))
+                {
+                    var tmpTextBox = (TextBox)control;
+                    if (tmpTextBox.TextLength < 1)
+                    {
+                        MessageBox.Show("Проверьте введены ли нужные данные!", "Ошибка!");
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
 
+        private void buttonPage2StartDrawGrafics_Click(object sender, EventArgs e)
+        {
+            chartGrafics.ChartAreas.Clear();
+            chartGrafics.Series.Clear();
+            // Если в одном из TextBox'ов не введены данные операция прервется и выведется оповещение
+            if (CheckTextOnTextBoxInTabPage(tabPageSecondQuest))
+                return;           
+            int kol = Convert.ToInt32(textBoxPage2Kol.Text);
+            int intervals = Convert.ToInt32(textBoxPage2Intervals.Text);
 
+            if (radioButtonPage2Trap.Checked)
+            {
+                int startInterval = Convert.ToInt32(textBoxPage2StartNumberGenerate.Text);
+                int endInterval = Convert.ToInt32(textBoxPage2EndNumberGenerate.Text);
+                PredelAxisX = 0;
+                dotes = Simpson.GenerateNumberTrapezoidal(kol,startInterval,endInterval);
+            }
+            else if (radioButtonPage2Treangle.Checked)
+            {
+               
+            }          
+            else
+            {
+                MessageBox.Show("Вы не выбрали метод генерации чисел", "Ошибка!");
+                return;
+            }
+            DrawGrafics(intervals, dotes, PredelAxisX);
+        }
     }
 }

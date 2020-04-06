@@ -1,6 +1,6 @@
 ﻿namespace ModelingInformationSystems
 {
-    partial class Form1
+    partial class Body
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageFirstQuest = new System.Windows.Forms.TabPage();
             this.groupBoxPage1Methods = new System.Windows.Forms.GroupBox();
@@ -41,10 +41,10 @@
             this.textBoxPage1Kol = new System.Windows.Forms.TextBox();
             this.buttonPage1StartDrawGrafics = new System.Windows.Forms.Button();
             this.tabPageSecondQuest = new System.Windows.Forms.TabPage();
-            this.labelPage2Offset = new System.Windows.Forms.Label();
-            this.textBoxPage2Offset = new System.Windows.Forms.TextBox();
-            this.labelPage2WidthOrLambda = new System.Windows.Forms.Label();
-            this.textBoxPage2WidthOrLambda = new System.Windows.Forms.TextBox();
+            this.labelPage2EndNumberGenerate = new System.Windows.Forms.Label();
+            this.textBoxPage2EndNumberGenerate = new System.Windows.Forms.TextBox();
+            this.labelPage2StartNumberGenerate = new System.Windows.Forms.Label();
+            this.textBoxPage2StartNumberGenerate = new System.Windows.Forms.TextBox();
             this.groupBoxPage2Methods = new System.Windows.Forms.GroupBox();
             this.radioButtonPage2Treangle = new System.Windows.Forms.RadioButton();
             this.radioButtonPage2Trap = new System.Windows.Forms.RadioButton();
@@ -52,7 +52,7 @@
             this.labelIntervals = new System.Windows.Forms.Label();
             this.textBoxPage2Intervals = new System.Windows.Forms.TextBox();
             this.textBoxPage2Kol = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonPage2StartDrawGrafics = new System.Windows.Forms.Button();
             this.tabPageThirdQuest = new System.Windows.Forms.TabPage();
             this.chartGrafics = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabControl.SuspendLayout();
@@ -184,16 +184,16 @@
             // 
             // tabPageSecondQuest
             // 
-            this.tabPageSecondQuest.Controls.Add(this.labelPage2Offset);
-            this.tabPageSecondQuest.Controls.Add(this.textBoxPage2Offset);
-            this.tabPageSecondQuest.Controls.Add(this.labelPage2WidthOrLambda);
-            this.tabPageSecondQuest.Controls.Add(this.textBoxPage2WidthOrLambda);
+            this.tabPageSecondQuest.Controls.Add(this.labelPage2EndNumberGenerate);
+            this.tabPageSecondQuest.Controls.Add(this.textBoxPage2EndNumberGenerate);
+            this.tabPageSecondQuest.Controls.Add(this.labelPage2StartNumberGenerate);
+            this.tabPageSecondQuest.Controls.Add(this.textBoxPage2StartNumberGenerate);
             this.tabPageSecondQuest.Controls.Add(this.groupBoxPage2Methods);
             this.tabPageSecondQuest.Controls.Add(this.labelPage2Kol);
             this.tabPageSecondQuest.Controls.Add(this.labelIntervals);
             this.tabPageSecondQuest.Controls.Add(this.textBoxPage2Intervals);
             this.tabPageSecondQuest.Controls.Add(this.textBoxPage2Kol);
-            this.tabPageSecondQuest.Controls.Add(this.button1);
+            this.tabPageSecondQuest.Controls.Add(this.buttonPage2StartDrawGrafics);
             this.tabPageSecondQuest.Location = new System.Drawing.Point(4, 22);
             this.tabPageSecondQuest.Name = "tabPageSecondQuest";
             this.tabPageSecondQuest.Padding = new System.Windows.Forms.Padding(3);
@@ -202,41 +202,41 @@
             this.tabPageSecondQuest.Text = "Симпсона";
             this.tabPageSecondQuest.UseVisualStyleBackColor = true;
             // 
-            // labelPage2Offset
+            // labelPage2EndNumberGenerate
             // 
-            this.labelPage2Offset.AutoSize = true;
-            this.labelPage2Offset.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelPage2Offset.Location = new System.Drawing.Point(20, 282);
-            this.labelPage2Offset.Name = "labelPage2Offset";
-            this.labelPage2Offset.Size = new System.Drawing.Size(131, 17);
-            this.labelPage2Offset.TabIndex = 19;
-            this.labelPage2Offset.Text = "Смещение по оси Х";
+            this.labelPage2EndNumberGenerate.AutoSize = true;
+            this.labelPage2EndNumberGenerate.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelPage2EndNumberGenerate.Location = new System.Drawing.Point(20, 282);
+            this.labelPage2EndNumberGenerate.Name = "labelPage2EndNumberGenerate";
+            this.labelPage2EndNumberGenerate.Size = new System.Drawing.Size(28, 17);
+            this.labelPage2EndNumberGenerate.TabIndex = 19;
+            this.labelPage2EndNumberGenerate.Text = "До:";
             // 
-            // textBoxPage2Offset
+            // textBoxPage2EndNumberGenerate
             // 
-            this.textBoxPage2Offset.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPage2Offset.Location = new System.Drawing.Point(24, 302);
-            this.textBoxPage2Offset.Name = "textBoxPage2Offset";
-            this.textBoxPage2Offset.Size = new System.Drawing.Size(100, 25);
-            this.textBoxPage2Offset.TabIndex = 18;
+            this.textBoxPage2EndNumberGenerate.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxPage2EndNumberGenerate.Location = new System.Drawing.Point(24, 302);
+            this.textBoxPage2EndNumberGenerate.Name = "textBoxPage2EndNumberGenerate";
+            this.textBoxPage2EndNumberGenerate.Size = new System.Drawing.Size(100, 25);
+            this.textBoxPage2EndNumberGenerate.TabIndex = 18;
             // 
-            // labelPage2WidthOrLambda
+            // labelPage2StartNumberGenerate
             // 
-            this.labelPage2WidthOrLambda.AutoSize = true;
-            this.labelPage2WidthOrLambda.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelPage2WidthOrLambda.Location = new System.Drawing.Point(20, 234);
-            this.labelPage2WidthOrLambda.Name = "labelPage2WidthOrLambda";
-            this.labelPage2WidthOrLambda.Size = new System.Drawing.Size(210, 17);
-            this.labelPage2WidthOrLambda.TabIndex = 17;
-            this.labelPage2WidthOrLambda.Text = "Увеличение ширины диаграммы";
+            this.labelPage2StartNumberGenerate.AutoSize = true;
+            this.labelPage2StartNumberGenerate.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelPage2StartNumberGenerate.Location = new System.Drawing.Point(20, 234);
+            this.labelPage2StartNumberGenerate.Name = "labelPage2StartNumberGenerate";
+            this.labelPage2StartNumberGenerate.Size = new System.Drawing.Size(29, 17);
+            this.labelPage2StartNumberGenerate.TabIndex = 17;
+            this.labelPage2StartNumberGenerate.Text = "От:";
             // 
-            // textBoxPage2WidthOrLambda
+            // textBoxPage2StartNumberGenerate
             // 
-            this.textBoxPage2WidthOrLambda.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPage2WidthOrLambda.Location = new System.Drawing.Point(23, 254);
-            this.textBoxPage2WidthOrLambda.Name = "textBoxPage2WidthOrLambda";
-            this.textBoxPage2WidthOrLambda.Size = new System.Drawing.Size(100, 25);
-            this.textBoxPage2WidthOrLambda.TabIndex = 16;
+            this.textBoxPage2StartNumberGenerate.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxPage2StartNumberGenerate.Location = new System.Drawing.Point(23, 254);
+            this.textBoxPage2StartNumberGenerate.Name = "textBoxPage2StartNumberGenerate";
+            this.textBoxPage2StartNumberGenerate.Size = new System.Drawing.Size(100, 25);
+            this.textBoxPage2StartNumberGenerate.TabIndex = 16;
             // 
             // groupBoxPage2Methods
             // 
@@ -308,14 +308,15 @@
             this.textBoxPage2Kol.Size = new System.Drawing.Size(100, 25);
             this.textBoxPage2Kol.TabIndex = 12;
             // 
-            // button1
+            // buttonPage2StartDrawGrafics
             // 
-            this.button1.Location = new System.Drawing.Point(24, 359);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(183, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Принять";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonPage2StartDrawGrafics.Location = new System.Drawing.Point(24, 359);
+            this.buttonPage2StartDrawGrafics.Name = "buttonPage2StartDrawGrafics";
+            this.buttonPage2StartDrawGrafics.Size = new System.Drawing.Size(183, 23);
+            this.buttonPage2StartDrawGrafics.TabIndex = 10;
+            this.buttonPage2StartDrawGrafics.Text = "Принять";
+            this.buttonPage2StartDrawGrafics.UseVisualStyleBackColor = true;
+            this.buttonPage2StartDrawGrafics.Click += new System.EventHandler(this.buttonPage2StartDrawGrafics_Click);
             // 
             // tabPageThirdQuest
             // 
@@ -329,8 +330,8 @@
             // 
             // chartGrafics
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartGrafics.ChartAreas.Add(chartArea2);
+            chartArea1.Name = "ChartArea1";
+            this.chartGrafics.ChartAreas.Add(chartArea1);
             this.chartGrafics.Location = new System.Drawing.Point(269, 34);
             this.chartGrafics.Name = "chartGrafics";
             this.chartGrafics.Size = new System.Drawing.Size(503, 400);
@@ -381,10 +382,10 @@
         private System.Windows.Forms.RadioButton radioButtonKongryen;
         private System.Windows.Forms.RadioButton radioButtonMethodLemera;
         private System.Windows.Forms.RadioButton radioButtonDefaultGeneration;
-        private System.Windows.Forms.Label labelPage2Offset;
-        private System.Windows.Forms.TextBox textBoxPage2Offset;
-        private System.Windows.Forms.Label labelPage2WidthOrLambda;
-        private System.Windows.Forms.TextBox textBoxPage2WidthOrLambda;
+        private System.Windows.Forms.Label labelPage2EndNumberGenerate;
+        private System.Windows.Forms.TextBox textBoxPage2EndNumberGenerate;
+        private System.Windows.Forms.Label labelPage2StartNumberGenerate;
+        private System.Windows.Forms.TextBox textBoxPage2StartNumberGenerate;
         private System.Windows.Forms.GroupBox groupBoxPage2Methods;
         private System.Windows.Forms.RadioButton radioButtonPage2Treangle;
         private System.Windows.Forms.RadioButton radioButtonPage2Trap;
@@ -392,7 +393,7 @@
         private System.Windows.Forms.Label labelIntervals;
         private System.Windows.Forms.TextBox textBoxPage2Intervals;
         private System.Windows.Forms.TextBox textBoxPage2Kol;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonPage2StartDrawGrafics;
     }
 }
 
