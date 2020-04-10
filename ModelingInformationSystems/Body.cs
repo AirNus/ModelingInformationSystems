@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ByMarin;
+using System;
+using System.Globalization;
+using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -6,7 +9,7 @@ namespace ModelingInformationSystems
 {
     public partial class Body : Form
     {
-        int PredelAxisX;
+        double PredelAxisX;
         double[] dotes;
        
         
@@ -15,7 +18,12 @@ namespace ModelingInformationSystems
         public Body()
         {
             InitializeComponent();
-            
+            // Page3 Normal
+            radioButtonPage3ArbitraryNormal.CheckedChanged += new EventHandler(radioButtonPage3Checked);
+            radioButtonPage3StandartNormal.CheckedChanged += new EventHandler(radioButtonPage3Checked);
+            // Page4 Exponential
+            radioButtonPage4Exponential.CheckedChanged += new EventHandler(radioButtonPage4Checked);
+            radioButtonPage4HyperExponential.CheckedChanged += new EventHandler(radioButtonPage4Checked);
         }
 
         public double[] SortedArrayToDesc(double[] dotes)
@@ -38,17 +46,21 @@ namespace ModelingInformationSystems
             return dotes;
         }
 
-        public void DrawGrafics(int intervals, double[] dotes, int PredelAxisX)
+        public void DrawGrafics(int intervals, double[] dotes, double PredelAxisX)
         {           
-            chartGrafics.ChartAreas.Add(new ChartArea("UniformRasp"));
-            if(PredelAxisX != 0)
+            chartGrafics.ChartAreas.Add(new ChartArea("Rasp"));
+            if(PredelAxisX == 0)
             {
-                chartGrafics.ChartAreas[0].AxisX.Maximum = PredelAxisX;
+                MessageBox.Show("PredelAxisX равен нулю! Ахтунг!","Ошибка!");
+                return;
             }
+            chartGrafics.ChartAreas[0].AxisX.Maximum = dotes.Max();
+            chartGrafics.ChartAreas[0].AxisX.Minimum = dotes.Min();
             Series mySeries = new Series("Uniform")
             {
+                
                 ChartType = SeriesChartType.Column,
-                ChartArea = "UniformRasp"             
+                ChartArea = "Rasp"             
             };
 
             SortedArrayToDesc(dotes);
@@ -75,9 +87,10 @@ namespace ModelingInformationSystems
         }
 
         ///
-        private void buttonStartDrawGrafics_Click(object sender, EventArgs e)
+        private void buttonPage1StartDrawGrafics_Click(object sender, EventArgs e)
         {
-
+            chartGrafics.ChartAreas.Clear();
+            chartGrafics.Series.Clear();
             if (CheckTextOnTextBoxInTabPage(tabPageFirstQuest))
                 return;
             int kol = Convert.ToInt32(textBoxPage1Kol.Text);
@@ -132,22 +145,176 @@ namespace ModelingInformationSystems
             int kol = Convert.ToInt32(textBoxPage2Kol.Text);
             int intervals = Convert.ToInt32(textBoxPage2Intervals.Text);
 
+            int startInterval = Convert.ToInt32(textBoxPage2StartNumberGenerate.Text);
+            int endInterval = Convert.ToInt32(textBoxPage2EndNumberGenerate.Text);
             if (radioButtonPage2Trap.Checked)
-            {
-                int startInterval = Convert.ToInt32(textBoxPage2StartNumberGenerate.Text);
-                int endInterval = Convert.ToInt32(textBoxPage2EndNumberGenerate.Text);
-                PredelAxisX = 0;
+            {               
                 dotes = Simpson.GenerateNumberTrapezoidal(kol,startInterval,endInterval);
+                PredelAxisX = endInterval * 1.5;
             }
-            else if (radioButtonPage2Treangle.Checked)
+            else if (radioButtonPage2Triangle.Checked)
             {
-               
+               dotes = Simpson.GenerateNumberTriangle(kol,startInterval,endInterval);
+               PredelAxisX = endInterval * 1.5;
             }          
             else
             {
                 MessageBox.Show("Вы не выбрали метод генерации чисел", "Ошибка!");
                 return;
             }
+            DrawGrafics(intervals, dotes, PredelAxisX);
+        }
+
+        private void buttonPage3StartDrawGrafics_Click(object sender, EventArgs e)
+        {
+            chartGrafics.ChartAreas.Clear();
+            chartGrafics.Series.Clear();
+            // Если в одном из TextBox'ов не введены данные операция прервется и выведется оповещение
+            if (CheckTextOnTextBoxInTabPage(tabPageThirdQuest))
+                return;
+            int kol = Convert.ToInt32(textBoxPage3Kol.Text);
+            int intervals = Convert.ToInt32(textBoxPage3Intervals.Text);
+            if (radioButtonPage3StandartNormal.Checked)
+            {               
+                int n = Convert.ToInt32(textBoxPage3N.Text);
+                dotes = Normal.GenerateNumberStandartNormal(kol, n);
+                PredelAxisX = dotes.Max();
+            }
+            else if (radioButtonPage3ArbitraryNormal.Checked)
+            {
+                int M = Convert.ToInt32(textBoxPage3M.Text);
+                int deviation = Convert.ToInt32(textBoxPage3Deviation.Text);
+                dotes = Normal.GenerateNumberArbitraryNormal(kol, M, deviation);
+                PredelAxisX = dotes.Max();   
+            }
+            else
+            {
+                MessageBox.Show("Вы не выбрали метод генерации чисел", "Ошибка!");
+                return;
+            }
+            DrawGrafics(intervals, dotes, PredelAxisX);
+        }
+        private void radioButtonPage3Checked(object sender, EventArgs e)
+        {
+            if (radioButtonPage3StandartNormal.Checked)
+            {
+                textBoxPage3M.Visible = false;
+                textBoxPage3M.Text = "erynda";
+                labelPage3M.Visible = false;
+                textBoxPage3Deviation.Visible = false;
+                textBoxPage3Deviation.Text = "erynda";
+                labelPage3Deviation.Visible = false;
+                labelPage3N.Visible = true;
+                textBoxPage3N.Visible = true;
+                textBoxPage3N.Text = "";
+
+
+            }
+            else if (radioButtonPage3ArbitraryNormal.Checked)
+            {
+                labelPage3N.Visible = false;
+                textBoxPage3N.Visible = false;
+                textBoxPage3N.Text = "erynda";
+                textBoxPage3M.Visible = true;
+                textBoxPage3M.Text = "";
+                labelPage3M.Visible = true;
+                textBoxPage3Deviation.Visible = true;
+                textBoxPage3Deviation.Text = "";
+                labelPage3Deviation.Visible = true;              
+            }
+        }
+
+        private void buttonPage4StartDrawGrafics_Click(object sender, EventArgs e)
+        {
+            chartGrafics.ChartAreas.Clear();
+            chartGrafics.Series.Clear();
+            // Если в одном из TextBox'ов не введены данные операция прервется и выведется оповещение
+            if (CheckTextOnTextBoxInTabPage(tabPageFourthQuest))
+                return;
+            int kol = Convert.ToInt32(textBoxPage4Kol.Text);
+            int intervals = Convert.ToInt32(textBoxPage4Intervals.Text);
+            if (radioButtonPage4Exponential.Checked)
+            {
+                int lambda = Convert.ToInt32(textBoxPage4Lambda.Text);
+                if(lambda <= 0)
+                {
+                    MessageBox.Show("Лямбда не может быть равна нулю!","Ошибка!");
+                    return;
+                }
+                dotes = Exponential.GenerateNumberExponential(kol, lambda);
+                PredelAxisX = dotes.Max();
+            }
+            else if (radioButtonPage4HyperExponential.Checked)
+            {
+                int lambda = Convert.ToInt32(textBoxPage4Lambda.Text);
+                int lambda2 = Convert.ToInt32(textBoxPage4Lambda2Hyper.Text);
+                double probability = Convert.ToDouble(textBoxPage4Probability.Text,CultureInfo.InvariantCulture);
+                if(probability >= 1)
+                {
+                    MessageBox.Show("Вероятность не может быть больше или равна единице!", "Ошибка!");
+                    return;
+                }
+                if (lambda <= 0)
+                {
+                    MessageBox.Show("Лямбда не может быть равна нулю!", "Ошибка!");
+                    return;
+                }
+                if (lambda2 <= 0)
+                {
+                    MessageBox.Show("Лямбда2 не может быть равна нулю!", "Ошибка!");
+                    return;
+                }
+                dotes = Exponential.GenerateNumberHyperExponential(kol, lambda, lambda2, probability);
+                PredelAxisX = dotes.Max();
+            }
+            else
+            {
+                MessageBox.Show("Вы не выбрали метод генерации чисел", "Ошибка!");
+                return;
+            }
+            DrawGrafics(intervals, dotes, PredelAxisX);
+        }
+
+        private void radioButtonPage4Checked(object sender, EventArgs e)
+        {
+            if (radioButtonPage4Exponential.Checked)
+            {
+                labelPage4Lambda2Hyper.Visible = false;
+                labelPage4Probability.Visible = false;
+                textBoxPage4Lambda2Hyper.Visible = false;
+                textBoxPage4Lambda2Hyper.Text = "Banana";
+                textBoxPage4Probability.Visible = false;
+                textBoxPage4Probability.Text = "Banana";
+            }
+            else if (radioButtonPage4HyperExponential.Checked)
+            {
+                labelPage4Lambda2Hyper.Visible = true;
+                labelPage4Probability.Visible = true;
+                textBoxPage4Lambda2Hyper.Visible = true;
+                textBoxPage4Lambda2Hyper.Text = "";
+                textBoxPage4Probability.Visible = true;
+                textBoxPage4Probability.Text = "";
+            }
+        }
+
+        private void buttonPage5StartDrawGrafics_Click(object sender, EventArgs e)
+        {
+            chartGrafics.ChartAreas.Clear();
+            chartGrafics.Series.Clear();
+            //// Если в одном из TextBox'ов не введены данные операция прервется и выведется оповещение
+            //if (CheckTextOnTextBoxInTabPage(tabPageFourthQuest))
+            //    return;
+            int kol = Convert.ToInt32(textBoxPage5Kol.Text);
+            int intervals = Convert.ToInt32(textBoxPage5Intervals.Text);
+
+            int order = Convert.ToInt32(textBoxPage5Order.Text);
+
+            int lambda = Convert.ToInt32(textBoxPage5Lambda.Text);
+
+            dotes = Erlang.GenerateNumberErlang(kol, lambda, order);
+            
+            PredelAxisX = dotes.Max();
+            
             DrawGrafics(intervals, dotes, PredelAxisX);
         }
     }

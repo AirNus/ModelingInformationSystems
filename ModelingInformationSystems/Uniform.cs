@@ -24,6 +24,7 @@ namespace ModelingInformationSystems
             double[] dotes = new double[kol];
             for (int i = 0; i < kol; i++)
             {
+                // Функция NextDouble() генерирует числа с равномерным распределением от 0 до 1
                 dotes[i] = random.NextDouble();
             }
             return dotes;
