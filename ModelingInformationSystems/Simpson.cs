@@ -10,18 +10,15 @@ namespace ModelingInformationSystems
     {
         static Random random = new Random();
         static public double[] GenerateNumberTrapezoidal(int kol, int startNumber, int endNumber)
-        {
-            
-
+        {       
             double half = Convert.ToInt32((startNumber + endNumber) / 8);
-            int sum = startNumber + endNumber;
             int Up = (int)half * 2;
             int Low = (int)half;
-          
+
 
             double[] dotes = new double[kol];
-            
-            for(int i = 0; i < kol; i ++)
+
+            for (int i = 0; i < kol; i++)
             {
                 double firstPart = random.Next(startNumber, Up);
                 double secondPart = random.Next(Low, endNumber);

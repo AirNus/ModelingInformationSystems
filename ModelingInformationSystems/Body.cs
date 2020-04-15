@@ -65,8 +65,8 @@ namespace ModelingInformationSystems
 
             SortedArrayToDesc(dotes);
 
-            double durInterval = (double)PredelAxisX / intervals;
-            double tempInterval = durInterval;
+            double durInterval = (double)(PredelAxisX - dotes.Min()) / intervals;
+            double tempInterval = dotes.Min();
             int countDotesInInterval;
             int currDotes = dotes.Length;
             while (tempInterval <= PredelAxisX)
@@ -150,7 +150,7 @@ namespace ModelingInformationSystems
             if (radioButtonPage2Trap.Checked)
             {               
                 dotes = Simpson.GenerateNumberTrapezoidal(kol,startInterval,endInterval);
-                PredelAxisX = endInterval * 1.5;
+                PredelAxisX = dotes.Max();//endInterval * 1.5;
             }
             else if (radioButtonPage2Triangle.Checked)
             {
