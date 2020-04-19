@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageFirstQuest = new System.Windows.Forms.TabPage();
             this.groupBoxPage1Methods = new System.Windows.Forms.GroupBox();
@@ -69,8 +69,10 @@
             this.textBoxPage3Kol = new System.Windows.Forms.TextBox();
             this.buttonPage3StartDrawGrafics = new System.Windows.Forms.Button();
             this.tabPageFourthQuest = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.chartGrafics = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.labelPage4Probability = new System.Windows.Forms.Label();
+            this.textBoxPage4Probability = new System.Windows.Forms.TextBox();
+            this.labelPage4Lambda2Hyper = new System.Windows.Forms.Label();
+            this.textBoxPage4Lambda2Hyper = new System.Windows.Forms.TextBox();
             this.labelPage4Lambda = new System.Windows.Forms.Label();
             this.textBoxPage4Lambda = new System.Windows.Forms.TextBox();
             this.groupBoxPage4 = new System.Windows.Forms.GroupBox();
@@ -81,10 +83,9 @@
             this.textBoxPage4Intervals = new System.Windows.Forms.TextBox();
             this.textBoxPage4Kol = new System.Windows.Forms.TextBox();
             this.buttonPage4StartDrawGrafics = new System.Windows.Forms.Button();
-            this.labelPage4Lambda2Hyper = new System.Windows.Forms.Label();
-            this.textBoxPage4Lambda2Hyper = new System.Windows.Forms.TextBox();
-            this.labelPage4Probability = new System.Windows.Forms.Label();
-            this.textBoxPage4Probability = new System.Windows.Forms.TextBox();
+            this.tabPageFifthQuest = new System.Windows.Forms.TabPage();
+            this.labelNameRaspErlang = new System.Windows.Forms.Label();
+            this.labelPage5Lambda = new System.Windows.Forms.Label();
             this.labelPage5Order = new System.Windows.Forms.Label();
             this.textBoxPage5Order = new System.Windows.Forms.TextBox();
             this.textBoxPage5Lambda = new System.Windows.Forms.TextBox();
@@ -93,8 +94,37 @@
             this.textBoxPage5Intervals = new System.Windows.Forms.TextBox();
             this.textBoxPage5Kol = new System.Windows.Forms.TextBox();
             this.buttonPage5StartDrawGrafics = new System.Windows.Forms.Button();
-            this.labelPage5Lambda = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.chartGrafics = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonRasp = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonWaterhouse = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.groupBoxTotalRasp = new System.Windows.Forms.GroupBox();
+            this.groupBoxWaterhouse = new System.Windows.Forms.GroupBox();
+            this.numericUpDownPredelPurchase = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownWaterhouseCustomerCount = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownPurchaseInStorage = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownWaterhouseMinLeft = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownWaterhouseStartKolGoods = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownWaterhouseTypesGoods = new System.Windows.Forms.NumericUpDown();
+            this.tabControlWaterhouseOutputs = new System.Windows.Forms.TabControl();
+            this.tabPageWaterhouseOutputPurchase = new System.Windows.Forms.TabPage();
+            this.textBoxWaterhouseOutputPurchase = new System.Windows.Forms.TextBox();
+            this.tabPageWaterhouseInfoGoods = new System.Windows.Forms.TabPage();
+            this.textBoxWaterhouseOutputInfoGoods = new System.Windows.Forms.TextBox();
+            this.tabPageStatisticForDays = new System.Windows.Forms.TabPage();
+            this.textBoxWaterhouseStatisticForDays = new System.Windows.Forms.TextBox();
+            this.numericUpDownWaterhouseDays = new System.Windows.Forms.NumericUpDown();
+            this.labelWaterhouseStartKolGoods = new System.Windows.Forms.Label();
+            this.labelWaterhousePredelPurchase = new System.Windows.Forms.Label();
+            this.labelWaterhouseCustomerCount = new System.Windows.Forms.Label();
+            this.labelWaterhousePurchaseInStorage = new System.Windows.Forms.Label();
+            this.labelWaterhouseMinLeft = new System.Windows.Forms.Label();
+            this.labelWaterhouseTypesGoods = new System.Windows.Forms.Label();
+            this.labelWaterhouseDays = new System.Windows.Forms.Label();
+            this.buttonWaterhouseStartModeling = new System.Windows.Forms.Button();
+            this.labelWaterhouseChangeMinKolGoods = new System.Windows.Forms.Label();
+            this.labelWaterhouseChangePuchaseInStorage = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabPageFirstQuest.SuspendLayout();
             this.groupBoxPage1Methods.SuspendLayout();
@@ -103,9 +133,23 @@
             this.tabPageThirdQuest.SuspendLayout();
             this.groupBoxPage3Normal.SuspendLayout();
             this.tabPageFourthQuest.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartGrafics)).BeginInit();
             this.groupBoxPage4.SuspendLayout();
+            this.tabPageFifthQuest.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartGrafics)).BeginInit();
+            this.toolStrip1.SuspendLayout();
+            this.groupBoxTotalRasp.SuspendLayout();
+            this.groupBoxWaterhouse.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPredelPurchase)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWaterhouseCustomerCount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPurchaseInStorage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWaterhouseMinLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWaterhouseStartKolGoods)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWaterhouseTypesGoods)).BeginInit();
+            this.tabControlWaterhouseOutputs.SuspendLayout();
+            this.tabPageWaterhouseOutputPurchase.SuspendLayout();
+            this.tabPageWaterhouseInfoGoods.SuspendLayout();
+            this.tabPageStatisticForDays.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWaterhouseDays)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -114,8 +158,8 @@
             this.tabControl.Controls.Add(this.tabPageSecondQuest);
             this.tabControl.Controls.Add(this.tabPageThirdQuest);
             this.tabControl.Controls.Add(this.tabPageFourthQuest);
-            this.tabControl.Controls.Add(this.tabPage2);
-            this.tabControl.Location = new System.Drawing.Point(12, 12);
+            this.tabControl.Controls.Add(this.tabPageFifthQuest);
+            this.tabControl.Location = new System.Drawing.Point(6, 10);
             this.tabControl.Multiline = true;
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
@@ -550,35 +594,45 @@
             this.tabPageFourthQuest.Text = "Экспоненциальное";
             this.tabPageFourthQuest.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // labelPage4Probability
             // 
-            this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.labelPage5Lambda);
-            this.tabPage2.Controls.Add(this.labelPage5Order);
-            this.tabPage2.Controls.Add(this.textBoxPage5Order);
-            this.tabPage2.Controls.Add(this.textBoxPage5Lambda);
-            this.tabPage2.Controls.Add(this.labelPage5Kol);
-            this.tabPage2.Controls.Add(this.labelPage5Intervals);
-            this.tabPage2.Controls.Add(this.textBoxPage5Intervals);
-            this.tabPage2.Controls.Add(this.textBoxPage5Kol);
-            this.tabPage2.Controls.Add(this.buttonPage5StartDrawGrafics);
-            this.tabPage2.Location = new System.Drawing.Point(4, 40);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(243, 382);
-            this.tabPage2.TabIndex = 4;
-            this.tabPage2.Text = "Эрланга";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.labelPage4Probability.AutoSize = true;
+            this.labelPage4Probability.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelPage4Probability.Location = new System.Drawing.Point(124, 287);
+            this.labelPage4Probability.Name = "labelPage4Probability";
+            this.labelPage4Probability.Size = new System.Drawing.Size(28, 24);
+            this.labelPage4Probability.TabIndex = 31;
+            this.labelPage4Probability.Text = "q:";
+            this.labelPage4Probability.Visible = false;
             // 
-            // chartGrafics
+            // textBoxPage4Probability
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chartGrafics.ChartAreas.Add(chartArea3);
-            this.chartGrafics.Location = new System.Drawing.Point(269, 34);
-            this.chartGrafics.Name = "chartGrafics";
-            this.chartGrafics.Size = new System.Drawing.Size(503, 400);
-            this.chartGrafics.TabIndex = 3;
-            this.chartGrafics.TabStop = false;
+            this.textBoxPage4Probability.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxPage4Probability.Location = new System.Drawing.Point(124, 312);
+            this.textBoxPage4Probability.Name = "textBoxPage4Probability";
+            this.textBoxPage4Probability.Size = new System.Drawing.Size(100, 25);
+            this.textBoxPage4Probability.TabIndex = 30;
+            this.textBoxPage4Probability.Visible = false;
+            // 
+            // labelPage4Lambda2Hyper
+            // 
+            this.labelPage4Lambda2Hyper.AutoSize = true;
+            this.labelPage4Lambda2Hyper.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelPage4Lambda2Hyper.Location = new System.Drawing.Point(6, 287);
+            this.labelPage4Lambda2Hyper.Name = "labelPage4Lambda2Hyper";
+            this.labelPage4Lambda2Hyper.Size = new System.Drawing.Size(38, 24);
+            this.labelPage4Lambda2Hyper.TabIndex = 29;
+            this.labelPage4Lambda2Hyper.Text = "λ2:";
+            this.labelPage4Lambda2Hyper.Visible = false;
+            // 
+            // textBoxPage4Lambda2Hyper
+            // 
+            this.textBoxPage4Lambda2Hyper.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxPage4Lambda2Hyper.Location = new System.Drawing.Point(6, 312);
+            this.textBoxPage4Lambda2Hyper.Name = "textBoxPage4Lambda2Hyper";
+            this.textBoxPage4Lambda2Hyper.Size = new System.Drawing.Size(100, 25);
+            this.textBoxPage4Lambda2Hyper.TabIndex = 28;
+            this.textBoxPage4Lambda2Hyper.Visible = false;
             // 
             // labelPage4Lambda
             // 
@@ -679,45 +733,45 @@
             this.buttonPage4StartDrawGrafics.UseVisualStyleBackColor = true;
             this.buttonPage4StartDrawGrafics.Click += new System.EventHandler(this.buttonPage4StartDrawGrafics_Click);
             // 
-            // labelPage4Lambda2Hyper
+            // tabPageFifthQuest
             // 
-            this.labelPage4Lambda2Hyper.AutoSize = true;
-            this.labelPage4Lambda2Hyper.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelPage4Lambda2Hyper.Location = new System.Drawing.Point(6, 287);
-            this.labelPage4Lambda2Hyper.Name = "labelPage4Lambda2Hyper";
-            this.labelPage4Lambda2Hyper.Size = new System.Drawing.Size(38, 24);
-            this.labelPage4Lambda2Hyper.TabIndex = 29;
-            this.labelPage4Lambda2Hyper.Text = "λ2:";
-            this.labelPage4Lambda2Hyper.Visible = false;
+            this.tabPageFifthQuest.Controls.Add(this.labelNameRaspErlang);
+            this.tabPageFifthQuest.Controls.Add(this.labelPage5Lambda);
+            this.tabPageFifthQuest.Controls.Add(this.labelPage5Order);
+            this.tabPageFifthQuest.Controls.Add(this.textBoxPage5Order);
+            this.tabPageFifthQuest.Controls.Add(this.textBoxPage5Lambda);
+            this.tabPageFifthQuest.Controls.Add(this.labelPage5Kol);
+            this.tabPageFifthQuest.Controls.Add(this.labelPage5Intervals);
+            this.tabPageFifthQuest.Controls.Add(this.textBoxPage5Intervals);
+            this.tabPageFifthQuest.Controls.Add(this.textBoxPage5Kol);
+            this.tabPageFifthQuest.Controls.Add(this.buttonPage5StartDrawGrafics);
+            this.tabPageFifthQuest.Location = new System.Drawing.Point(4, 40);
+            this.tabPageFifthQuest.Name = "tabPageFifthQuest";
+            this.tabPageFifthQuest.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageFifthQuest.Size = new System.Drawing.Size(243, 382);
+            this.tabPageFifthQuest.TabIndex = 4;
+            this.tabPageFifthQuest.Text = "Эрланга";
+            this.tabPageFifthQuest.UseVisualStyleBackColor = true;
             // 
-            // textBoxPage4Lambda2Hyper
+            // labelNameRaspErlang
             // 
-            this.textBoxPage4Lambda2Hyper.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPage4Lambda2Hyper.Location = new System.Drawing.Point(6, 312);
-            this.textBoxPage4Lambda2Hyper.Name = "textBoxPage4Lambda2Hyper";
-            this.textBoxPage4Lambda2Hyper.Size = new System.Drawing.Size(100, 25);
-            this.textBoxPage4Lambda2Hyper.TabIndex = 28;
-            this.textBoxPage4Lambda2Hyper.Visible = false;
+            this.labelNameRaspErlang.AutoSize = true;
+            this.labelNameRaspErlang.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelNameRaspErlang.Location = new System.Drawing.Point(13, 10);
+            this.labelNameRaspErlang.Name = "labelNameRaspErlang";
+            this.labelNameRaspErlang.Size = new System.Drawing.Size(217, 23);
+            this.labelNameRaspErlang.TabIndex = 31;
+            this.labelNameRaspErlang.Text = "Распределение Эрланга";
             // 
-            // labelPage4Probability
+            // labelPage5Lambda
             // 
-            this.labelPage4Probability.AutoSize = true;
-            this.labelPage4Probability.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelPage4Probability.Location = new System.Drawing.Point(124, 287);
-            this.labelPage4Probability.Name = "labelPage4Probability";
-            this.labelPage4Probability.Size = new System.Drawing.Size(28, 24);
-            this.labelPage4Probability.TabIndex = 31;
-            this.labelPage4Probability.Text = "q:";
-            this.labelPage4Probability.Visible = false;
-            // 
-            // textBoxPage4Probability
-            // 
-            this.textBoxPage4Probability.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPage4Probability.Location = new System.Drawing.Point(124, 312);
-            this.textBoxPage4Probability.Name = "textBoxPage4Probability";
-            this.textBoxPage4Probability.Size = new System.Drawing.Size(100, 25);
-            this.textBoxPage4Probability.TabIndex = 30;
-            this.textBoxPage4Probability.Visible = false;
+            this.labelPage5Lambda.AutoSize = true;
+            this.labelPage5Lambda.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelPage5Lambda.Location = new System.Drawing.Point(26, 198);
+            this.labelPage5Lambda.Name = "labelPage5Lambda";
+            this.labelPage5Lambda.Size = new System.Drawing.Size(27, 24);
+            this.labelPage5Lambda.TabIndex = 30;
+            this.labelPage5Lambda.Text = "λ:";
             // 
             // labelPage5Order
             // 
@@ -791,33 +845,383 @@
             this.buttonPage5StartDrawGrafics.UseVisualStyleBackColor = true;
             this.buttonPage5StartDrawGrafics.Click += new System.EventHandler(this.buttonPage5StartDrawGrafics_Click);
             // 
-            // labelPage5Lambda
+            // chartGrafics
             // 
-            this.labelPage5Lambda.AutoSize = true;
-            this.labelPage5Lambda.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelPage5Lambda.Location = new System.Drawing.Point(26, 198);
-            this.labelPage5Lambda.Name = "labelPage5Lambda";
-            this.labelPage5Lambda.Size = new System.Drawing.Size(27, 24);
-            this.labelPage5Lambda.TabIndex = 30;
-            this.labelPage5Lambda.Text = "λ:";
+            chartArea1.Name = "ChartArea1";
+            this.chartGrafics.ChartAreas.Add(chartArea1);
+            this.chartGrafics.Location = new System.Drawing.Point(262, 13);
+            this.chartGrafics.Name = "chartGrafics";
+            this.chartGrafics.Size = new System.Drawing.Size(503, 418);
+            this.chartGrafics.TabIndex = 3;
+            this.chartGrafics.TabStop = false;
             // 
-            // label1
+            // toolStrip1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(13, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(217, 23);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "Распределение Эрланга";
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonRasp,
+            this.toolStripButtonWaterhouse,
+            this.toolStripButton3});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(778, 25);
+            this.toolStrip1.TabIndex = 4;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButtonRasp
+            // 
+            this.toolStripButtonRasp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonRasp.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonRasp.Name = "toolStripButtonRasp";
+            this.toolStripButtonRasp.Size = new System.Drawing.Size(95, 22);
+            this.toolStripButtonRasp.Text = "Распределения";
+            this.toolStripButtonRasp.Click += new System.EventHandler(this.toolStripButtonRasp_Click);
+            // 
+            // toolStripButtonWaterhouse
+            // 
+            this.toolStripButtonWaterhouse.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonWaterhouse.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonWaterhouse.Name = "toolStripButtonWaterhouse";
+            this.toolStripButtonWaterhouse.Size = new System.Drawing.Size(95, 22);
+            this.toolStripButtonWaterhouse.Text = "Оптовый склад";
+            this.toolStripButtonWaterhouse.Click += new System.EventHandler(this.toolStripButtonWaterhouse_Click);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(83, 22);
+            this.toolStripButton3.Text = "В разработке";
+            // 
+            // groupBoxTotalRasp
+            // 
+            this.groupBoxTotalRasp.Controls.Add(this.tabControl);
+            this.groupBoxTotalRasp.Controls.Add(this.chartGrafics);
+            this.groupBoxTotalRasp.Location = new System.Drawing.Point(0, 28);
+            this.groupBoxTotalRasp.Name = "groupBoxTotalRasp";
+            this.groupBoxTotalRasp.Size = new System.Drawing.Size(774, 441);
+            this.groupBoxTotalRasp.TabIndex = 5;
+            this.groupBoxTotalRasp.TabStop = false;
+            // 
+            // groupBoxWaterhouse
+            // 
+            this.groupBoxWaterhouse.Controls.Add(this.labelWaterhouseChangePuchaseInStorage);
+            this.groupBoxWaterhouse.Controls.Add(this.labelWaterhouseChangeMinKolGoods);
+            this.groupBoxWaterhouse.Controls.Add(this.numericUpDownPredelPurchase);
+            this.groupBoxWaterhouse.Controls.Add(this.numericUpDownWaterhouseCustomerCount);
+            this.groupBoxWaterhouse.Controls.Add(this.numericUpDownPurchaseInStorage);
+            this.groupBoxWaterhouse.Controls.Add(this.numericUpDownWaterhouseMinLeft);
+            this.groupBoxWaterhouse.Controls.Add(this.numericUpDownWaterhouseStartKolGoods);
+            this.groupBoxWaterhouse.Controls.Add(this.numericUpDownWaterhouseTypesGoods);
+            this.groupBoxWaterhouse.Controls.Add(this.tabControlWaterhouseOutputs);
+            this.groupBoxWaterhouse.Controls.Add(this.numericUpDownWaterhouseDays);
+            this.groupBoxWaterhouse.Controls.Add(this.labelWaterhouseStartKolGoods);
+            this.groupBoxWaterhouse.Controls.Add(this.labelWaterhousePredelPurchase);
+            this.groupBoxWaterhouse.Controls.Add(this.labelWaterhouseCustomerCount);
+            this.groupBoxWaterhouse.Controls.Add(this.labelWaterhousePurchaseInStorage);
+            this.groupBoxWaterhouse.Controls.Add(this.labelWaterhouseMinLeft);
+            this.groupBoxWaterhouse.Controls.Add(this.labelWaterhouseTypesGoods);
+            this.groupBoxWaterhouse.Controls.Add(this.labelWaterhouseDays);
+            this.groupBoxWaterhouse.Controls.Add(this.buttonWaterhouseStartModeling);
+            this.groupBoxWaterhouse.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBoxWaterhouse.Location = new System.Drawing.Point(4, 28);
+            this.groupBoxWaterhouse.Name = "groupBoxWaterhouse";
+            this.groupBoxWaterhouse.Size = new System.Drawing.Size(774, 441);
+            this.groupBoxWaterhouse.TabIndex = 4;
+            this.groupBoxWaterhouse.TabStop = false;
+            this.groupBoxWaterhouse.Visible = false;
+            // 
+            // numericUpDownPredelPurchase
+            // 
+            this.numericUpDownPredelPurchase.Location = new System.Drawing.Point(33, 376);
+            this.numericUpDownPredelPurchase.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownPredelPurchase.Name = "numericUpDownPredelPurchase";
+            this.numericUpDownPredelPurchase.Size = new System.Drawing.Size(193, 25);
+            this.numericUpDownPredelPurchase.TabIndex = 11;
+            this.numericUpDownPredelPurchase.ThousandsSeparator = true;
+            // 
+            // numericUpDownWaterhouseCustomerCount
+            // 
+            this.numericUpDownWaterhouseCustomerCount.Location = new System.Drawing.Point(33, 316);
+            this.numericUpDownWaterhouseCustomerCount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownWaterhouseCustomerCount.Name = "numericUpDownWaterhouseCustomerCount";
+            this.numericUpDownWaterhouseCustomerCount.Size = new System.Drawing.Size(193, 25);
+            this.numericUpDownWaterhouseCustomerCount.TabIndex = 10;
+            this.numericUpDownWaterhouseCustomerCount.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numericUpDownPurchaseInStorage
+            // 
+            this.numericUpDownPurchaseInStorage.Location = new System.Drawing.Point(33, 259);
+            this.numericUpDownPurchaseInStorage.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownPurchaseInStorage.Name = "numericUpDownPurchaseInStorage";
+            this.numericUpDownPurchaseInStorage.Size = new System.Drawing.Size(193, 25);
+            this.numericUpDownPurchaseInStorage.TabIndex = 9;
+            this.numericUpDownPurchaseInStorage.ThousandsSeparator = true;
+            // 
+            // numericUpDownWaterhouseMinLeft
+            // 
+            this.numericUpDownWaterhouseMinLeft.Location = new System.Drawing.Point(33, 196);
+            this.numericUpDownWaterhouseMinLeft.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownWaterhouseMinLeft.Name = "numericUpDownWaterhouseMinLeft";
+            this.numericUpDownWaterhouseMinLeft.Size = new System.Drawing.Size(193, 25);
+            this.numericUpDownWaterhouseMinLeft.TabIndex = 8;
+            this.numericUpDownWaterhouseMinLeft.ThousandsSeparator = true;
+            // 
+            // numericUpDownWaterhouseStartKolGoods
+            // 
+            this.numericUpDownWaterhouseStartKolGoods.Location = new System.Drawing.Point(33, 136);
+            this.numericUpDownWaterhouseStartKolGoods.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownWaterhouseStartKolGoods.Name = "numericUpDownWaterhouseStartKolGoods";
+            this.numericUpDownWaterhouseStartKolGoods.Size = new System.Drawing.Size(193, 25);
+            this.numericUpDownWaterhouseStartKolGoods.TabIndex = 7;
+            this.numericUpDownWaterhouseStartKolGoods.ThousandsSeparator = true;
+            // 
+            // numericUpDownWaterhouseTypesGoods
+            // 
+            this.numericUpDownWaterhouseTypesGoods.Location = new System.Drawing.Point(33, 76);
+            this.numericUpDownWaterhouseTypesGoods.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownWaterhouseTypesGoods.Name = "numericUpDownWaterhouseTypesGoods";
+            this.numericUpDownWaterhouseTypesGoods.Size = new System.Drawing.Size(193, 25);
+            this.numericUpDownWaterhouseTypesGoods.TabIndex = 6;
+            this.numericUpDownWaterhouseTypesGoods.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // tabControlWaterhouseOutputs
+            // 
+            this.tabControlWaterhouseOutputs.Controls.Add(this.tabPageWaterhouseOutputPurchase);
+            this.tabControlWaterhouseOutputs.Controls.Add(this.tabPageWaterhouseInfoGoods);
+            this.tabControlWaterhouseOutputs.Controls.Add(this.tabPageStatisticForDays);
+            this.tabControlWaterhouseOutputs.Location = new System.Drawing.Point(396, 10);
+            this.tabControlWaterhouseOutputs.Name = "tabControlWaterhouseOutputs";
+            this.tabControlWaterhouseOutputs.SelectedIndex = 0;
+            this.tabControlWaterhouseOutputs.Size = new System.Drawing.Size(370, 365);
+            this.tabControlWaterhouseOutputs.TabIndex = 5;
+            // 
+            // tabPageWaterhouseOutputPurchase
+            // 
+            this.tabPageWaterhouseOutputPurchase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tabPageWaterhouseOutputPurchase.Controls.Add(this.textBoxWaterhouseOutputPurchase);
+            this.tabPageWaterhouseOutputPurchase.Location = new System.Drawing.Point(4, 26);
+            this.tabPageWaterhouseOutputPurchase.Name = "tabPageWaterhouseOutputPurchase";
+            this.tabPageWaterhouseOutputPurchase.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageWaterhouseOutputPurchase.Size = new System.Drawing.Size(362, 335);
+            this.tabPageWaterhouseOutputPurchase.TabIndex = 0;
+            this.tabPageWaterhouseOutputPurchase.Text = "Покупки";
+            this.tabPageWaterhouseOutputPurchase.UseVisualStyleBackColor = true;
+            // 
+            // textBoxWaterhouseOutputPurchase
+            // 
+            this.textBoxWaterhouseOutputPurchase.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxWaterhouseOutputPurchase.Location = new System.Drawing.Point(5, 0);
+            this.textBoxWaterhouseOutputPurchase.Multiline = true;
+            this.textBoxWaterhouseOutputPurchase.Name = "textBoxWaterhouseOutputPurchase";
+            this.textBoxWaterhouseOutputPurchase.ReadOnly = true;
+            this.textBoxWaterhouseOutputPurchase.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxWaterhouseOutputPurchase.Size = new System.Drawing.Size(357, 331);
+            this.textBoxWaterhouseOutputPurchase.TabIndex = 4;
+            this.textBoxWaterhouseOutputPurchase.TabStop = false;
+            // 
+            // tabPageWaterhouseInfoGoods
+            // 
+            this.tabPageWaterhouseInfoGoods.Controls.Add(this.textBoxWaterhouseOutputInfoGoods);
+            this.tabPageWaterhouseInfoGoods.Location = new System.Drawing.Point(4, 26);
+            this.tabPageWaterhouseInfoGoods.Name = "tabPageWaterhouseInfoGoods";
+            this.tabPageWaterhouseInfoGoods.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageWaterhouseInfoGoods.Size = new System.Drawing.Size(362, 335);
+            this.tabPageWaterhouseInfoGoods.TabIndex = 1;
+            this.tabPageWaterhouseInfoGoods.Text = "Доп.Информация";
+            this.tabPageWaterhouseInfoGoods.UseVisualStyleBackColor = true;
+            // 
+            // textBoxWaterhouseOutputInfoGoods
+            // 
+            this.textBoxWaterhouseOutputInfoGoods.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxWaterhouseOutputInfoGoods.Location = new System.Drawing.Point(3, 2);
+            this.textBoxWaterhouseOutputInfoGoods.Multiline = true;
+            this.textBoxWaterhouseOutputInfoGoods.Name = "textBoxWaterhouseOutputInfoGoods";
+            this.textBoxWaterhouseOutputInfoGoods.ReadOnly = true;
+            this.textBoxWaterhouseOutputInfoGoods.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxWaterhouseOutputInfoGoods.Size = new System.Drawing.Size(357, 331);
+            this.textBoxWaterhouseOutputInfoGoods.TabIndex = 5;
+            this.textBoxWaterhouseOutputInfoGoods.TabStop = false;
+            // 
+            // tabPageStatisticForDays
+            // 
+            this.tabPageStatisticForDays.Controls.Add(this.textBoxWaterhouseStatisticForDays);
+            this.tabPageStatisticForDays.Location = new System.Drawing.Point(4, 26);
+            this.tabPageStatisticForDays.Name = "tabPageStatisticForDays";
+            this.tabPageStatisticForDays.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageStatisticForDays.Size = new System.Drawing.Size(362, 335);
+            this.tabPageStatisticForDays.TabIndex = 2;
+            this.tabPageStatisticForDays.Text = "Отчет по дням";
+            this.tabPageStatisticForDays.UseVisualStyleBackColor = true;
+            // 
+            // textBoxWaterhouseStatisticForDays
+            // 
+            this.textBoxWaterhouseStatisticForDays.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxWaterhouseStatisticForDays.Location = new System.Drawing.Point(3, 2);
+            this.textBoxWaterhouseStatisticForDays.Multiline = true;
+            this.textBoxWaterhouseStatisticForDays.Name = "textBoxWaterhouseStatisticForDays";
+            this.textBoxWaterhouseStatisticForDays.ReadOnly = true;
+            this.textBoxWaterhouseStatisticForDays.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxWaterhouseStatisticForDays.Size = new System.Drawing.Size(357, 331);
+            this.textBoxWaterhouseStatisticForDays.TabIndex = 6;
+            this.textBoxWaterhouseStatisticForDays.TabStop = false;
+            // 
+            // numericUpDownWaterhouseDays
+            // 
+            this.numericUpDownWaterhouseDays.Location = new System.Drawing.Point(79, 20);
+            this.numericUpDownWaterhouseDays.Maximum = new decimal(new int[] {
+            365,
+            0,
+            0,
+            0});
+            this.numericUpDownWaterhouseDays.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownWaterhouseDays.Name = "numericUpDownWaterhouseDays";
+            this.numericUpDownWaterhouseDays.Size = new System.Drawing.Size(71, 25);
+            this.numericUpDownWaterhouseDays.TabIndex = 3;
+            this.numericUpDownWaterhouseDays.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // labelWaterhouseStartKolGoods
+            // 
+            this.labelWaterhouseStartKolGoods.AutoSize = true;
+            this.labelWaterhouseStartKolGoods.Location = new System.Drawing.Point(33, 114);
+            this.labelWaterhouseStartKolGoods.Name = "labelWaterhouseStartKolGoods";
+            this.labelWaterhouseStartKolGoods.Size = new System.Drawing.Size(201, 17);
+            this.labelWaterhouseStartKolGoods.TabIndex = 2;
+            this.labelWaterhouseStartKolGoods.Text = "Стартовое количество товаров";
+            // 
+            // labelWaterhousePredelPurchase
+            // 
+            this.labelWaterhousePredelPurchase.AutoSize = true;
+            this.labelWaterhousePredelPurchase.Location = new System.Drawing.Point(28, 354);
+            this.labelWaterhousePredelPurchase.Name = "labelWaterhousePredelPurchase";
+            this.labelWaterhousePredelPurchase.Size = new System.Drawing.Size(206, 17);
+            this.labelWaterhousePredelPurchase.TabIndex = 2;
+            this.labelWaterhousePredelPurchase.Text = "Макс. объем покупок клиентом";
+            // 
+            // labelWaterhouseCustomerCount
+            // 
+            this.labelWaterhouseCustomerCount.AutoSize = true;
+            this.labelWaterhouseCustomerCount.Location = new System.Drawing.Point(33, 294);
+            this.labelWaterhouseCustomerCount.Name = "labelWaterhouseCustomerCount";
+            this.labelWaterhouseCustomerCount.Size = new System.Drawing.Size(141, 17);
+            this.labelWaterhouseCustomerCount.TabIndex = 2;
+            this.labelWaterhouseCustomerCount.Text = "Количество клиентов";
+            // 
+            // labelWaterhousePurchaseInStorage
+            // 
+            this.labelWaterhousePurchaseInStorage.AutoSize = true;
+            this.labelWaterhousePurchaseInStorage.Location = new System.Drawing.Point(33, 234);
+            this.labelWaterhousePurchaseInStorage.Name = "labelWaterhousePurchaseInStorage";
+            this.labelWaterhousePurchaseInStorage.Size = new System.Drawing.Size(247, 17);
+            this.labelWaterhousePurchaseInStorage.TabIndex = 2;
+            this.labelWaterhousePurchaseInStorage.Text = "Объем закупки недостающих товаров";
+            // 
+            // labelWaterhouseMinLeft
+            // 
+            this.labelWaterhouseMinLeft.AutoSize = true;
+            this.labelWaterhouseMinLeft.Location = new System.Drawing.Point(33, 174);
+            this.labelWaterhouseMinLeft.Name = "labelWaterhouseMinLeft";
+            this.labelWaterhouseMinLeft.Size = new System.Drawing.Size(279, 17);
+            this.labelWaterhouseMinLeft.TabIndex = 2;
+            this.labelWaterhouseMinLeft.Text = "Минимальное количество товара на складе";
+            // 
+            // labelWaterhouseTypesGoods
+            // 
+            this.labelWaterhouseTypesGoods.AutoSize = true;
+            this.labelWaterhouseTypesGoods.Location = new System.Drawing.Point(33, 54);
+            this.labelWaterhouseTypesGoods.Name = "labelWaterhouseTypesGoods";
+            this.labelWaterhouseTypesGoods.Size = new System.Drawing.Size(167, 17);
+            this.labelWaterhouseTypesGoods.TabIndex = 2;
+            this.labelWaterhouseTypesGoods.Text = "Количество видов товара";
+            // 
+            // labelWaterhouseDays
+            // 
+            this.labelWaterhouseDays.AutoSize = true;
+            this.labelWaterhouseDays.Location = new System.Drawing.Point(34, 24);
+            this.labelWaterhouseDays.Name = "labelWaterhouseDays";
+            this.labelWaterhouseDays.Size = new System.Drawing.Size(39, 17);
+            this.labelWaterhouseDays.TabIndex = 2;
+            this.labelWaterhouseDays.Text = "Дней";
+            // 
+            // buttonWaterhouseStartModeling
+            // 
+            this.buttonWaterhouseStartModeling.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonWaterhouseStartModeling.Location = new System.Drawing.Point(497, 378);
+            this.buttonWaterhouseStartModeling.Name = "buttonWaterhouseStartModeling";
+            this.buttonWaterhouseStartModeling.Size = new System.Drawing.Size(186, 42);
+            this.buttonWaterhouseStartModeling.TabIndex = 0;
+            this.buttonWaterhouseStartModeling.Text = "Начать моделирование";
+            this.buttonWaterhouseStartModeling.UseVisualStyleBackColor = true;
+            this.buttonWaterhouseStartModeling.Click += new System.EventHandler(this.buttonWaterhouseStartModeling_Click);
+            // 
+            // labelWaterhouseChangeMinKolGoods
+            // 
+            this.labelWaterhouseChangeMinKolGoods.AutoSize = true;
+            this.labelWaterhouseChangeMinKolGoods.Location = new System.Drawing.Point(244, 201);
+            this.labelWaterhouseChangeMinKolGoods.Name = "labelWaterhouseChangeMinKolGoods";
+            this.labelWaterhouseChangeMinKolGoods.Size = new System.Drawing.Size(42, 17);
+            this.labelWaterhouseChangeMinKolGoods.TabIndex = 12;
+            this.labelWaterhouseChangeMinKolGoods.Text = "label1";
+            this.labelWaterhouseChangeMinKolGoods.Visible = false;
+            // 
+            // labelWaterhouseChangePuchaseInStorage
+            // 
+            this.labelWaterhouseChangePuchaseInStorage.AutoSize = true;
+            this.labelWaterhouseChangePuchaseInStorage.Location = new System.Drawing.Point(244, 264);
+            this.labelWaterhouseChangePuchaseInStorage.Name = "labelWaterhouseChangePuchaseInStorage";
+            this.labelWaterhouseChangePuchaseInStorage.Size = new System.Drawing.Size(42, 17);
+            this.labelWaterhouseChangePuchaseInStorage.TabIndex = 12;
+            this.labelWaterhouseChangePuchaseInStorage.Text = "label1";
+            this.labelWaterhouseChangePuchaseInStorage.Visible = false;
             // 
             // Body
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(786, 450);
-            this.Controls.Add(this.tabControl);
-            this.Controls.Add(this.chartGrafics);
+            this.ClientSize = new System.Drawing.Size(778, 471);
+            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.groupBoxWaterhouse);
+            this.Controls.Add(this.groupBoxTotalRasp);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -840,12 +1244,32 @@
             this.groupBoxPage3Normal.PerformLayout();
             this.tabPageFourthQuest.ResumeLayout(false);
             this.tabPageFourthQuest.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartGrafics)).EndInit();
             this.groupBoxPage4.ResumeLayout(false);
             this.groupBoxPage4.PerformLayout();
+            this.tabPageFifthQuest.ResumeLayout(false);
+            this.tabPageFifthQuest.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartGrafics)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
+            this.groupBoxTotalRasp.ResumeLayout(false);
+            this.groupBoxWaterhouse.ResumeLayout(false);
+            this.groupBoxWaterhouse.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPredelPurchase)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWaterhouseCustomerCount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPurchaseInStorage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWaterhouseMinLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWaterhouseStartKolGoods)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWaterhouseTypesGoods)).EndInit();
+            this.tabControlWaterhouseOutputs.ResumeLayout(false);
+            this.tabPageWaterhouseOutputPurchase.ResumeLayout(false);
+            this.tabPageWaterhouseOutputPurchase.PerformLayout();
+            this.tabPageWaterhouseInfoGoods.ResumeLayout(false);
+            this.tabPageWaterhouseInfoGoods.PerformLayout();
+            this.tabPageStatisticForDays.ResumeLayout(false);
+            this.tabPageStatisticForDays.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWaterhouseDays)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -890,7 +1314,7 @@
         private System.Windows.Forms.TextBox textBoxPage3Kol;
         private System.Windows.Forms.Button buttonPage3StartDrawGrafics;
         private System.Windows.Forms.TabPage tabPageFourthQuest;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPageFifthQuest;
         private System.Windows.Forms.TextBox textBoxPage3Deviation;
         private System.Windows.Forms.Label labelPage3Deviation;
         private System.Windows.Forms.Label labelPage4Lambda;
@@ -916,7 +1340,37 @@
         private System.Windows.Forms.TextBox textBoxPage5Kol;
         private System.Windows.Forms.Button buttonPage5StartDrawGrafics;
         private System.Windows.Forms.Label labelPage5Lambda;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelNameRaspErlang;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.GroupBox groupBoxTotalRasp;
+        private System.Windows.Forms.ToolStripButton toolStripButtonRasp;
+        private System.Windows.Forms.ToolStripButton toolStripButtonWaterhouse;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.GroupBox groupBoxWaterhouse;
+        private System.Windows.Forms.Label labelWaterhouseStartKolGoods;
+        private System.Windows.Forms.Label labelWaterhousePredelPurchase;
+        private System.Windows.Forms.Label labelWaterhouseCustomerCount;
+        private System.Windows.Forms.Label labelWaterhousePurchaseInStorage;
+        private System.Windows.Forms.Label labelWaterhouseMinLeft;
+        private System.Windows.Forms.Label labelWaterhouseTypesGoods;
+        private System.Windows.Forms.Label labelWaterhouseDays;
+        private System.Windows.Forms.Button buttonWaterhouseStartModeling;
+        internal System.Windows.Forms.TextBox textBoxWaterhouseOutputPurchase;
+        private System.Windows.Forms.NumericUpDown numericUpDownWaterhouseDays;
+        private System.Windows.Forms.TabControl tabControlWaterhouseOutputs;
+        private System.Windows.Forms.TabPage tabPageWaterhouseOutputPurchase;
+        private System.Windows.Forms.TabPage tabPageWaterhouseInfoGoods;
+        internal System.Windows.Forms.TextBox textBoxWaterhouseOutputInfoGoods;
+        private System.Windows.Forms.NumericUpDown numericUpDownPredelPurchase;
+        private System.Windows.Forms.NumericUpDown numericUpDownWaterhouseCustomerCount;
+        private System.Windows.Forms.NumericUpDown numericUpDownPurchaseInStorage;
+        private System.Windows.Forms.NumericUpDown numericUpDownWaterhouseMinLeft;
+        private System.Windows.Forms.NumericUpDown numericUpDownWaterhouseStartKolGoods;
+        private System.Windows.Forms.NumericUpDown numericUpDownWaterhouseTypesGoods;
+        private System.Windows.Forms.TabPage tabPageStatisticForDays;
+        internal System.Windows.Forms.TextBox textBoxWaterhouseStatisticForDays;
+        private System.Windows.Forms.Label labelWaterhouseChangePuchaseInStorage;
+        private System.Windows.Forms.Label labelWaterhouseChangeMinKolGoods;
     }
 }
 

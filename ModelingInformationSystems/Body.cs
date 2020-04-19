@@ -2,6 +2,7 @@
 using System;
 using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -300,10 +301,7 @@ namespace ModelingInformationSystems
         private void buttonPage5StartDrawGrafics_Click(object sender, EventArgs e)
         {
             chartGrafics.ChartAreas.Clear();
-            chartGrafics.Series.Clear();
-            //// Если в одном из TextBox'ов не введены данные операция прервется и выведется оповещение
-            //if (CheckTextOnTextBoxInTabPage(tabPageFourthQuest))
-            //    return;
+            chartGrafics.Series.Clear();         
             int kol = Convert.ToInt32(textBoxPage5Kol.Text);
             int intervals = Convert.ToInt32(textBoxPage5Intervals.Text);
 
@@ -316,6 +314,52 @@ namespace ModelingInformationSystems
             PredelAxisX = dotes.Max();
             
             DrawGrafics(intervals, dotes, PredelAxisX);
+        }
+
+        private void toolStripButtonRasp_Click(object sender, EventArgs e)
+        {
+            groupBoxTotalRasp.Visible = true;
+            groupBoxWaterhouse.Visible = false;
+        }
+
+        private void toolStripButtonWaterhouse_Click(object sender, EventArgs e)
+        {
+            groupBoxTotalRasp.Visible = false;
+            groupBoxWaterhouse.Visible = true;
+        }
+
+        private async void buttonWaterhouseStartModeling_Click(object sender, EventArgs e)
+        {
+
+            textBoxWaterhouseOutputInfoGoods.Text = "";
+            textBoxWaterhouseOutputPurchase.Text = "";
+            textBoxWaterhouseStatisticForDays.Text = "";
+            labelWaterhouseChangeMinKolGoods.Visible = true;
+            labelWaterhouseChangePuchaseInStorage.Visible = true;
+            OutputInTextBox output = new OutputInTextBox();
+            output.OutputPurchase = textBoxWaterhouseOutputPurchase;
+            output.OutputInfoGoods = textBoxWaterhouseOutputInfoGoods;
+            output.OutputStatistic = textBoxWaterhouseStatisticForDays;
+            output.ChangeMinKol = labelWaterhouseChangeMinKolGoods;
+            output.ChangeProcurementSize = labelWaterhouseChangePuchaseInStorage;
+
+
+            ParamForModeling forModeling = new ParamForModeling();
+            forModeling.days = (int) numericUpDownWaterhouseDays.Value;
+            // Количество товаров
+            forModeling.kolTypesGoods = (int)numericUpDownWaterhouseTypesGoods.Value ;
+            // Минимальное количество товаров на складе до закупки
+            forModeling.minimumQuantity = (int) numericUpDownWaterhouseMinLeft.Value;
+            // Количество единиц закупаемых товаров
+            forModeling.procurementSize = (int) numericUpDownPurchaseInStorage.Value;
+            // Количество клиентов
+            forModeling.countCustomer = (int) numericUpDownWaterhouseCustomerCount.Value;
+            // Максимальное количество товаро которое может купить 1 клиент
+            forModeling.kolPurchaseCustomer = (int) numericUpDownPredelPurchase.Value;
+            // Стартовое количество единиц товаров
+            forModeling.startKolGoods = (int) numericUpDownWaterhouseStartKolGoods.Value;
+
+            await Waterhouse.AsyncModelingWork(forModeling,output);
         }
     }
 }
