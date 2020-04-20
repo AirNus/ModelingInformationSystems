@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ModelingInformationSystems
 {
-    class Simpson
+    class Simpson : Uniform
     {
         static Random random = new Random();
         static public double[] GenerateNumberTrapezoidal(int kol, int startNumber, int endNumber)
@@ -40,6 +40,13 @@ namespace ModelingInformationSystems
             }
 
             return dotes;
+        }
+        internal double GenerateNumber( int endNumber)
+        {            
+            int sigma = Convert.ToInt32(endNumber / 2);        
+            double firstNum = (random.Next(sigma));
+            double secondNum = (random.Next(sigma));
+            return (firstNum + secondNum) % endNumber;            
         }
     }
 }

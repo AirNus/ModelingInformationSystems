@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace ModelingInformationSystems
 {
-    class Normal
+    class Normal : Uniform
     {
         static Random random = new Random();
         static public double[] GenerateNumberStandartNormal(int kol,int n)
@@ -27,6 +27,18 @@ namespace ModelingInformationSystems
             }
 
             return dotes;
+        }
+
+        internal double GenerateNumber(int Up)
+        {
+            double sum = 0;           
+            double tmp = Math.Sqrt(12.0 / 12);
+            for (int j = 0; j < 12; j++)
+            {
+                sum += random.NextDouble() - 12 / 2;
+            }
+            return (tmp * Math.Abs(sum)) % Up;
+            
         }
 
         static public double[] GenerateNumberArbitraryNormal(int kol,int M,int deviation)

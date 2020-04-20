@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Deployment.Application;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ModelingInformationSystems
 {
-    class Uniform
+    internal class Uniform
     {
         static Random random = new Random();
 
@@ -52,6 +53,10 @@ namespace ModelingInformationSystems
                 dotes[i] = (a * dotes[i - 1] + c) % m;
             }
             return dotes;
+        }
+        internal double GenerateNumber(int Up)
+        {            
+            return random.Next(Up);
         }
     }
 }

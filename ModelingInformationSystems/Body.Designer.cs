@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageFirstQuest = new System.Windows.Forms.TabPage();
             this.groupBoxPage1Methods = new System.Windows.Forms.GroupBox();
@@ -95,7 +95,7 @@
             this.textBoxPage5Kol = new System.Windows.Forms.TextBox();
             this.buttonPage5StartDrawGrafics = new System.Windows.Forms.Button();
             this.chartGrafics = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripTopPanel = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonRasp = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonWaterhouse = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
@@ -112,7 +112,7 @@
             this.textBoxWaterhouseOutputPurchase = new System.Windows.Forms.TextBox();
             this.tabPageWaterhouseInfoGoods = new System.Windows.Forms.TabPage();
             this.textBoxWaterhouseOutputInfoGoods = new System.Windows.Forms.TextBox();
-            this.tabPageStatisticForDays = new System.Windows.Forms.TabPage();
+            this.tabPageWaterhouseStatistic = new System.Windows.Forms.TabPage();
             this.textBoxWaterhouseStatisticForDays = new System.Windows.Forms.TextBox();
             this.numericUpDownWaterhouseDays = new System.Windows.Forms.NumericUpDown();
             this.labelWaterhouseStartKolGoods = new System.Windows.Forms.Label();
@@ -123,6 +123,11 @@
             this.labelWaterhouseTypesGoods = new System.Windows.Forms.Label();
             this.labelWaterhouseDays = new System.Windows.Forms.Label();
             this.buttonWaterhouseStartModeling = new System.Windows.Forms.Button();
+            this.checkBoxSetMethodGenerate = new System.Windows.Forms.CheckBox();
+            this.groupBoxWaterhouseRasp = new System.Windows.Forms.GroupBox();
+            this.radioButtonWaterhouseUniform = new System.Windows.Forms.RadioButton();
+            this.radioButtonWaterhouseTriangle = new System.Windows.Forms.RadioButton();
+            this.radioButtonWaterhouseNormal = new System.Windows.Forms.RadioButton();
             this.tabControl.SuspendLayout();
             this.tabPageFirstQuest.SuspendLayout();
             this.groupBoxPage1Methods.SuspendLayout();
@@ -134,7 +139,7 @@
             this.groupBoxPage4.SuspendLayout();
             this.tabPageFifthQuest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartGrafics)).BeginInit();
-            this.toolStrip1.SuspendLayout();
+            this.toolStripTopPanel.SuspendLayout();
             this.groupBoxTotalRasp.SuspendLayout();
             this.groupBoxWaterhouse.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPredelPurchase)).BeginInit();
@@ -146,8 +151,9 @@
             this.tabControlWaterhouseOutputs.SuspendLayout();
             this.tabPageWaterhouseOutputPurchase.SuspendLayout();
             this.tabPageWaterhouseInfoGoods.SuspendLayout();
-            this.tabPageStatisticForDays.SuspendLayout();
+            this.tabPageWaterhouseStatistic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWaterhouseDays)).BeginInit();
+            this.groupBoxWaterhouseRasp.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -845,25 +851,25 @@
             // 
             // chartGrafics
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartGrafics.ChartAreas.Add(chartArea1);
+            chartArea2.Name = "ChartArea1";
+            this.chartGrafics.ChartAreas.Add(chartArea2);
             this.chartGrafics.Location = new System.Drawing.Point(262, 13);
             this.chartGrafics.Name = "chartGrafics";
             this.chartGrafics.Size = new System.Drawing.Size(503, 418);
             this.chartGrafics.TabIndex = 3;
             this.chartGrafics.TabStop = false;
             // 
-            // toolStrip1
+            // toolStripTopPanel
             // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripTopPanel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonRasp,
             this.toolStripButtonWaterhouse,
             this.toolStripButton3});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(778, 25);
-            this.toolStrip1.TabIndex = 4;
-            this.toolStrip1.Text = "toolStrip1";
+            this.toolStripTopPanel.Location = new System.Drawing.Point(0, 0);
+            this.toolStripTopPanel.Name = "toolStripTopPanel";
+            this.toolStripTopPanel.Size = new System.Drawing.Size(778, 25);
+            this.toolStripTopPanel.TabIndex = 4;
+            this.toolStripTopPanel.Text = "toolStrip1";
             // 
             // toolStripButtonRasp
             // 
@@ -903,6 +909,8 @@
             // 
             // groupBoxWaterhouse
             // 
+            this.groupBoxWaterhouse.Controls.Add(this.groupBoxWaterhouseRasp);
+            this.groupBoxWaterhouse.Controls.Add(this.checkBoxSetMethodGenerate);
             this.groupBoxWaterhouse.Controls.Add(this.numericUpDownPredelPurchase);
             this.groupBoxWaterhouse.Controls.Add(this.numericUpDownWaterhouseCustomerCount);
             this.groupBoxWaterhouse.Controls.Add(this.numericUpDownPurchaseInStorage);
@@ -1017,7 +1025,7 @@
             // 
             this.tabControlWaterhouseOutputs.Controls.Add(this.tabPageWaterhouseOutputPurchase);
             this.tabControlWaterhouseOutputs.Controls.Add(this.tabPageWaterhouseInfoGoods);
-            this.tabControlWaterhouseOutputs.Controls.Add(this.tabPageStatisticForDays);
+            this.tabControlWaterhouseOutputs.Controls.Add(this.tabPageWaterhouseStatistic);
             this.tabControlWaterhouseOutputs.Location = new System.Drawing.Point(396, 10);
             this.tabControlWaterhouseOutputs.Name = "tabControlWaterhouseOutputs";
             this.tabControlWaterhouseOutputs.SelectedIndex = 0;
@@ -1039,7 +1047,7 @@
             // textBoxWaterhouseOutputPurchase
             // 
             this.textBoxWaterhouseOutputPurchase.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxWaterhouseOutputPurchase.Location = new System.Drawing.Point(5, 0);
+            this.textBoxWaterhouseOutputPurchase.Location = new System.Drawing.Point(3, 2);
             this.textBoxWaterhouseOutputPurchase.Multiline = true;
             this.textBoxWaterhouseOutputPurchase.Name = "textBoxWaterhouseOutputPurchase";
             this.textBoxWaterhouseOutputPurchase.ReadOnly = true;
@@ -1071,16 +1079,16 @@
             this.textBoxWaterhouseOutputInfoGoods.TabIndex = 5;
             this.textBoxWaterhouseOutputInfoGoods.TabStop = false;
             // 
-            // tabPageStatisticForDays
+            // tabPageWaterhouseStatistic
             // 
-            this.tabPageStatisticForDays.Controls.Add(this.textBoxWaterhouseStatisticForDays);
-            this.tabPageStatisticForDays.Location = new System.Drawing.Point(4, 26);
-            this.tabPageStatisticForDays.Name = "tabPageStatisticForDays";
-            this.tabPageStatisticForDays.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageStatisticForDays.Size = new System.Drawing.Size(362, 335);
-            this.tabPageStatisticForDays.TabIndex = 2;
-            this.tabPageStatisticForDays.Text = "Отчет по дням";
-            this.tabPageStatisticForDays.UseVisualStyleBackColor = true;
+            this.tabPageWaterhouseStatistic.Controls.Add(this.textBoxWaterhouseStatisticForDays);
+            this.tabPageWaterhouseStatistic.Location = new System.Drawing.Point(4, 26);
+            this.tabPageWaterhouseStatistic.Name = "tabPageWaterhouseStatistic";
+            this.tabPageWaterhouseStatistic.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageWaterhouseStatistic.Size = new System.Drawing.Size(362, 335);
+            this.tabPageWaterhouseStatistic.TabIndex = 2;
+            this.tabPageWaterhouseStatistic.Text = "Итоговые параметры";
+            this.tabPageWaterhouseStatistic.UseVisualStyleBackColor = true;
             // 
             // textBoxWaterhouseStatisticForDays
             // 
@@ -1190,12 +1198,66 @@
             this.buttonWaterhouseStartModeling.UseVisualStyleBackColor = true;
             this.buttonWaterhouseStartModeling.Click += new System.EventHandler(this.buttonWaterhouseStartModeling_Click);
             // 
+            // checkBoxSetMethodGenerate
+            // 
+            this.checkBoxSetMethodGenerate.AutoSize = true;
+            this.checkBoxSetMethodGenerate.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBoxSetMethodGenerate.Location = new System.Drawing.Point(12, 410);
+            this.checkBoxSetMethodGenerate.Name = "checkBoxSetMethodGenerate";
+            this.checkBoxSetMethodGenerate.Size = new System.Drawing.Size(203, 19);
+            this.checkBoxSetMethodGenerate.TabIndex = 12;
+            this.checkBoxSetMethodGenerate.Text = "Выбрать способ генерации продаж";
+            this.checkBoxSetMethodGenerate.UseVisualStyleBackColor = true;
+            // 
+            // groupBoxWaterhouseRasp
+            // 
+            this.groupBoxWaterhouseRasp.Controls.Add(this.radioButtonWaterhouseNormal);
+            this.groupBoxWaterhouseRasp.Controls.Add(this.radioButtonWaterhouseTriangle);
+            this.groupBoxWaterhouseRasp.Controls.Add(this.radioButtonWaterhouseUniform);
+            this.groupBoxWaterhouseRasp.Location = new System.Drawing.Point(13, 18);
+            this.groupBoxWaterhouseRasp.Name = "groupBoxWaterhouseRasp";
+            this.groupBoxWaterhouseRasp.Size = new System.Drawing.Size(240, 172);
+            this.groupBoxWaterhouseRasp.TabIndex = 13;
+            this.groupBoxWaterhouseRasp.TabStop = false;
+            this.groupBoxWaterhouseRasp.Text = "Распределения:";
+            this.groupBoxWaterhouseRasp.Visible = false;
+            // 
+            // radioButtonWaterhouseUniform
+            // 
+            this.radioButtonWaterhouseUniform.AutoSize = true;
+            this.radioButtonWaterhouseUniform.Location = new System.Drawing.Point(24, 52);
+            this.radioButtonWaterhouseUniform.Name = "radioButtonWaterhouseUniform";
+            this.radioButtonWaterhouseUniform.Size = new System.Drawing.Size(108, 21);
+            this.radioButtonWaterhouseUniform.TabIndex = 0;
+            this.radioButtonWaterhouseUniform.Text = "Равномерное";
+            this.radioButtonWaterhouseUniform.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonWaterhouseTriangle
+            // 
+            this.radioButtonWaterhouseTriangle.AutoSize = true;
+            this.radioButtonWaterhouseTriangle.Location = new System.Drawing.Point(24, 90);
+            this.radioButtonWaterhouseTriangle.Name = "radioButtonWaterhouseTriangle";
+            this.radioButtonWaterhouseTriangle.Size = new System.Drawing.Size(103, 21);
+            this.radioButtonWaterhouseTriangle.TabIndex = 1;
+            this.radioButtonWaterhouseTriangle.Text = "Треугольное";
+            this.radioButtonWaterhouseTriangle.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonWaterhouseNormal
+            // 
+            this.radioButtonWaterhouseNormal.AutoSize = true;
+            this.radioButtonWaterhouseNormal.Location = new System.Drawing.Point(24, 128);
+            this.radioButtonWaterhouseNormal.Name = "radioButtonWaterhouseNormal";
+            this.radioButtonWaterhouseNormal.Size = new System.Drawing.Size(103, 21);
+            this.radioButtonWaterhouseNormal.TabIndex = 2;
+            this.radioButtonWaterhouseNormal.Text = "Нормальное";
+            this.radioButtonWaterhouseNormal.UseVisualStyleBackColor = true;
+            // 
             // Body
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 471);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.toolStripTopPanel);
             this.Controls.Add(this.groupBoxWaterhouse);
             this.Controls.Add(this.groupBoxTotalRasp);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -1225,8 +1287,8 @@
             this.tabPageFifthQuest.ResumeLayout(false);
             this.tabPageFifthQuest.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartGrafics)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.toolStripTopPanel.ResumeLayout(false);
+            this.toolStripTopPanel.PerformLayout();
             this.groupBoxTotalRasp.ResumeLayout(false);
             this.groupBoxWaterhouse.ResumeLayout(false);
             this.groupBoxWaterhouse.PerformLayout();
@@ -1241,9 +1303,11 @@
             this.tabPageWaterhouseOutputPurchase.PerformLayout();
             this.tabPageWaterhouseInfoGoods.ResumeLayout(false);
             this.tabPageWaterhouseInfoGoods.PerformLayout();
-            this.tabPageStatisticForDays.ResumeLayout(false);
-            this.tabPageStatisticForDays.PerformLayout();
+            this.tabPageWaterhouseStatistic.ResumeLayout(false);
+            this.tabPageWaterhouseStatistic.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWaterhouseDays)).EndInit();
+            this.groupBoxWaterhouseRasp.ResumeLayout(false);
+            this.groupBoxWaterhouseRasp.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1317,7 +1381,7 @@
         private System.Windows.Forms.Button buttonPage5StartDrawGrafics;
         private System.Windows.Forms.Label labelPage5Lambda;
         private System.Windows.Forms.Label labelNameRaspErlang;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip toolStripTopPanel;
         private System.Windows.Forms.GroupBox groupBoxTotalRasp;
         private System.Windows.Forms.ToolStripButton toolStripButtonRasp;
         private System.Windows.Forms.ToolStripButton toolStripButtonWaterhouse;
@@ -1343,8 +1407,13 @@
         private System.Windows.Forms.NumericUpDown numericUpDownWaterhouseMinLeft;
         private System.Windows.Forms.NumericUpDown numericUpDownWaterhouseStartKolGoods;
         private System.Windows.Forms.NumericUpDown numericUpDownWaterhouseTypesGoods;
-        private System.Windows.Forms.TabPage tabPageStatisticForDays;
+        private System.Windows.Forms.TabPage tabPageWaterhouseStatistic;
         internal System.Windows.Forms.TextBox textBoxWaterhouseStatisticForDays;
+        private System.Windows.Forms.GroupBox groupBoxWaterhouseRasp;
+        private System.Windows.Forms.RadioButton radioButtonWaterhouseNormal;
+        private System.Windows.Forms.RadioButton radioButtonWaterhouseTriangle;
+        private System.Windows.Forms.RadioButton radioButtonWaterhouseUniform;
+        private System.Windows.Forms.CheckBox checkBoxSetMethodGenerate;
     }
 }
 

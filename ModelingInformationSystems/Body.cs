@@ -24,6 +24,9 @@ namespace ModelingInformationSystems
             // Page4 Exponential
             radioButtonPage4Exponential.CheckedChanged += new EventHandler(radioButtonPage4Checked);
             radioButtonPage4HyperExponential.CheckedChanged += new EventHandler(radioButtonPage4Checked);
+
+            // Waterhouse
+            checkBoxSetMethodGenerate.CheckedChanged += new EventHandler(checkBoxSetMethodGenerate_CheckedChange);
         }
 
         public double[] SortedArrayToDesc(double[] dotes)
@@ -328,8 +331,7 @@ namespace ModelingInformationSystems
         }
 
         private async void buttonWaterhouseStartModeling_Click(object sender, EventArgs e)
-        {
-
+        {          
             textBoxWaterhouseOutputInfoGoods.Text = "";
             textBoxWaterhouseOutputPurchase.Text = "";
             textBoxWaterhouseStatisticForDays.Text = "";          
@@ -353,7 +355,30 @@ namespace ModelingInformationSystems
             // Стартовое количество единиц товаров
             forModeling.startKolGoods = (int) numericUpDownWaterhouseStartKolGoods.Value;
 
+            if (radioButtonWaterhouseTriangle.Checked)
+            {
+                forModeling.generate = new Simpson();
+            }
+            else if (radioButtonWaterhouseNormal.Checked)
+            {
+                forModeling.generate = new Normal();
+            }
+            else
+            {
+                forModeling.generate = new Uniform();
+            }
+
             await Waterhouse.AsyncModelingWork(forModeling,output);
+        }
+
+        private void checkBoxSetMethodGenerate_CheckedChange(object sender, EventArgs e)
+        {
+            if (checkBoxSetMethodGenerate.Checked)
+            {
+                groupBoxWaterhouseRasp.Visible = true;
+            }
+            else
+                groupBoxWaterhouseRasp.Visible = false;
         }
     }
 }

@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace ModelingInformationSystems
 {
+    
     class OutputInTextBox
     {      
         internal TextBox OutputPurchase;
@@ -19,6 +20,8 @@ namespace ModelingInformationSystems
     }
     class ParamForModeling
     {
+        internal Uniform generate;
+
         internal int days;
         // Количество товаров
         internal int kolTypesGoods;
@@ -103,13 +106,13 @@ namespace ModelingInformationSystems
 
                     for(int i = 0; i < startParam.countCustomer;i++)
                     {
-                        int kolTypesProduct = random.Next(maximumTypesProducts);
+                        int kolTypesProduct = (int)startParam.generate.GenerateNumber(maximumTypesProducts);
                         if (kolTypesProduct == 0)
                             continue;
                         for(int type = 0; type < kolTypesProduct; type++)
                         {
-                            int currProduct = random.Next(startParam.kolTypesGoods);
-                            int currQuantity = random.Next(startParam.kolPurchaseCustomer);
+                            int currProduct = (int)startParam.generate.GenerateNumber(startParam.kolTypesGoods);
+                            int currQuantity = (int)startParam.generate.GenerateNumber(startParam.kolPurchaseCustomer);
                             if (currQuantity == 0)
                                 continue;
                             if(products[currProduct].kol < currQuantity)
