@@ -123,8 +123,6 @@
             this.labelWaterhouseTypesGoods = new System.Windows.Forms.Label();
             this.labelWaterhouseDays = new System.Windows.Forms.Label();
             this.buttonWaterhouseStartModeling = new System.Windows.Forms.Button();
-            this.labelWaterhouseChangeMinKolGoods = new System.Windows.Forms.Label();
-            this.labelWaterhouseChangePuchaseInStorage = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabPageFirstQuest.SuspendLayout();
             this.groupBoxPage1Methods.SuspendLayout();
@@ -905,8 +903,6 @@
             // 
             // groupBoxWaterhouse
             // 
-            this.groupBoxWaterhouse.Controls.Add(this.labelWaterhouseChangePuchaseInStorage);
-            this.groupBoxWaterhouse.Controls.Add(this.labelWaterhouseChangeMinKolGoods);
             this.groupBoxWaterhouse.Controls.Add(this.numericUpDownPredelPurchase);
             this.groupBoxWaterhouse.Controls.Add(this.numericUpDownWaterhouseCustomerCount);
             this.groupBoxWaterhouse.Controls.Add(this.numericUpDownPurchaseInStorage);
@@ -1194,26 +1190,6 @@
             this.buttonWaterhouseStartModeling.UseVisualStyleBackColor = true;
             this.buttonWaterhouseStartModeling.Click += new System.EventHandler(this.buttonWaterhouseStartModeling_Click);
             // 
-            // labelWaterhouseChangeMinKolGoods
-            // 
-            this.labelWaterhouseChangeMinKolGoods.AutoSize = true;
-            this.labelWaterhouseChangeMinKolGoods.Location = new System.Drawing.Point(244, 201);
-            this.labelWaterhouseChangeMinKolGoods.Name = "labelWaterhouseChangeMinKolGoods";
-            this.labelWaterhouseChangeMinKolGoods.Size = new System.Drawing.Size(42, 17);
-            this.labelWaterhouseChangeMinKolGoods.TabIndex = 12;
-            this.labelWaterhouseChangeMinKolGoods.Text = "label1";
-            this.labelWaterhouseChangeMinKolGoods.Visible = false;
-            // 
-            // labelWaterhouseChangePuchaseInStorage
-            // 
-            this.labelWaterhouseChangePuchaseInStorage.AutoSize = true;
-            this.labelWaterhouseChangePuchaseInStorage.Location = new System.Drawing.Point(244, 264);
-            this.labelWaterhouseChangePuchaseInStorage.Name = "labelWaterhouseChangePuchaseInStorage";
-            this.labelWaterhouseChangePuchaseInStorage.Size = new System.Drawing.Size(42, 17);
-            this.labelWaterhouseChangePuchaseInStorage.TabIndex = 12;
-            this.labelWaterhouseChangePuchaseInStorage.Text = "label1";
-            this.labelWaterhouseChangePuchaseInStorage.Visible = false;
-            // 
             // Body
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1369,8 +1345,6 @@
         private System.Windows.Forms.NumericUpDown numericUpDownWaterhouseTypesGoods;
         private System.Windows.Forms.TabPage tabPageStatisticForDays;
         internal System.Windows.Forms.TextBox textBoxWaterhouseStatisticForDays;
-        private System.Windows.Forms.Label labelWaterhouseChangePuchaseInStorage;
-        private System.Windows.Forms.Label labelWaterhouseChangeMinKolGoods;
     }
 }
 

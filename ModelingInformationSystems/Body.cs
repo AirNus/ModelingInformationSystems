@@ -333,16 +333,11 @@ namespace ModelingInformationSystems
 
             textBoxWaterhouseOutputInfoGoods.Text = "";
             textBoxWaterhouseOutputPurchase.Text = "";
-            textBoxWaterhouseStatisticForDays.Text = "";
-            labelWaterhouseChangeMinKolGoods.Visible = true;
-            labelWaterhouseChangePuchaseInStorage.Visible = true;
+            textBoxWaterhouseStatisticForDays.Text = "";          
             OutputInTextBox output = new OutputInTextBox();
             output.OutputPurchase = textBoxWaterhouseOutputPurchase;
             output.OutputInfoGoods = textBoxWaterhouseOutputInfoGoods;
-            output.OutputStatistic = textBoxWaterhouseStatisticForDays;
-            output.ChangeMinKol = labelWaterhouseChangeMinKolGoods;
-            output.ChangeProcurementSize = labelWaterhouseChangePuchaseInStorage;
-
+            output.OutputStatistic = textBoxWaterhouseStatisticForDays;         
 
             ParamForModeling forModeling = new ParamForModeling();
             forModeling.days = (int) numericUpDownWaterhouseDays.Value;
