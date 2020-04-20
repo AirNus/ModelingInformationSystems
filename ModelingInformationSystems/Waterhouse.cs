@@ -12,9 +12,7 @@ using System.Windows.Forms;
 namespace ModelingInformationSystems
 {
     class OutputInTextBox
-    {
-        internal Label ChangeMinKol;
-        internal Label ChangeProcurementSize;
+    {      
         internal TextBox OutputPurchase;
         internal TextBox OutputInfoGoods;
         internal TextBox OutputStatistic;
@@ -35,160 +33,155 @@ namespace ModelingInformationSystems
         // Стартовое количество единиц товаров
         internal int startKolGoods;
     }
+    class Product
+    {
+        internal int number;
+        internal int kol { set; get; }
+        internal int procurement { get; set; }
+        internal int minQuantity { get; set; }
+    }
+    class InfoProduct
+    {
+        internal int numberProduct;
+        internal int purchase { get; set; }
+        internal int procurement { get; set; }
+        internal int shortage { get; set; }
+    }
+
     class Waterhouse
     {
         static Random random = new Random();
        
-        static void OutputInTextBoxDays(TextBox OutputPurchase,int currDays)
-        {
-            OutputPurchase.Text += $"День {currDays + 1}." + Environment.NewLine;
-        }    
+       
         static internal Task AsyncModelingWork(object Param, object Output)
         {
             return Task.Run(() =>
-            {              
-                Dictionary<int, int> goods = new Dictionary<int, int>();
-
-                ParamForModeling forModeling = (ParamForModeling) Param;
+            {
+                ParamForModeling startParam = (ParamForModeling) Param;
                 OutputInTextBox output = (OutputInTextBox) Output;
-
-                TextBox OutputPurchase = output.OutputPurchase;
-                TextBox OutputInfoGoods = output.OutputInfoGoods;
-                TextBox OutputStatistic = output.OutputStatistic;
-                Label ChangeMinKol = output.ChangeMinKol;
-                Label ChangeProcurementSize = output.ChangeProcurementSize;
-                int days = forModeling.days;
-                // Количество товаров
-                int kolTypesGoods = forModeling.kolTypesGoods;
-                // Минимальное количество товаров на складе до закупки
-                int minimumQuantity = forModeling.minimumQuantity;
-                // Количество единиц закупаемых товаров
-                int procurementSize = forModeling.procurementSize;
-                // Количество клиентов
-                int countCustomer = forModeling.countCustomer;
-                // Максимальное количество товаро которое может купить 1 клиент
-                int kolPurchaseCustomer = forModeling.kolPurchaseCustomer;
-                // Стартовое количество единиц товаров
-                int startKolGoods = forModeling.startKolGoods;
-                // Количество отмененных\неполностью удовлетворенных заказов по дням
-                Dictionary<int, int> CanceledOrders = new Dictionary<int, int>();
-                // Коллиество неудовлетворенных заказов в текущий день
-                int countCanceledOrders = 0;
-
-                for (int i = 0; i < kolTypesGoods; i++)
+                List<InfoProduct> infoProducts = new List<InfoProduct>();
+                List<Product> products = new List<Product>();
+                for(int i = 0; i < startParam.kolTypesGoods; i ++)
                 {
-                    goods.Add(i, startKolGoods);
+                    products.Add(new Product {
+                        number = i, 
+                        kol = startParam.startKolGoods,
+                        minQuantity = startParam.minimumQuantity,
+                        procurement = startParam.procurementSize });
+                    infoProducts.Add(new InfoProduct {
+                        numberProduct = i,
+                        procurement = 0,
+                        purchase = 0,
+                        shortage = 0});
                 }
-                //
-                // Количество товаров которое клиент закупит сегодня
-                int currQuantity;
-                // Номер товара который клиент сегодня купит
-                int currGood;
-                //
-                // Информация о покупке, закупке из завода, непроданных товарах в шт.          
-                int[,] infoGoods = new int[kolTypesGoods, 3];
-
-                //
-                for (int currDays = 0; currDays < days; currDays++)
+                // Максимальное количество товаров, которое может купить один клиент
+                int maximumTypesProducts = Convert.ToInt32(startParam.kolTypesGoods * 0.7);
+                Dictionary<int, int> canceledOrdersProduct = new Dictionary<int, int>();
+                for(int i = 0; i < startParam.kolTypesGoods; i++)
                 {
-                    OutputPurchase.Invoke((MethodInvoker)(() =>
+                    canceledOrdersProduct.Add(i, 0);
+                }
+                int canceledOrder = 0;
+                for(int currDay = 0; currDay < startParam.days; currDay++)
+                {
+                    output.OutputPurchase.Invoke((MethodInvoker)(() => 
                     {
-                        OutputPurchase.Text += $"День {currDays + 1}." + Environment.NewLine;
+                        output.OutputPurchase.Text += "День " + (currDay + 1) + Environment.NewLine;
                     }));
-                    // Пополнение скалада
-                    for (int i = 0; i < goods.Count; i++)
+                    for(int i = 0; i < canceledOrdersProduct.Count; i++)
                     {
-                        if (goods[i] < minimumQuantity)
+                        canceledOrdersProduct[i] = 0;
+                    }
+                    for(int i = 0; i < products.Count; i++)
+                    {
+                        if(products[i].kol <= products[i].minQuantity)
                         {
-                            goods[i] += procurementSize;
-                            infoGoods[i, 1] += procurementSize;
+                            products[i].kol += products[i].procurement;
+                            infoProducts[i].procurement += products[i].procurement;
                         }
                     }
 
-                    countCanceledOrders = 0;
-                    for (int i = 0; i < countCustomer; i++)
+                    for(int i = 0; i < startParam.countCustomer;i++)
                     {
-                        currGood = random.Next(kolTypesGoods);
-                        currQuantity = random.Next(kolPurchaseCustomer);
-                        if (currQuantity == 0)
+                        int kolTypesProduct = random.Next(maximumTypesProducts);
+                        if (kolTypesProduct == 0)
                             continue;
-                        if (currQuantity > goods[currGood])
+                        for(int type = 0; type < kolTypesProduct; type++)
                         {
-                            countCanceledOrders++;
-                            infoGoods[currGood, 2] += currQuantity + goods[currGood];
-                            OutputPurchase.Invoke((MethodInvoker)(() =>
+                            int currProduct = random.Next(startParam.kolTypesGoods);
+                            int currQuantity = random.Next(startParam.kolPurchaseCustomer);
+                            if (currQuantity == 0)
+                                continue;
+                            if(products[currProduct].kol < currQuantity)
                             {
-                                OutputPurchase.Text += $"Товар {currGood + 1} закончился. Купили {goods[currGood]} штук вместо {currQuantity}." + Environment.NewLine;
+                                infoProducts[currProduct].shortage += currQuantity - products[currProduct].kol;
+                                infoProducts[currProduct].purchase += products[currProduct].kol;
+                                output.OutputPurchase.Invoke((MethodInvoker)( () => 
+                                {
+                                    output.OutputPurchase.Text += $"Товар {currProduct +1} закончился. Купили {products[currProduct].kol} шт. вместо {currQuantity}" + Environment.NewLine;
+                                }));
+                                products[currProduct].kol = 0;
+                                canceledOrder++;
+                                canceledOrdersProduct[currProduct]++;
+                                continue;
+                            }
+                            output.OutputPurchase.Invoke((MethodInvoker) ( () => 
+                            {
+                                output.OutputPurchase.Text += $"Куплен товар {currProduct +1} в количестве: {currQuantity} шт. " + Environment.NewLine;
                             }));
-                            infoGoods[currGood, 0] += goods[currGood];
-                            goods[currGood] = 0;
-                            continue;
+                            infoProducts[currProduct].purchase += currQuantity;
+                            products[currProduct].kol -= currQuantity;
                         }
-                        goods[currGood] -= currQuantity;
-                        infoGoods[currGood, 0] += currQuantity;
-                        OutputPurchase.Invoke((MethodInvoker)(() =>
-                        {
-                            OutputPurchase.Text += $"Куплен товар {currGood + 1} в количестве {currQuantity}  штук." + Environment.NewLine;
-                        }));
                     }
-                    CanceledOrders.Add(currDays, countCanceledOrders);
-                    OutputPurchase.Invoke((MethodInvoker)(() =>
+                    
+                    //
+                    for (int i = 0; i < products.Count; i++)
                     {
-                        OutputStatistic.Text += $"День {currDays + 1}. Отмененных заказов: {countCanceledOrders}" + Environment.NewLine;
-                    }));
-
-                    if (countCanceledOrders > (countCustomer * 0.3))
-                    {
-                        minimumQuantity = Convert.ToInt32(minimumQuantity * 1.3);
-                        procurementSize = Convert.ToInt32(procurementSize * 1.3);
-                        ChangeProcurementSize.Invoke((MethodInvoker)(() =>
+                        if(canceledOrdersProduct[i] > (startParam.countCustomer * 0.3))
                         {
-                            ChangeProcurementSize.Text = procurementSize.ToString();
-                        }));
-                        ChangeMinKol.Invoke((MethodInvoker)(() =>
+                            products[i].procurement = Convert.ToInt32(products[i].procurement * 1.3);
+                            products[i].minQuantity = Convert.ToInt32(products[i].minQuantity * 1.3);
+                        }
+                        else if(products[i].kol > products[i].minQuantity * 2)
                         {
-                            ChangeMinKol.Text = minimumQuantity.ToString();
-                        }));
+                            products[i].procurement = Convert.ToInt32(products[i].procurement * 0.95);
+                            products[i].minQuantity = Convert.ToInt32(products[i].minQuantity * 0.95);
+                        }
                     }
-
-
-                    var rezult = goods.FirstOrDefault(x => x.Value > minimumQuantity * 2);
-                    if (rezult.Value != 0)
-                    {
-                        minimumQuantity = Convert.ToInt32(minimumQuantity * 0.9);
-                        procurementSize = Convert.ToInt32(procurementSize * 0.9);
-                        ChangeProcurementSize.Invoke((MethodInvoker)(() =>
-                        {
-                            ChangeProcurementSize.Text = procurementSize.ToString();
-                        }));
-                        ChangeMinKol.Invoke((MethodInvoker)(() =>
-                        {
-                            ChangeMinKol.Text = minimumQuantity.ToString();
-                        }));
-                    }
-                }             
-
+                    
+                }
                 int TotalPurchase = 0;
-                int TotalUnredeemed = 0;
-                for (int i = 0; i < kolTypesGoods; i++)
+                int TotalShortage = 0;
+                for( int i = 0; i < infoProducts.Count; i++)
                 {
-                    TotalPurchase += infoGoods[i, 0];
-                    TotalUnredeemed += infoGoods[i, 2];
-                    OutputInfoGoods.Invoke((MethodInvoker)(() =>
+                    TotalPurchase += infoProducts[i].purchase;
+                    TotalShortage += infoProducts[i].shortage;
+                    output.OutputInfoGoods.Invoke((MethodInvoker)(() => 
                     {
-                        OutputInfoGoods.Text += $"Товар {i + 1}" + Environment.NewLine;
-                        OutputInfoGoods.Text += $"Продано {infoGoods[i, 0]} шт." + Environment.NewLine;
-                        OutputInfoGoods.Text += $"Заказано {infoGoods[i, 1]} шт." + Environment.NewLine;
-                        OutputInfoGoods.Text += $"Отменено {infoGoods[i, 2]} шт." + Environment.NewLine;
+                        output.OutputInfoGoods.Text += $"Товар {i +1}" + Environment.NewLine;
+                        output.OutputInfoGoods.Text += $"Купили {infoProducts[i].purchase} шт." + Environment.NewLine;
+                        output.OutputInfoGoods.Text += $"Заказали {infoProducts[i].procurement} шт." + Environment.NewLine;
+                        output.OutputInfoGoods.Text += $"Недокупили {infoProducts[i].shortage} шт." + Environment.NewLine;
                     }));
                 }
-                double percentageOfSales = (double)TotalPurchase / (TotalUnredeemed + TotalPurchase);  
-                OutputPurchase.Invoke((MethodInvoker)(() =>
+                double percentRealize = (double)TotalPurchase / (TotalPurchase + TotalShortage);
+                output.OutputInfoGoods.Invoke((MethodInvoker)(() =>
                 {
-                    OutputInfoGoods.Text += $"Обеспечено процентов заявок: {percentageOfSales}" + Environment.NewLine;
+                    output.OutputInfoGoods.Text += $"Реализовано {Math.Round(percentRealize,4)}%" + Environment.NewLine;
+                    output.OutputInfoGoods.Text += $"Всего неудовлетворительных заказов: {canceledOrder}";
                 }));
-            });
+                for(int i = 0; i < products.Count; i++)
+                {
+                    output.OutputStatistic.Invoke((MethodInvoker)(() =>
+                    {
+                        output.OutputStatistic.Text += $"Товар {i + 1}" + Environment.NewLine;
+                        output.OutputStatistic.Text += $"Минимальное количество на складе {products[i].minQuantity} шт." + Environment.NewLine;
+                        output.OutputStatistic.Text += $"Объем закупок {products[i].procurement} шт." + Environment.NewLine;
+                    }));
+                }
 
+
+            });
         }
 
     }
