@@ -31,11 +31,12 @@ namespace ModelingInformationSystems
 
         internal double GenerateNumber(int Up)
         {
+            int n = 12;
             double sum = 0;           
-            double tmp = Math.Sqrt(12.0 / 12);
-            for (int j = 0; j < 12; j++)
+            double tmp = Math.Sqrt(12.0 / n);
+            for (int j = 0; j < n; j++)
             {
-                sum += random.NextDouble() - 12 / 2;
+                sum += random.NextDouble() - n / 2;
             }
             return (tmp * Math.Abs(sum)) % Up;
             
