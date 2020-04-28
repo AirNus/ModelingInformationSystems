@@ -321,13 +321,22 @@ namespace ModelingInformationSystems
         private void toolStripButtonRasp_Click(object sender, EventArgs e)
         {
             groupBoxTotalRasp.Visible = true;
-            groupBoxWaterhouse.Visible = false;
+            groupBoxWaterhouse.Visible = false; 
+            groupBoxCPU.Visible = false;
         }
 
         private void toolStripButtonWaterhouse_Click(object sender, EventArgs e)
         {
             groupBoxTotalRasp.Visible = false;
             groupBoxWaterhouse.Visible = true;
+            groupBoxCPU.Visible = false;
+        }
+
+        private void toolStripButtonCPU_Click(object sender, EventArgs e)
+        {
+            groupBoxTotalRasp.Visible = false;
+            groupBoxWaterhouse.Visible = false;
+            groupBoxCPU.Visible = true;
         }
 
         private async void buttonWaterhouseStartModeling_Click(object sender, EventArgs e)
@@ -380,5 +389,7 @@ namespace ModelingInformationSystems
             else
                 groupBoxWaterhouseRasp.Visible = false;
         }
+
+       
     }
 }

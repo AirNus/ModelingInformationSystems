@@ -98,9 +98,14 @@
             this.toolStripTopPanel = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonRasp = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonWaterhouse = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonCPU = new System.Windows.Forms.ToolStripButton();
             this.groupBoxTotalRasp = new System.Windows.Forms.GroupBox();
             this.groupBoxWaterhouse = new System.Windows.Forms.GroupBox();
+            this.groupBoxWaterhouseRasp = new System.Windows.Forms.GroupBox();
+            this.radioButtonWaterhouseNormal = new System.Windows.Forms.RadioButton();
+            this.radioButtonWaterhouseTriangle = new System.Windows.Forms.RadioButton();
+            this.radioButtonWaterhouseUniform = new System.Windows.Forms.RadioButton();
+            this.checkBoxSetMethodGenerate = new System.Windows.Forms.CheckBox();
             this.numericUpDownPredelPurchase = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownWaterhouseCustomerCount = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownPurchaseInStorage = new System.Windows.Forms.NumericUpDown();
@@ -123,11 +128,15 @@
             this.labelWaterhouseTypesGoods = new System.Windows.Forms.Label();
             this.labelWaterhouseDays = new System.Windows.Forms.Label();
             this.buttonWaterhouseStartModeling = new System.Windows.Forms.Button();
-            this.checkBoxSetMethodGenerate = new System.Windows.Forms.CheckBox();
-            this.groupBoxWaterhouseRasp = new System.Windows.Forms.GroupBox();
-            this.radioButtonWaterhouseUniform = new System.Windows.Forms.RadioButton();
-            this.radioButtonWaterhouseTriangle = new System.Windows.Forms.RadioButton();
-            this.radioButtonWaterhouseNormal = new System.Windows.Forms.RadioButton();
+            this.groupBoxCPU = new System.Windows.Forms.GroupBox();
+            this.labelCPUMonitor = new System.Windows.Forms.Label();
+            this.labelCPUPrinter = new System.Windows.Forms.Label();
+            this.labelCPUKeyboard = new System.Windows.Forms.Label();
+            this.labelCPUMonitorValue = new System.Windows.Forms.Label();
+            this.labelCPUPrinterValue = new System.Windows.Forms.Label();
+            this.labelCPUKeyboardValue = new System.Windows.Forms.Label();
+            this.numericUpDownCPUAllottedTime = new System.Windows.Forms.NumericUpDown();
+            this.labelCPUAllottedTime = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabPageFirstQuest.SuspendLayout();
             this.groupBoxPage1Methods.SuspendLayout();
@@ -142,6 +151,7 @@
             this.toolStripTopPanel.SuspendLayout();
             this.groupBoxTotalRasp.SuspendLayout();
             this.groupBoxWaterhouse.SuspendLayout();
+            this.groupBoxWaterhouseRasp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPredelPurchase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWaterhouseCustomerCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPurchaseInStorage)).BeginInit();
@@ -153,7 +163,8 @@
             this.tabPageWaterhouseInfoGoods.SuspendLayout();
             this.tabPageWaterhouseStatistic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWaterhouseDays)).BeginInit();
-            this.groupBoxWaterhouseRasp.SuspendLayout();
+            this.groupBoxCPU.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCPUAllottedTime)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -864,7 +875,7 @@
             this.toolStripTopPanel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonRasp,
             this.toolStripButtonWaterhouse,
-            this.toolStripButton3});
+            this.toolStripButtonCPU});
             this.toolStripTopPanel.Location = new System.Drawing.Point(0, 0);
             this.toolStripTopPanel.Name = "toolStripTopPanel";
             this.toolStripTopPanel.Size = new System.Drawing.Size(778, 25);
@@ -889,13 +900,14 @@
             this.toolStripButtonWaterhouse.Text = "Оптовый склад";
             this.toolStripButtonWaterhouse.Click += new System.EventHandler(this.toolStripButtonWaterhouse_Click);
             // 
-            // toolStripButton3
+            // toolStripButtonCPU
             // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(83, 22);
-            this.toolStripButton3.Text = "В разработке";
+            this.toolStripButtonCPU.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonCPU.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonCPU.Name = "toolStripButtonCPU";
+            this.toolStripButtonCPU.Size = new System.Drawing.Size(73, 22);
+            this.toolStripButtonCPU.Text = "Процессор";
+            this.toolStripButtonCPU.Click += new System.EventHandler(this.toolStripButtonCPU_Click);
             // 
             // groupBoxTotalRasp
             // 
@@ -909,6 +921,7 @@
             // 
             // groupBoxWaterhouse
             // 
+            this.groupBoxWaterhouse.Controls.Add(this.groupBoxCPU);
             this.groupBoxWaterhouse.Controls.Add(this.groupBoxWaterhouseRasp);
             this.groupBoxWaterhouse.Controls.Add(this.checkBoxSetMethodGenerate);
             this.groupBoxWaterhouse.Controls.Add(this.numericUpDownPredelPurchase);
@@ -928,12 +941,66 @@
             this.groupBoxWaterhouse.Controls.Add(this.labelWaterhouseDays);
             this.groupBoxWaterhouse.Controls.Add(this.buttonWaterhouseStartModeling);
             this.groupBoxWaterhouse.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBoxWaterhouse.Location = new System.Drawing.Point(4, 28);
+            this.groupBoxWaterhouse.Location = new System.Drawing.Point(0, 18);
             this.groupBoxWaterhouse.Name = "groupBoxWaterhouse";
             this.groupBoxWaterhouse.Size = new System.Drawing.Size(774, 441);
             this.groupBoxWaterhouse.TabIndex = 4;
             this.groupBoxWaterhouse.TabStop = false;
             this.groupBoxWaterhouse.Visible = false;
+            // 
+            // groupBoxWaterhouseRasp
+            // 
+            this.groupBoxWaterhouseRasp.Controls.Add(this.radioButtonWaterhouseNormal);
+            this.groupBoxWaterhouseRasp.Controls.Add(this.radioButtonWaterhouseTriangle);
+            this.groupBoxWaterhouseRasp.Controls.Add(this.radioButtonWaterhouseUniform);
+            this.groupBoxWaterhouseRasp.Location = new System.Drawing.Point(13, 18);
+            this.groupBoxWaterhouseRasp.Name = "groupBoxWaterhouseRasp";
+            this.groupBoxWaterhouseRasp.Size = new System.Drawing.Size(240, 172);
+            this.groupBoxWaterhouseRasp.TabIndex = 13;
+            this.groupBoxWaterhouseRasp.TabStop = false;
+            this.groupBoxWaterhouseRasp.Text = "Распределения:";
+            this.groupBoxWaterhouseRasp.Visible = false;
+            // 
+            // radioButtonWaterhouseNormal
+            // 
+            this.radioButtonWaterhouseNormal.AutoSize = true;
+            this.radioButtonWaterhouseNormal.Location = new System.Drawing.Point(24, 128);
+            this.radioButtonWaterhouseNormal.Name = "radioButtonWaterhouseNormal";
+            this.radioButtonWaterhouseNormal.Size = new System.Drawing.Size(103, 21);
+            this.radioButtonWaterhouseNormal.TabIndex = 2;
+            this.radioButtonWaterhouseNormal.Text = "Нормальное";
+            this.radioButtonWaterhouseNormal.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonWaterhouseTriangle
+            // 
+            this.radioButtonWaterhouseTriangle.AutoSize = true;
+            this.radioButtonWaterhouseTriangle.Location = new System.Drawing.Point(24, 90);
+            this.radioButtonWaterhouseTriangle.Name = "radioButtonWaterhouseTriangle";
+            this.radioButtonWaterhouseTriangle.Size = new System.Drawing.Size(103, 21);
+            this.radioButtonWaterhouseTriangle.TabIndex = 1;
+            this.radioButtonWaterhouseTriangle.Text = "Треугольное";
+            this.radioButtonWaterhouseTriangle.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonWaterhouseUniform
+            // 
+            this.radioButtonWaterhouseUniform.AutoSize = true;
+            this.radioButtonWaterhouseUniform.Location = new System.Drawing.Point(24, 52);
+            this.radioButtonWaterhouseUniform.Name = "radioButtonWaterhouseUniform";
+            this.radioButtonWaterhouseUniform.Size = new System.Drawing.Size(108, 21);
+            this.radioButtonWaterhouseUniform.TabIndex = 0;
+            this.radioButtonWaterhouseUniform.Text = "Равномерное";
+            this.radioButtonWaterhouseUniform.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxSetMethodGenerate
+            // 
+            this.checkBoxSetMethodGenerate.AutoSize = true;
+            this.checkBoxSetMethodGenerate.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBoxSetMethodGenerate.Location = new System.Drawing.Point(12, 410);
+            this.checkBoxSetMethodGenerate.Name = "checkBoxSetMethodGenerate";
+            this.checkBoxSetMethodGenerate.Size = new System.Drawing.Size(203, 19);
+            this.checkBoxSetMethodGenerate.TabIndex = 12;
+            this.checkBoxSetMethodGenerate.Text = "Выбрать способ генерации продаж";
+            this.checkBoxSetMethodGenerate.UseVisualStyleBackColor = true;
             // 
             // numericUpDownPredelPurchase
             // 
@@ -1198,59 +1265,96 @@
             this.buttonWaterhouseStartModeling.UseVisualStyleBackColor = true;
             this.buttonWaterhouseStartModeling.Click += new System.EventHandler(this.buttonWaterhouseStartModeling_Click);
             // 
-            // checkBoxSetMethodGenerate
+            // groupBoxCPU
             // 
-            this.checkBoxSetMethodGenerate.AutoSize = true;
-            this.checkBoxSetMethodGenerate.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBoxSetMethodGenerate.Location = new System.Drawing.Point(12, 410);
-            this.checkBoxSetMethodGenerate.Name = "checkBoxSetMethodGenerate";
-            this.checkBoxSetMethodGenerate.Size = new System.Drawing.Size(203, 19);
-            this.checkBoxSetMethodGenerate.TabIndex = 12;
-            this.checkBoxSetMethodGenerate.Text = "Выбрать способ генерации продаж";
-            this.checkBoxSetMethodGenerate.UseVisualStyleBackColor = true;
+            this.groupBoxCPU.Controls.Add(this.numericUpDownCPUAllottedTime);
+            this.groupBoxCPU.Controls.Add(this.labelCPUKeyboard);
+            this.groupBoxCPU.Controls.Add(this.labelCPUPrinter);
+            this.groupBoxCPU.Controls.Add(this.labelCPUKeyboardValue);
+            this.groupBoxCPU.Controls.Add(this.labelCPUPrinterValue);
+            this.groupBoxCPU.Controls.Add(this.labelCPUMonitorValue);
+            this.groupBoxCPU.Controls.Add(this.labelCPUAllottedTime);
+            this.groupBoxCPU.Controls.Add(this.labelCPUMonitor);
+            this.groupBoxCPU.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBoxCPU.Location = new System.Drawing.Point(8, 8);
+            this.groupBoxCPU.Name = "groupBoxCPU";
+            this.groupBoxCPU.Size = new System.Drawing.Size(774, 441);
+            this.groupBoxCPU.TabIndex = 14;
+            this.groupBoxCPU.TabStop = false;
+            this.groupBoxCPU.Visible = false;
             // 
-            // groupBoxWaterhouseRasp
+            // labelCPUMonitor
             // 
-            this.groupBoxWaterhouseRasp.Controls.Add(this.radioButtonWaterhouseNormal);
-            this.groupBoxWaterhouseRasp.Controls.Add(this.radioButtonWaterhouseTriangle);
-            this.groupBoxWaterhouseRasp.Controls.Add(this.radioButtonWaterhouseUniform);
-            this.groupBoxWaterhouseRasp.Location = new System.Drawing.Point(13, 18);
-            this.groupBoxWaterhouseRasp.Name = "groupBoxWaterhouseRasp";
-            this.groupBoxWaterhouseRasp.Size = new System.Drawing.Size(240, 172);
-            this.groupBoxWaterhouseRasp.TabIndex = 13;
-            this.groupBoxWaterhouseRasp.TabStop = false;
-            this.groupBoxWaterhouseRasp.Text = "Распределения:";
-            this.groupBoxWaterhouseRasp.Visible = false;
+            this.labelCPUMonitor.AutoSize = true;
+            this.labelCPUMonitor.Location = new System.Drawing.Point(100, 205);
+            this.labelCPUMonitor.Name = "labelCPUMonitor";
+            this.labelCPUMonitor.Size = new System.Drawing.Size(63, 17);
+            this.labelCPUMonitor.TabIndex = 0;
+            this.labelCPUMonitor.Text = "Монитор";
             // 
-            // radioButtonWaterhouseUniform
+            // labelCPUPrinter
             // 
-            this.radioButtonWaterhouseUniform.AutoSize = true;
-            this.radioButtonWaterhouseUniform.Location = new System.Drawing.Point(24, 52);
-            this.radioButtonWaterhouseUniform.Name = "radioButtonWaterhouseUniform";
-            this.radioButtonWaterhouseUniform.Size = new System.Drawing.Size(108, 21);
-            this.radioButtonWaterhouseUniform.TabIndex = 0;
-            this.radioButtonWaterhouseUniform.Text = "Равномерное";
-            this.radioButtonWaterhouseUniform.UseVisualStyleBackColor = true;
+            this.labelCPUPrinter.AutoSize = true;
+            this.labelCPUPrinter.Location = new System.Drawing.Point(365, 205);
+            this.labelCPUPrinter.Name = "labelCPUPrinter";
+            this.labelCPUPrinter.Size = new System.Drawing.Size(61, 17);
+            this.labelCPUPrinter.TabIndex = 0;
+            this.labelCPUPrinter.Text = "Принтер";
             // 
-            // radioButtonWaterhouseTriangle
+            // labelCPUKeyboard
             // 
-            this.radioButtonWaterhouseTriangle.AutoSize = true;
-            this.radioButtonWaterhouseTriangle.Location = new System.Drawing.Point(24, 90);
-            this.radioButtonWaterhouseTriangle.Name = "radioButtonWaterhouseTriangle";
-            this.radioButtonWaterhouseTriangle.Size = new System.Drawing.Size(103, 21);
-            this.radioButtonWaterhouseTriangle.TabIndex = 1;
-            this.radioButtonWaterhouseTriangle.Text = "Треугольное";
-            this.radioButtonWaterhouseTriangle.UseVisualStyleBackColor = true;
+            this.labelCPUKeyboard.AutoSize = true;
+            this.labelCPUKeyboard.Location = new System.Drawing.Point(604, 205);
+            this.labelCPUKeyboard.Name = "labelCPUKeyboard";
+            this.labelCPUKeyboard.Size = new System.Drawing.Size(130, 17);
+            this.labelCPUKeyboard.TabIndex = 0;
+            this.labelCPUKeyboard.Text = "Другие вычисления";
             // 
-            // radioButtonWaterhouseNormal
+            // labelCPUMonitorValue
             // 
-            this.radioButtonWaterhouseNormal.AutoSize = true;
-            this.radioButtonWaterhouseNormal.Location = new System.Drawing.Point(24, 128);
-            this.radioButtonWaterhouseNormal.Name = "radioButtonWaterhouseNormal";
-            this.radioButtonWaterhouseNormal.Size = new System.Drawing.Size(103, 21);
-            this.radioButtonWaterhouseNormal.TabIndex = 2;
-            this.radioButtonWaterhouseNormal.Text = "Нормальное";
-            this.radioButtonWaterhouseNormal.UseVisualStyleBackColor = true;
+            this.labelCPUMonitorValue.AutoSize = true;
+            this.labelCPUMonitorValue.Font = new System.Drawing.Font("Mistral", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUMonitorValue.Location = new System.Drawing.Point(124, 251);
+            this.labelCPUMonitorValue.Name = "labelCPUMonitorValue";
+            this.labelCPUMonitorValue.Size = new System.Drawing.Size(27, 33);
+            this.labelCPUMonitorValue.TabIndex = 0;
+            this.labelCPUMonitorValue.Text = "0";
+            // 
+            // labelCPUPrinterValue
+            // 
+            this.labelCPUPrinterValue.AutoSize = true;
+            this.labelCPUPrinterValue.Font = new System.Drawing.Font("Mistral", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUPrinterValue.Location = new System.Drawing.Point(384, 251);
+            this.labelCPUPrinterValue.Name = "labelCPUPrinterValue";
+            this.labelCPUPrinterValue.Size = new System.Drawing.Size(27, 33);
+            this.labelCPUPrinterValue.TabIndex = 0;
+            this.labelCPUPrinterValue.Text = "0";
+            // 
+            // labelCPUKeyboardValue
+            // 
+            this.labelCPUKeyboardValue.AutoSize = true;
+            this.labelCPUKeyboardValue.Font = new System.Drawing.Font("Mistral", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUKeyboardValue.Location = new System.Drawing.Point(654, 251);
+            this.labelCPUKeyboardValue.Name = "labelCPUKeyboardValue";
+            this.labelCPUKeyboardValue.Size = new System.Drawing.Size(27, 33);
+            this.labelCPUKeyboardValue.TabIndex = 0;
+            this.labelCPUKeyboardValue.Text = "0";
+            // 
+            // numericUpDownCPUAllottedTime
+            // 
+            this.numericUpDownCPUAllottedTime.Location = new System.Drawing.Point(159, 37);
+            this.numericUpDownCPUAllottedTime.Name = "numericUpDownCPUAllottedTime";
+            this.numericUpDownCPUAllottedTime.Size = new System.Drawing.Size(120, 25);
+            this.numericUpDownCPUAllottedTime.TabIndex = 1;
+            // 
+            // labelCPUAllottedTime
+            // 
+            this.labelCPUAllottedTime.AutoSize = true;
+            this.labelCPUAllottedTime.Location = new System.Drawing.Point(26, 40);
+            this.labelCPUAllottedTime.Name = "labelCPUAllottedTime";
+            this.labelCPUAllottedTime.Size = new System.Drawing.Size(127, 17);
+            this.labelCPUAllottedTime.TabIndex = 0;
+            this.labelCPUAllottedTime.Text = "Выделенное время";
             // 
             // Body
             // 
@@ -1292,6 +1396,8 @@
             this.groupBoxTotalRasp.ResumeLayout(false);
             this.groupBoxWaterhouse.ResumeLayout(false);
             this.groupBoxWaterhouse.PerformLayout();
+            this.groupBoxWaterhouseRasp.ResumeLayout(false);
+            this.groupBoxWaterhouseRasp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPredelPurchase)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWaterhouseCustomerCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPurchaseInStorage)).EndInit();
@@ -1306,8 +1412,9 @@
             this.tabPageWaterhouseStatistic.ResumeLayout(false);
             this.tabPageWaterhouseStatistic.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWaterhouseDays)).EndInit();
-            this.groupBoxWaterhouseRasp.ResumeLayout(false);
-            this.groupBoxWaterhouseRasp.PerformLayout();
+            this.groupBoxCPU.ResumeLayout(false);
+            this.groupBoxCPU.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCPUAllottedTime)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1385,7 +1492,7 @@
         private System.Windows.Forms.GroupBox groupBoxTotalRasp;
         private System.Windows.Forms.ToolStripButton toolStripButtonRasp;
         private System.Windows.Forms.ToolStripButton toolStripButtonWaterhouse;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripButton toolStripButtonCPU;
         private System.Windows.Forms.GroupBox groupBoxWaterhouse;
         private System.Windows.Forms.Label labelWaterhouseStartKolGoods;
         private System.Windows.Forms.Label labelWaterhousePredelPurchase;
@@ -1414,6 +1521,15 @@
         private System.Windows.Forms.RadioButton radioButtonWaterhouseTriangle;
         private System.Windows.Forms.RadioButton radioButtonWaterhouseUniform;
         private System.Windows.Forms.CheckBox checkBoxSetMethodGenerate;
+        private System.Windows.Forms.GroupBox groupBoxCPU;
+        private System.Windows.Forms.NumericUpDown numericUpDownCPUAllottedTime;
+        private System.Windows.Forms.Label labelCPUKeyboard;
+        private System.Windows.Forms.Label labelCPUPrinter;
+        private System.Windows.Forms.Label labelCPUKeyboardValue;
+        private System.Windows.Forms.Label labelCPUPrinterValue;
+        private System.Windows.Forms.Label labelCPUMonitorValue;
+        private System.Windows.Forms.Label labelCPUAllottedTime;
+        private System.Windows.Forms.Label labelCPUMonitor;
     }
 }
 
