@@ -6,10 +6,11 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ByMarin
+namespace ModelingInformationSystems
 {
     class MyThread
     {
+        internal string Name;
         internal Queue<int> pool;
         internal bool working;
         internal MyThread()
@@ -24,6 +25,7 @@ namespace ByMarin
     }
     class MyTask
     {
+        internal string nameThread;
         internal string Name;
         internal int id;
         internal int MaxWorkTimer;
@@ -38,8 +40,8 @@ namespace ByMarin
         static internal Dictionary<string,int> ModellingWorkCPU(int timeDuration)
         {
             
-            MyThread frstPool = new MyThread(new Queue<int>());
-            MyThread scndPool = new MyThread(new Queue<int>());
+            MyThread frstPool = new MyThread(new Queue<int>()) { Name = "first"};
+            MyThread scndPool = new MyThread(new Queue<int>()) { Name = "second"};
             List<MyThread> threads = new List<MyThread>();
             threads.Add(frstPool);
             threads.Add(scndPool);
@@ -73,6 +75,7 @@ namespace ByMarin
                             int durationCurrentTask = random.Next(task.MaxWorkTimer);
                             task.totalTime += durationCurrentTask;
                             task.timeFinish = i + durationCurrentTask;
+                            task.nameThread = thread.Name;
                         }
                         if(i == task.timeFinish && task.ready == false)
                         {
@@ -81,6 +84,11 @@ namespace ByMarin
                             int incomingTask = random.Next(1,tasks.Count + 1);
                             thread.pool.Enqueue(incomingTask);
                         }    
+                        if(task.id == thread.pool.First() && !task.ready && task.nameThread != thread.Name)
+                        {
+                            int deferredTask = thread.pool.Dequeue();
+                            thread.pool.Enqueue(deferredTask);
+                        }
                     }
                     
                 }               
