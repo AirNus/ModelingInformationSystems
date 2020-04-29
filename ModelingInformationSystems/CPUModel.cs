@@ -8,58 +8,92 @@ using System.Threading.Tasks;
 
 namespace ByMarin
 {
-    class Thread
+    class MyThread
     {
-        internal Queue<int> thread;
+        internal Queue<int> pool;
         internal bool working;
-        internal Thread()
+        internal MyThread()
         {
 
         }
-        internal Thread(Queue<int> thread)
+        internal MyThread(Queue<int> pool)
         {
-            this.thread = thread;
-            working = false;           
+            this.pool = pool;
+            working = true;           
         }
+    }
+    class MyTask
+    {
+        internal string Name;
+        internal int id;
+        internal int MaxWorkTimer;
+        internal bool ready;
+        internal int totalTime;
+        internal int timeFinish;
     }
     class CPUModel
     {
         static Random random = new Random();
-        const int countTask = 3;
-        const int calculationTask = 1;
-        const int MaxWorkTimeCalculation = 5;
-
-
-        const int printerTask = 2;
-        const int MaxWorkTimePrinter = 20;
-
-        const int monitorTask = 3;
-        const int MaxWorkTimeMonitor = 10;
-        static internal void ModellingWorkCPU(int timeDuration)
+        
+        static internal Dictionary<string,int> ModellingWorkCPU(int timeDuration)
         {
             
-            Thread firstThread = new Thread(new Queue<int>());
-            Thread secondThread = new Thread(new Queue<int>());
+            MyThread frstPool = new MyThread(new Queue<int>());
+            MyThread scndPool = new MyThread(new Queue<int>());
+            List<MyThread> threads = new List<MyThread>();
+            threads.Add(frstPool);
+            threads.Add(scndPool);
 
-            firstThread.thread.Enqueue(calculationTask);
-            secondThread.thread.Enqueue(calculationTask);
+            MyTask Monitor = new MyTask() { Name = "Monitor",id = 2, MaxWorkTimer = 10, ready = true, totalTime = 0 };
+            MyTask Calculation = new MyTask() { Name = "Calculation",id = 1, MaxWorkTimer = 10, ready = false, totalTime = 0 };
+            MyTask Printer = new MyTask() { Name = "Printer", id = 3, MaxWorkTimer = 20, ready = true, totalTime = 0 };
 
-            bool PrinterReady = true;
-            int timePrinter = 0;
-            int printerAvailable = 0;
-
-            bool MonitorReady = true;
-            int timeMonitor = 0;
-            int monitorAvailable = 0;
-
-            bool CalculationReady = true;                        
-            int timeCalculation = 0;
-            int calculationAvailable = 0;
-               
-            for(int i = 0; i < timeDuration; i++)
+            List<MyTask> tasks = new List<MyTask>();
+            tasks.Add(Monitor);
+            tasks.Add(Calculation);
+            tasks.Add(Printer);
+            
+            for(int i = 0; i < threads.Count; i++)
             {
-                
+                threads[i].pool.Enqueue(1);
+                tasks[1].timeFinish = tasks[1].MaxWorkTimer;
+                tasks[1].totalTime = tasks[1].MaxWorkTimer;
             }
+            for (int i = 0; i < timeDuration; i++)
+            {
+                foreach(MyThread thread in threads)
+                {
+                    foreach(MyTask task in tasks)
+                    {
+                        if (task.ready && !thread.working && task.id == thread.pool.First())
+                        {
+                            thread.working = true;
+                            task.ready = false;
+                            thread.pool.Dequeue();
+                            int durationCurrentTask = random.Next(task.MaxWorkTimer);
+                            task.totalTime += durationCurrentTask;
+                            task.timeFinish = i + durationCurrentTask;
+                        }
+                        if(i == task.timeFinish && task.ready == false)
+                        {
+                            task.ready = true;
+                            thread.working = false;
+                            int incomingTask = random.Next(1,tasks.Count + 1);
+                            thread.pool.Enqueue(incomingTask);
+                        }    
+                    }
+                    
+                }               
+            }
+            Dictionary<string, int> answer = new Dictionary<string, int>();
+            int mainTotalTime = 0;
+            foreach(MyTask task in tasks)
+            {
+                mainTotalTime += task.totalTime;
+                answer.Add(task.Name, task.totalTime);
+            }
+            answer.Add("total", mainTotalTime);
+            return answer;
         }
     }
 }

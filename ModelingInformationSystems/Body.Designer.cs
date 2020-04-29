@@ -100,6 +100,16 @@
             this.toolStripButtonWaterhouse = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonCPU = new System.Windows.Forms.ToolStripButton();
             this.groupBoxTotalRasp = new System.Windows.Forms.GroupBox();
+            this.groupBoxCPU = new System.Windows.Forms.GroupBox();
+            this.buttonCPUStartModeling = new System.Windows.Forms.Button();
+            this.numericUpDownCPUAllottedTime = new System.Windows.Forms.NumericUpDown();
+            this.labelCPUCalculation = new System.Windows.Forms.Label();
+            this.labelCPUPrinter = new System.Windows.Forms.Label();
+            this.labelCPUCalculationValue = new System.Windows.Forms.Label();
+            this.labelCPUPrinterValue = new System.Windows.Forms.Label();
+            this.labelCPUMonitorValue = new System.Windows.Forms.Label();
+            this.labelCPUAllottedTime = new System.Windows.Forms.Label();
+            this.labelCPUMonitor = new System.Windows.Forms.Label();
             this.groupBoxWaterhouse = new System.Windows.Forms.GroupBox();
             this.groupBoxWaterhouseRasp = new System.Windows.Forms.GroupBox();
             this.radioButtonWaterhouseNormal = new System.Windows.Forms.RadioButton();
@@ -128,15 +138,8 @@
             this.labelWaterhouseTypesGoods = new System.Windows.Forms.Label();
             this.labelWaterhouseDays = new System.Windows.Forms.Label();
             this.buttonWaterhouseStartModeling = new System.Windows.Forms.Button();
-            this.groupBoxCPU = new System.Windows.Forms.GroupBox();
-            this.labelCPUMonitor = new System.Windows.Forms.Label();
-            this.labelCPUPrinter = new System.Windows.Forms.Label();
-            this.labelCPUKeyboard = new System.Windows.Forms.Label();
-            this.labelCPUMonitorValue = new System.Windows.Forms.Label();
-            this.labelCPUPrinterValue = new System.Windows.Forms.Label();
-            this.labelCPUKeyboardValue = new System.Windows.Forms.Label();
-            this.numericUpDownCPUAllottedTime = new System.Windows.Forms.NumericUpDown();
-            this.labelCPUAllottedTime = new System.Windows.Forms.Label();
+            this.labelCPUTotalTime = new System.Windows.Forms.Label();
+            this.labelCPUTotalTimeValue = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabPageFirstQuest.SuspendLayout();
             this.groupBoxPage1Methods.SuspendLayout();
@@ -150,6 +153,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartGrafics)).BeginInit();
             this.toolStripTopPanel.SuspendLayout();
             this.groupBoxTotalRasp.SuspendLayout();
+            this.groupBoxCPU.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCPUAllottedTime)).BeginInit();
             this.groupBoxWaterhouse.SuspendLayout();
             this.groupBoxWaterhouseRasp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPredelPurchase)).BeginInit();
@@ -163,8 +168,6 @@
             this.tabPageWaterhouseInfoGoods.SuspendLayout();
             this.tabPageWaterhouseStatistic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWaterhouseDays)).BeginInit();
-            this.groupBoxCPU.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCPUAllottedTime)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -191,7 +194,7 @@
             this.tabPageFirstQuest.Controls.Add(this.buttonPage1StartDrawGrafics);
             this.tabPageFirstQuest.Location = new System.Drawing.Point(4, 40);
             this.tabPageFirstQuest.Name = "tabPageFirstQuest";
-            this.tabPageFirstQuest.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageFirstQuest.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPageFirstQuest.Size = new System.Drawing.Size(243, 382);
             this.tabPageFirstQuest.TabIndex = 0;
             this.tabPageFirstQuest.Text = "Равномерное";
@@ -301,10 +304,10 @@
             this.tabPageSecondQuest.Controls.Add(this.textBoxPage2Intervals);
             this.tabPageSecondQuest.Controls.Add(this.textBoxPage2Kol);
             this.tabPageSecondQuest.Controls.Add(this.buttonPage2StartDrawGrafics);
-            this.tabPageSecondQuest.Location = new System.Drawing.Point(4, 40);
+            this.tabPageSecondQuest.Location = new System.Drawing.Point(4, 56);
             this.tabPageSecondQuest.Name = "tabPageSecondQuest";
-            this.tabPageSecondQuest.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSecondQuest.Size = new System.Drawing.Size(243, 382);
+            this.tabPageSecondQuest.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageSecondQuest.Size = new System.Drawing.Size(243, 366);
             this.tabPageSecondQuest.TabIndex = 1;
             this.tabPageSecondQuest.Text = "Симпсона";
             this.tabPageSecondQuest.UseVisualStyleBackColor = true;
@@ -439,10 +442,10 @@
             this.tabPageThirdQuest.Controls.Add(this.textBoxPage3Intervals);
             this.tabPageThirdQuest.Controls.Add(this.textBoxPage3Kol);
             this.tabPageThirdQuest.Controls.Add(this.buttonPage3StartDrawGrafics);
-            this.tabPageThirdQuest.Location = new System.Drawing.Point(4, 40);
+            this.tabPageThirdQuest.Location = new System.Drawing.Point(4, 56);
             this.tabPageThirdQuest.Name = "tabPageThirdQuest";
-            this.tabPageThirdQuest.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageThirdQuest.Size = new System.Drawing.Size(243, 382);
+            this.tabPageThirdQuest.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageThirdQuest.Size = new System.Drawing.Size(243, 366);
             this.tabPageThirdQuest.TabIndex = 2;
             this.tabPageThirdQuest.Text = "Нормальное";
             this.tabPageThirdQuest.UseVisualStyleBackColor = true;
@@ -601,10 +604,10 @@
             this.tabPageFourthQuest.Controls.Add(this.textBoxPage4Intervals);
             this.tabPageFourthQuest.Controls.Add(this.textBoxPage4Kol);
             this.tabPageFourthQuest.Controls.Add(this.buttonPage4StartDrawGrafics);
-            this.tabPageFourthQuest.Location = new System.Drawing.Point(4, 40);
+            this.tabPageFourthQuest.Location = new System.Drawing.Point(4, 56);
             this.tabPageFourthQuest.Name = "tabPageFourthQuest";
-            this.tabPageFourthQuest.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageFourthQuest.Size = new System.Drawing.Size(243, 382);
+            this.tabPageFourthQuest.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageFourthQuest.Size = new System.Drawing.Size(243, 366);
             this.tabPageFourthQuest.TabIndex = 3;
             this.tabPageFourthQuest.Text = "Экспоненциальное";
             this.tabPageFourthQuest.UseVisualStyleBackColor = true;
@@ -760,10 +763,10 @@
             this.tabPageFifthQuest.Controls.Add(this.textBoxPage5Intervals);
             this.tabPageFifthQuest.Controls.Add(this.textBoxPage5Kol);
             this.tabPageFifthQuest.Controls.Add(this.buttonPage5StartDrawGrafics);
-            this.tabPageFifthQuest.Location = new System.Drawing.Point(4, 40);
+            this.tabPageFifthQuest.Location = new System.Drawing.Point(4, 56);
             this.tabPageFifthQuest.Name = "tabPageFifthQuest";
-            this.tabPageFifthQuest.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageFifthQuest.Size = new System.Drawing.Size(243, 382);
+            this.tabPageFifthQuest.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageFifthQuest.Size = new System.Drawing.Size(243, 366);
             this.tabPageFifthQuest.TabIndex = 4;
             this.tabPageFifthQuest.Text = "Эрланга";
             this.tabPageFifthQuest.UseVisualStyleBackColor = true;
@@ -913,15 +916,126 @@
             // 
             this.groupBoxTotalRasp.Controls.Add(this.tabControl);
             this.groupBoxTotalRasp.Controls.Add(this.chartGrafics);
-            this.groupBoxTotalRasp.Location = new System.Drawing.Point(0, 28);
+            this.groupBoxTotalRasp.Location = new System.Drawing.Point(4, 32);
             this.groupBoxTotalRasp.Name = "groupBoxTotalRasp";
             this.groupBoxTotalRasp.Size = new System.Drawing.Size(774, 441);
             this.groupBoxTotalRasp.TabIndex = 5;
             this.groupBoxTotalRasp.TabStop = false;
             // 
+            // groupBoxCPU
+            // 
+            this.groupBoxCPU.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBoxCPU.Controls.Add(this.buttonCPUStartModeling);
+            this.groupBoxCPU.Controls.Add(this.numericUpDownCPUAllottedTime);
+            this.groupBoxCPU.Controls.Add(this.labelCPUCalculation);
+            this.groupBoxCPU.Controls.Add(this.labelCPUTotalTime);
+            this.groupBoxCPU.Controls.Add(this.labelCPUPrinter);
+            this.groupBoxCPU.Controls.Add(this.labelCPUCalculationValue);
+            this.groupBoxCPU.Controls.Add(this.labelCPUTotalTimeValue);
+            this.groupBoxCPU.Controls.Add(this.labelCPUPrinterValue);
+            this.groupBoxCPU.Controls.Add(this.labelCPUMonitorValue);
+            this.groupBoxCPU.Controls.Add(this.labelCPUAllottedTime);
+            this.groupBoxCPU.Controls.Add(this.labelCPUMonitor);
+            this.groupBoxCPU.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBoxCPU.Location = new System.Drawing.Point(0, 23);
+            this.groupBoxCPU.Name = "groupBoxCPU";
+            this.groupBoxCPU.Size = new System.Drawing.Size(774, 441);
+            this.groupBoxCPU.TabIndex = 14;
+            this.groupBoxCPU.TabStop = false;
+            // 
+            // buttonCPUStartModeling
+            // 
+            this.buttonCPUStartModeling.Location = new System.Drawing.Point(446, 40);
+            this.buttonCPUStartModeling.Name = "buttonCPUStartModeling";
+            this.buttonCPUStartModeling.Size = new System.Drawing.Size(229, 23);
+            this.buttonCPUStartModeling.TabIndex = 2;
+            this.buttonCPUStartModeling.Text = "Начать моделирование";
+            this.buttonCPUStartModeling.UseVisualStyleBackColor = true;
+            this.buttonCPUStartModeling.Click += new System.EventHandler(this.buttonCPUStartModeling_Click);
+            // 
+            // numericUpDownCPUAllottedTime
+            // 
+            this.numericUpDownCPUAllottedTime.Location = new System.Drawing.Point(159, 37);
+            this.numericUpDownCPUAllottedTime.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownCPUAllottedTime.Name = "numericUpDownCPUAllottedTime";
+            this.numericUpDownCPUAllottedTime.Size = new System.Drawing.Size(120, 25);
+            this.numericUpDownCPUAllottedTime.TabIndex = 1;
+            // 
+            // labelCPUCalculation
+            // 
+            this.labelCPUCalculation.AutoSize = true;
+            this.labelCPUCalculation.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUCalculation.Location = new System.Drawing.Point(541, 106);
+            this.labelCPUCalculation.Name = "labelCPUCalculation";
+            this.labelCPUCalculation.Size = new System.Drawing.Size(170, 21);
+            this.labelCPUCalculation.TabIndex = 0;
+            this.labelCPUCalculation.Text = "Другие вычисления";
+            // 
+            // labelCPUPrinter
+            // 
+            this.labelCPUPrinter.AutoSize = true;
+            this.labelCPUPrinter.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUPrinter.Location = new System.Drawing.Point(302, 106);
+            this.labelCPUPrinter.Name = "labelCPUPrinter";
+            this.labelCPUPrinter.Size = new System.Drawing.Size(79, 21);
+            this.labelCPUPrinter.TabIndex = 0;
+            this.labelCPUPrinter.Text = "Принтер";
+            // 
+            // labelCPUCalculationValue
+            // 
+            this.labelCPUCalculationValue.AutoSize = true;
+            this.labelCPUCalculationValue.Font = new System.Drawing.Font("Mistral", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUCalculationValue.Location = new System.Drawing.Point(648, 157);
+            this.labelCPUCalculationValue.Name = "labelCPUCalculationValue";
+            this.labelCPUCalculationValue.Size = new System.Drawing.Size(27, 33);
+            this.labelCPUCalculationValue.TabIndex = 0;
+            this.labelCPUCalculationValue.Text = "0";
+            // 
+            // labelCPUPrinterValue
+            // 
+            this.labelCPUPrinterValue.AutoSize = true;
+            this.labelCPUPrinterValue.Font = new System.Drawing.Font("Mistral", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUPrinterValue.Location = new System.Drawing.Point(343, 157);
+            this.labelCPUPrinterValue.Name = "labelCPUPrinterValue";
+            this.labelCPUPrinterValue.Size = new System.Drawing.Size(27, 33);
+            this.labelCPUPrinterValue.TabIndex = 0;
+            this.labelCPUPrinterValue.Text = "0";
+            // 
+            // labelCPUMonitorValue
+            // 
+            this.labelCPUMonitorValue.AutoSize = true;
+            this.labelCPUMonitorValue.Font = new System.Drawing.Font("Mistral", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUMonitorValue.Location = new System.Drawing.Point(77, 157);
+            this.labelCPUMonitorValue.Name = "labelCPUMonitorValue";
+            this.labelCPUMonitorValue.Size = new System.Drawing.Size(27, 33);
+            this.labelCPUMonitorValue.TabIndex = 0;
+            this.labelCPUMonitorValue.Text = "0";
+            // 
+            // labelCPUAllottedTime
+            // 
+            this.labelCPUAllottedTime.AutoSize = true;
+            this.labelCPUAllottedTime.Location = new System.Drawing.Point(26, 40);
+            this.labelCPUAllottedTime.Name = "labelCPUAllottedTime";
+            this.labelCPUAllottedTime.Size = new System.Drawing.Size(127, 17);
+            this.labelCPUAllottedTime.TabIndex = 0;
+            this.labelCPUAllottedTime.Text = "Выделенное время";
+            // 
+            // labelCPUMonitor
+            // 
+            this.labelCPUMonitor.AutoSize = true;
+            this.labelCPUMonitor.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUMonitor.Location = new System.Drawing.Point(37, 106);
+            this.labelCPUMonitor.Name = "labelCPUMonitor";
+            this.labelCPUMonitor.Size = new System.Drawing.Size(84, 21);
+            this.labelCPUMonitor.TabIndex = 0;
+            this.labelCPUMonitor.Text = "Монитор";
+            // 
             // groupBoxWaterhouse
             // 
-            this.groupBoxWaterhouse.Controls.Add(this.groupBoxCPU);
             this.groupBoxWaterhouse.Controls.Add(this.groupBoxWaterhouseRasp);
             this.groupBoxWaterhouse.Controls.Add(this.checkBoxSetMethodGenerate);
             this.groupBoxWaterhouse.Controls.Add(this.numericUpDownPredelPurchase);
@@ -941,7 +1055,7 @@
             this.groupBoxWaterhouse.Controls.Add(this.labelWaterhouseDays);
             this.groupBoxWaterhouse.Controls.Add(this.buttonWaterhouseStartModeling);
             this.groupBoxWaterhouse.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBoxWaterhouse.Location = new System.Drawing.Point(0, 18);
+            this.groupBoxWaterhouse.Location = new System.Drawing.Point(4, 22);
             this.groupBoxWaterhouse.Name = "groupBoxWaterhouse";
             this.groupBoxWaterhouse.Size = new System.Drawing.Size(774, 441);
             this.groupBoxWaterhouse.TabIndex = 4;
@@ -1105,7 +1219,7 @@
             this.tabPageWaterhouseOutputPurchase.Controls.Add(this.textBoxWaterhouseOutputPurchase);
             this.tabPageWaterhouseOutputPurchase.Location = new System.Drawing.Point(4, 26);
             this.tabPageWaterhouseOutputPurchase.Name = "tabPageWaterhouseOutputPurchase";
-            this.tabPageWaterhouseOutputPurchase.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageWaterhouseOutputPurchase.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPageWaterhouseOutputPurchase.Size = new System.Drawing.Size(362, 335);
             this.tabPageWaterhouseOutputPurchase.TabIndex = 0;
             this.tabPageWaterhouseOutputPurchase.Text = "Покупки";
@@ -1128,7 +1242,7 @@
             this.tabPageWaterhouseInfoGoods.Controls.Add(this.textBoxWaterhouseOutputInfoGoods);
             this.tabPageWaterhouseInfoGoods.Location = new System.Drawing.Point(4, 26);
             this.tabPageWaterhouseInfoGoods.Name = "tabPageWaterhouseInfoGoods";
-            this.tabPageWaterhouseInfoGoods.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageWaterhouseInfoGoods.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPageWaterhouseInfoGoods.Size = new System.Drawing.Size(362, 335);
             this.tabPageWaterhouseInfoGoods.TabIndex = 1;
             this.tabPageWaterhouseInfoGoods.Text = "Доп.Информация";
@@ -1151,7 +1265,7 @@
             this.tabPageWaterhouseStatistic.Controls.Add(this.textBoxWaterhouseStatisticForDays);
             this.tabPageWaterhouseStatistic.Location = new System.Drawing.Point(4, 26);
             this.tabPageWaterhouseStatistic.Name = "tabPageWaterhouseStatistic";
-            this.tabPageWaterhouseStatistic.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageWaterhouseStatistic.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPageWaterhouseStatistic.Size = new System.Drawing.Size(362, 335);
             this.tabPageWaterhouseStatistic.TabIndex = 2;
             this.tabPageWaterhouseStatistic.Text = "Итоговые параметры";
@@ -1265,103 +1379,33 @@
             this.buttonWaterhouseStartModeling.UseVisualStyleBackColor = true;
             this.buttonWaterhouseStartModeling.Click += new System.EventHandler(this.buttonWaterhouseStartModeling_Click);
             // 
-            // groupBoxCPU
+            // labelCPUTotalTime
             // 
-            this.groupBoxCPU.Controls.Add(this.numericUpDownCPUAllottedTime);
-            this.groupBoxCPU.Controls.Add(this.labelCPUKeyboard);
-            this.groupBoxCPU.Controls.Add(this.labelCPUPrinter);
-            this.groupBoxCPU.Controls.Add(this.labelCPUKeyboardValue);
-            this.groupBoxCPU.Controls.Add(this.labelCPUPrinterValue);
-            this.groupBoxCPU.Controls.Add(this.labelCPUMonitorValue);
-            this.groupBoxCPU.Controls.Add(this.labelCPUAllottedTime);
-            this.groupBoxCPU.Controls.Add(this.labelCPUMonitor);
-            this.groupBoxCPU.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBoxCPU.Location = new System.Drawing.Point(8, 8);
-            this.groupBoxCPU.Name = "groupBoxCPU";
-            this.groupBoxCPU.Size = new System.Drawing.Size(774, 441);
-            this.groupBoxCPU.TabIndex = 14;
-            this.groupBoxCPU.TabStop = false;
-            this.groupBoxCPU.Visible = false;
+            this.labelCPUTotalTime.AutoSize = true;
+            this.labelCPUTotalTime.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUTotalTime.Location = new System.Drawing.Point(302, 219);
+            this.labelCPUTotalTime.Name = "labelCPUTotalTime";
+            this.labelCPUTotalTime.Size = new System.Drawing.Size(117, 21);
+            this.labelCPUTotalTime.TabIndex = 0;
+            this.labelCPUTotalTime.Text = "Общее время";
             // 
-            // labelCPUMonitor
+            // labelCPUTotalTimeValue
             // 
-            this.labelCPUMonitor.AutoSize = true;
-            this.labelCPUMonitor.Location = new System.Drawing.Point(100, 205);
-            this.labelCPUMonitor.Name = "labelCPUMonitor";
-            this.labelCPUMonitor.Size = new System.Drawing.Size(63, 17);
-            this.labelCPUMonitor.TabIndex = 0;
-            this.labelCPUMonitor.Text = "Монитор";
-            // 
-            // labelCPUPrinter
-            // 
-            this.labelCPUPrinter.AutoSize = true;
-            this.labelCPUPrinter.Location = new System.Drawing.Point(365, 205);
-            this.labelCPUPrinter.Name = "labelCPUPrinter";
-            this.labelCPUPrinter.Size = new System.Drawing.Size(61, 17);
-            this.labelCPUPrinter.TabIndex = 0;
-            this.labelCPUPrinter.Text = "Принтер";
-            // 
-            // labelCPUKeyboard
-            // 
-            this.labelCPUKeyboard.AutoSize = true;
-            this.labelCPUKeyboard.Location = new System.Drawing.Point(604, 205);
-            this.labelCPUKeyboard.Name = "labelCPUKeyboard";
-            this.labelCPUKeyboard.Size = new System.Drawing.Size(130, 17);
-            this.labelCPUKeyboard.TabIndex = 0;
-            this.labelCPUKeyboard.Text = "Другие вычисления";
-            // 
-            // labelCPUMonitorValue
-            // 
-            this.labelCPUMonitorValue.AutoSize = true;
-            this.labelCPUMonitorValue.Font = new System.Drawing.Font("Mistral", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCPUMonitorValue.Location = new System.Drawing.Point(124, 251);
-            this.labelCPUMonitorValue.Name = "labelCPUMonitorValue";
-            this.labelCPUMonitorValue.Size = new System.Drawing.Size(27, 33);
-            this.labelCPUMonitorValue.TabIndex = 0;
-            this.labelCPUMonitorValue.Text = "0";
-            // 
-            // labelCPUPrinterValue
-            // 
-            this.labelCPUPrinterValue.AutoSize = true;
-            this.labelCPUPrinterValue.Font = new System.Drawing.Font("Mistral", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCPUPrinterValue.Location = new System.Drawing.Point(384, 251);
-            this.labelCPUPrinterValue.Name = "labelCPUPrinterValue";
-            this.labelCPUPrinterValue.Size = new System.Drawing.Size(27, 33);
-            this.labelCPUPrinterValue.TabIndex = 0;
-            this.labelCPUPrinterValue.Text = "0";
-            // 
-            // labelCPUKeyboardValue
-            // 
-            this.labelCPUKeyboardValue.AutoSize = true;
-            this.labelCPUKeyboardValue.Font = new System.Drawing.Font("Mistral", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCPUKeyboardValue.Location = new System.Drawing.Point(654, 251);
-            this.labelCPUKeyboardValue.Name = "labelCPUKeyboardValue";
-            this.labelCPUKeyboardValue.Size = new System.Drawing.Size(27, 33);
-            this.labelCPUKeyboardValue.TabIndex = 0;
-            this.labelCPUKeyboardValue.Text = "0";
-            // 
-            // numericUpDownCPUAllottedTime
-            // 
-            this.numericUpDownCPUAllottedTime.Location = new System.Drawing.Point(159, 37);
-            this.numericUpDownCPUAllottedTime.Name = "numericUpDownCPUAllottedTime";
-            this.numericUpDownCPUAllottedTime.Size = new System.Drawing.Size(120, 25);
-            this.numericUpDownCPUAllottedTime.TabIndex = 1;
-            // 
-            // labelCPUAllottedTime
-            // 
-            this.labelCPUAllottedTime.AutoSize = true;
-            this.labelCPUAllottedTime.Location = new System.Drawing.Point(26, 40);
-            this.labelCPUAllottedTime.Name = "labelCPUAllottedTime";
-            this.labelCPUAllottedTime.Size = new System.Drawing.Size(127, 17);
-            this.labelCPUAllottedTime.TabIndex = 0;
-            this.labelCPUAllottedTime.Text = "Выделенное время";
+            this.labelCPUTotalTimeValue.AutoSize = true;
+            this.labelCPUTotalTimeValue.Font = new System.Drawing.Font("Mistral", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUTotalTimeValue.Location = new System.Drawing.Point(343, 293);
+            this.labelCPUTotalTimeValue.Name = "labelCPUTotalTimeValue";
+            this.labelCPUTotalTimeValue.Size = new System.Drawing.Size(47, 57);
+            this.labelCPUTotalTimeValue.TabIndex = 0;
+            this.labelCPUTotalTimeValue.Text = "0";
             // 
             // Body
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 471);
+            this.ClientSize = new System.Drawing.Size(778, 461);
             this.Controls.Add(this.toolStripTopPanel);
+            this.Controls.Add(this.groupBoxCPU);
             this.Controls.Add(this.groupBoxWaterhouse);
             this.Controls.Add(this.groupBoxTotalRasp);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -1394,6 +1438,9 @@
             this.toolStripTopPanel.ResumeLayout(false);
             this.toolStripTopPanel.PerformLayout();
             this.groupBoxTotalRasp.ResumeLayout(false);
+            this.groupBoxCPU.ResumeLayout(false);
+            this.groupBoxCPU.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCPUAllottedTime)).EndInit();
             this.groupBoxWaterhouse.ResumeLayout(false);
             this.groupBoxWaterhouse.PerformLayout();
             this.groupBoxWaterhouseRasp.ResumeLayout(false);
@@ -1412,9 +1459,6 @@
             this.tabPageWaterhouseStatistic.ResumeLayout(false);
             this.tabPageWaterhouseStatistic.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWaterhouseDays)).EndInit();
-            this.groupBoxCPU.ResumeLayout(false);
-            this.groupBoxCPU.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCPUAllottedTime)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1523,13 +1567,16 @@
         private System.Windows.Forms.CheckBox checkBoxSetMethodGenerate;
         private System.Windows.Forms.GroupBox groupBoxCPU;
         private System.Windows.Forms.NumericUpDown numericUpDownCPUAllottedTime;
-        private System.Windows.Forms.Label labelCPUKeyboard;
+        private System.Windows.Forms.Label labelCPUCalculation;
         private System.Windows.Forms.Label labelCPUPrinter;
-        private System.Windows.Forms.Label labelCPUKeyboardValue;
+        private System.Windows.Forms.Label labelCPUCalculationValue;
         private System.Windows.Forms.Label labelCPUPrinterValue;
         private System.Windows.Forms.Label labelCPUMonitorValue;
         private System.Windows.Forms.Label labelCPUAllottedTime;
         private System.Windows.Forms.Label labelCPUMonitor;
+        private System.Windows.Forms.Button buttonCPUStartModeling;
+        private System.Windows.Forms.Label labelCPUTotalTime;
+        private System.Windows.Forms.Label labelCPUTotalTimeValue;
     }
 }
 

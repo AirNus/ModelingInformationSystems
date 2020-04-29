@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ByMarin;
+using System;
 using System.Globalization;
 using System.Linq;
 using System.Threading;
@@ -390,6 +391,15 @@ namespace ModelingInformationSystems
                 groupBoxWaterhouseRasp.Visible = false;
         }
 
-       
+        private void buttonCPUStartModeling_Click(object sender, EventArgs e)
+        {
+            int TotalTime = Convert.ToInt32(numericUpDownCPUAllottedTime.Value);
+
+            var answer = CPUModel.ModellingWorkCPU(TotalTime);
+            labelCPUCalculationValue.Text = answer["Calculation"].ToString();
+            labelCPUMonitorValue.Text = answer["Monitor"].ToString();
+            labelCPUPrinterValue.Text = answer["Printer"].ToString();
+            labelCPUTotalTimeValue.Text = answer["total"].ToString();
+        }
     }
 }
