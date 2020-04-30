@@ -39,35 +39,40 @@ namespace ModelingInformationSystems
         
         static internal Dictionary<string,int> ModellingWorkCPU(int timeDuration)
         {
-            
-            MyThread frstPool = new MyThread(new Queue<int>()) { Name = "first"};
-            MyThread scndPool = new MyThread(new Queue<int>()) { Name = "second"};
+
+            MyThread frstPool = new MyThread(new Queue<int>()) { Name = "first" };
+            MyThread scndPool = new MyThread(new Queue<int>()) { Name = "second" };
             List<MyThread> threads = new List<MyThread>();
             threads.Add(frstPool);
             threads.Add(scndPool);
 
-            MyTask Monitor = new MyTask() { Name = "Monitor",id = 2, MaxWorkTimer = 10, ready = true, totalTime = 0 };
-            MyTask Calculation = new MyTask() { Name = "Calculation",id = 1, MaxWorkTimer = 10, ready = false, totalTime = 0 };
-            MyTask Printer = new MyTask() { Name = "Printer", id = 3, MaxWorkTimer = 20, ready = true, totalTime = 0 };
+            MyTask Monitor = new MyTask() { Name = "Monitor",id = 2, MaxWorkTimer = 20, ready = true, totalTime = 0 };
+            MyTask Calculation = new MyTask() { Name = "Calculation",id = 1, MaxWorkTimer = 40, ready = false, totalTime = 0 };
+            MyTask Printer = new MyTask() { Name = "Printer", id = 3, MaxWorkTimer = 35, ready = true, totalTime = 0 };
 
             List<MyTask> tasks = new List<MyTask>();
             tasks.Add(Monitor);
             tasks.Add(Calculation);
             tasks.Add(Printer);
-            
-            for(int i = 0; i < threads.Count; i++)
-            {
-                threads[i].pool.Enqueue(1);
-                tasks[1].timeFinish = tasks[1].MaxWorkTimer;
-                tasks[1].totalTime = tasks[1].MaxWorkTimer;
-            }
+
+            threads[0].pool.Enqueue(1);
+            tasks[1].timeFinish = tasks[1].MaxWorkTimer;
+            tasks[1].totalTime = tasks[1].MaxWorkTimer;
+            tasks[1].nameThread = threads[0].Name;
+            tasks[1].ready = false;
+
+            threads[1].pool.Enqueue(2);
+            tasks[2].timeFinish = tasks[2].MaxWorkTimer;
+            tasks[2].totalTime = tasks[2].MaxWorkTimer;
+            tasks[2].nameThread = threads[1].Name;
+            tasks[2].ready = false;
             for (int i = 0; i < timeDuration; i++)
             {
                 foreach(MyThread thread in threads)
                 {
                     foreach(MyTask task in tasks)
                     {
-                        if (task.ready && !thread.working && task.id == thread.pool.First())
+                        if (task.ready == true && thread.working == false && task.id == thread.pool.First())
                         {
                             thread.working = true;
                             task.ready = false;
@@ -77,14 +82,20 @@ namespace ModelingInformationSystems
                             task.timeFinish = i + durationCurrentTask;
                             task.nameThread = thread.Name;
                         }
-                        if(i == task.timeFinish && task.ready == false)
+                        if(i == task.timeFinish && task.ready == false && task.nameThread == thread.Name)
                         {
+                            task.nameThread = "";
+                            task.timeFinish = 0;
                             task.ready = true;
                             thread.working = false;
-                            int incomingTask = random.Next(1,tasks.Count + 1);
-                            thread.pool.Enqueue(incomingTask);
+                            int kolTasksGive = random.Next(1,tasks.Count + 1);
+                            for(int j = 0; j < kolTasksGive; j++)
+                            {
+                                int incomingTask = random.Next(1, tasks.Count + 1);
+                                thread.pool.Enqueue(incomingTask);
+                            }
                         }    
-                        if(task.id == thread.pool.First() && !task.ready && task.nameThread != thread.Name)
+                        if(task.id == thread.pool.First() && task.ready == false && task.nameThread != thread.Name)
                         {
                             int deferredTask = thread.pool.Dequeue();
                             thread.pool.Enqueue(deferredTask);
