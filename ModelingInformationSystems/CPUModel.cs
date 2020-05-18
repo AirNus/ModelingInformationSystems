@@ -37,7 +37,7 @@ namespace ModelingInformationSystems
     {
         static Random random = new Random();
         
-        static internal Dictionary<string,int> ModellingWorkCPU(int timeDuration)
+        static internal Dictionary<string,int> ModellingWorkCPU(int timeDuration, Dictionary<string,int> param)
         {
 
             MyThread frstPool = new MyThread(new Queue<int>()) { Name = "first" };
@@ -46,14 +46,15 @@ namespace ModelingInformationSystems
             threads.Add(frstPool);
             threads.Add(scndPool);
 
-            MyTask Monitor = new MyTask() { Name = "Monitor",id = 2, MaxWorkTimer = 20, ready = true, totalTime = 0 };
-            MyTask Calculation = new MyTask() { Name = "Calculation",id = 1, MaxWorkTimer = 40, ready = false, totalTime = 0 };
-            MyTask Printer = new MyTask() { Name = "Printer", id = 3, MaxWorkTimer = 35, ready = true, totalTime = 0 };
-
+            MyTask Monitor = new MyTask() { Name = "Monitor",id = 2, MaxWorkTimer = param["Monitor"], ready = true, totalTime = 0 };
+            MyTask CPU = new MyTask() { Name = "CPU",id = 1, MaxWorkTimer = param["CPU"], ready = false, totalTime = 0 };
+            MyTask Printer = new MyTask() { Name = "Printer", id = 3, MaxWorkTimer = param["Printer"], ready = true, totalTime = 0 };
+            MyTask Keyboard = new MyTask() { Name = "Keyboard", id = 4, MaxWorkTimer = param["Keyboard"], ready = true, totalTime = 0 };
             List<MyTask> tasks = new List<MyTask>();
             tasks.Add(Monitor);
-            tasks.Add(Calculation);
+            tasks.Add(CPU);
             tasks.Add(Printer);
+            tasks.Add(Keyboard);
 
             threads[0].pool.Enqueue(1);
             tasks[1].timeFinish = tasks[1].MaxWorkTimer;

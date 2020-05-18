@@ -1,5 +1,6 @@
 ﻿using ModelingInformationSystems;
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading;
@@ -395,11 +396,22 @@ namespace ModelingInformationSystems
         {
             int TotalTime = Convert.ToInt32(numericUpDownCPUAllottedTime.Value);
 
-            var answer = CPUModel.ModellingWorkCPU(TotalTime);
-            labelCPUCalculationValue.Text = answer["Calculation"].ToString();
+            Dictionary<string, int> timeParam = new Dictionary<string, int>();
+            timeParam.Add("Monitor", Convert.ToInt32(numericUpDownMonitor.Value));
+            timeParam.Add("Printer", Convert.ToInt32(numericUpDownPrinter.Value));
+            timeParam.Add("Keyboard", Convert.ToInt32(numericUpDownKeyboard.Value));
+            timeParam.Add("CPU", Convert.ToInt32(numericUpDownCPU.Value));
+
+
+            var answer = CPUModel.ModellingWorkCPU(TotalTime,timeParam);
+            labelCPUKeyboardValue.Text = answer["Keyboard"].ToString();
             labelCPUMonitorValue.Text = answer["Monitor"].ToString();
             labelCPUPrinterValue.Text = answer["Printer"].ToString();
+            labelCPUcpuValue.Text = answer["CPU"].ToString();
             labelCPUTotalTimeValue.Text = answer["total"].ToString();
+
+            labelCPUSpentTimeValue.Text = (TotalTime * 2 - answer["total"]).ToString();
         }
+
     }
 }
