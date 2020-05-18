@@ -8,6 +8,12 @@ using System.Threading.Tasks;
 
 namespace ModelingInformationSystems
 {
+    class MyQueque
+    {
+        internal int time;
+        internal int timeEndCurrTask;
+        internal string nameTask;
+    }
     class MyThread
     {
         internal string Name;
@@ -56,6 +62,8 @@ namespace ModelingInformationSystems
             tasks.Add(Printer);
             tasks.Add(Keyboard);
 
+            List<MyQueque> queques = new List<MyQueque>();
+
             threads[0].pool.Enqueue(1);
             tasks[1].timeFinish = tasks[1].MaxWorkTimer;
             tasks[1].totalTime = tasks[1].MaxWorkTimer;
@@ -73,16 +81,7 @@ namespace ModelingInformationSystems
                 {
                     foreach(MyTask task in tasks)
                     {
-                        if (task.ready == true && thread.working == false && task.id == thread.pool.First())
-                        {
-                            thread.working = true;
-                            task.ready = false;
-                            thread.pool.Dequeue();
-                            int durationCurrentTask = random.Next(task.MaxWorkTimer);
-                            task.totalTime += durationCurrentTask;
-                            task.timeFinish = i + durationCurrentTask;
-                            task.nameThread = thread.Name;
-                        }
+                        
                         if(i == task.timeFinish && task.ready == false && task.nameThread == thread.Name)
                         {
                             task.nameThread = "";
@@ -98,13 +97,35 @@ namespace ModelingInformationSystems
                         }    
                         if(task.id == thread.pool.First() && task.ready == false && task.nameThread != thread.Name)
                         {
+                            if (thread.pool.Count == 1 && !queques.Exists(x => x.timeEndCurrTask == task.timeFinish && x.nameTask == task.Name))
+                            {
+                                queques.Add(new MyQueque()
+                                    {
+                                    nameTask = task.Name,
+                                    time = task.timeFinish - i,
+                                    timeEndCurrTask = task.timeFinish
+                                });                                    
+                            }
                             int deferredTask = thread.pool.Dequeue();
                             thread.pool.Enqueue(deferredTask);
+                        }
+                        if (task.ready == true && thread.working == false && task.id == thread.pool.First())
+                        {
+                            thread.working = true;
+                            task.ready = false;
+                            thread.pool.Dequeue();
+                            int durationCurrentTask = random.Next(task.MaxWorkTimer);
+                            if (durationCurrentTask == 0)
+                                durationCurrentTask = 1;
+                            task.totalTime += durationCurrentTask;
+                            task.timeFinish = i + durationCurrentTask;
+                            task.nameThread = thread.Name;
                         }
                     }
                     
                 }               
             }
+
             Dictionary<string, int> answer = new Dictionary<string, int>();
             int mainTotalTime = 0;
             foreach(MyTask task in tasks)
@@ -113,6 +134,22 @@ namespace ModelingInformationSystems
                 answer.Add(task.Name, task.totalTime);
             }
             answer.Add("total", mainTotalTime);
+
+            
+            int maxLengthQueque = 0;
+            int avgLengthQueque = 0;
+            if (queques.Count > 0)
+            {                
+                foreach(MyQueque queque in queques)
+                {
+                    if (queque.time > maxLengthQueque)
+                        maxLengthQueque = queque.time;
+                    avgLengthQueque += queque.time;
+                }
+                avgLengthQueque = avgLengthQueque / queques.Count;
+            }
+            answer.Add("maxLengthQueque", maxLengthQueque);
+            answer.Add("avgLengthQueque", avgLengthQueque);
             return answer;
         }
     }

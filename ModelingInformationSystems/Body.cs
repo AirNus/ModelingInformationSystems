@@ -410,8 +410,16 @@ namespace ModelingInformationSystems
             labelCPUcpuValue.Text = answer["CPU"].ToString();
             labelCPUTotalTimeValue.Text = answer["total"].ToString();
 
+            labelCPUMonitorValuePercent.Text =  "- " + (answer["Monitor"] / (TotalTime * 2 / 100)).ToString() + "%";
+            labelCPUPrinterValuePercent.Text = "- " + (answer["Printer"] / (TotalTime * 2 / 100)).ToString() + "%";
+            labelCPUKeyboardValuePercent.Text = "- " + (answer["Keyboard"] / (TotalTime * 2 / 100)).ToString() + "%";
+            labelCPUcpuValuePercent.Text = "- " + (answer["CPU"] / (TotalTime * 2 / 100)).ToString() + "%";
+
+            labelCPUMaxLengthQueque.Text = "Максимальная длина очереди: " + answer["maxLengthQueque"].ToString();
+            labelCPUAvgLengthQueque.Text = "Средняя длина очереди: " + answer["avgLengthQueque"].ToString();
+
             labelCPUSpentTimeValue.Text = (TotalTime * 2 - answer["total"]).ToString();
         }
-
+     
     }
 }

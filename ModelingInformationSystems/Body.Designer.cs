@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageFirstQuest = new System.Windows.Forms.TabPage();
             this.groupBoxPage1Methods = new System.Windows.Forms.GroupBox();
@@ -102,17 +102,34 @@
             this.groupBoxTotalRasp = new System.Windows.Forms.GroupBox();
             this.groupBoxCPU = new System.Windows.Forms.GroupBox();
             this.buttonCPUStartModeling = new System.Windows.Forms.Button();
+            this.numericUpDownCPU = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownKeyboard = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownPrinter = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownMonitor = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownCPUAllottedTime = new System.Windows.Forms.NumericUpDown();
             this.labelCPUKeyboard = new System.Windows.Forms.Label();
             this.labelCPUcpu = new System.Windows.Forms.Label();
+            this.labelCPUSpentTime = new System.Windows.Forms.Label();
             this.labelCPUTotalTime = new System.Windows.Forms.Label();
             this.labelCPUPrinter = new System.Windows.Forms.Label();
             this.labelCPUcpuValue = new System.Windows.Forms.Label();
+            this.labelCPUSpentTimeValue = new System.Windows.Forms.Label();
             this.labelCPUKeyboardValue = new System.Windows.Forms.Label();
             this.labelCPUTotalTimeValue = new System.Windows.Forms.Label();
             this.labelCPUPrinterValue = new System.Windows.Forms.Label();
+            this.labelCPUAvgLengthQueque = new System.Windows.Forms.Label();
+            this.labelCPUMaxLengthQueque = new System.Windows.Forms.Label();
+            this.labelCPUcpuSetValue = new System.Windows.Forms.Label();
             this.labelCPUMonitorValue = new System.Windows.Forms.Label();
+            this.labelCPUKeyboardSetValue = new System.Windows.Forms.Label();
+            this.labelText = new System.Windows.Forms.Label();
+            this.labelCPUPrinterSetValue = new System.Windows.Forms.Label();
+            this.labelCPUcpuValuePercent = new System.Windows.Forms.Label();
+            this.labelCPUKeyboardValuePercent = new System.Windows.Forms.Label();
+            this.labelCPUPrinterValuePercent = new System.Windows.Forms.Label();
+            this.labelCPUMonitorValuePercent = new System.Windows.Forms.Label();
             this.labelCPUAllottedTime = new System.Windows.Forms.Label();
+            this.labelCPUMonitorSetValue = new System.Windows.Forms.Label();
             this.labelCPUMonitor = new System.Windows.Forms.Label();
             this.groupBoxWaterhouse = new System.Windows.Forms.GroupBox();
             this.groupBoxWaterhouseRasp = new System.Windows.Forms.GroupBox();
@@ -142,17 +159,6 @@
             this.labelWaterhouseTypesGoods = new System.Windows.Forms.Label();
             this.labelWaterhouseDays = new System.Windows.Forms.Label();
             this.buttonWaterhouseStartModeling = new System.Windows.Forms.Button();
-            this.labelText = new System.Windows.Forms.Label();
-            this.numericUpDownMonitor = new System.Windows.Forms.NumericUpDown();
-            this.labelCPUMonitorSetValue = new System.Windows.Forms.Label();
-            this.labelCPUPrinterSetValue = new System.Windows.Forms.Label();
-            this.numericUpDownPrinter = new System.Windows.Forms.NumericUpDown();
-            this.labelCPUKeyboardSetValue = new System.Windows.Forms.Label();
-            this.numericUpDownKeyboard = new System.Windows.Forms.NumericUpDown();
-            this.labelCPUcpuSetValue = new System.Windows.Forms.Label();
-            this.numericUpDownCPU = new System.Windows.Forms.NumericUpDown();
-            this.labelCPUSpentTimeValue = new System.Windows.Forms.Label();
-            this.labelCPUSpentTime = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabPageFirstQuest.SuspendLayout();
             this.groupBoxPage1Methods.SuspendLayout();
@@ -167,6 +173,10 @@
             this.toolStripTopPanel.SuspendLayout();
             this.groupBoxTotalRasp.SuspendLayout();
             this.groupBoxCPU.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCPU)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownKeyboard)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrinter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMonitor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCPUAllottedTime)).BeginInit();
             this.groupBoxWaterhouse.SuspendLayout();
             this.groupBoxWaterhouseRasp.SuspendLayout();
@@ -181,10 +191,6 @@
             this.tabPageWaterhouseInfoGoods.SuspendLayout();
             this.tabPageWaterhouseStatistic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWaterhouseDays)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMonitor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrinter)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownKeyboard)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCPU)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -882,8 +888,8 @@
             // 
             // chartGrafics
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chartGrafics.ChartAreas.Add(chartArea4);
+            chartArea1.Name = "ChartArea1";
+            this.chartGrafics.ChartAreas.Add(chartArea1);
             this.chartGrafics.Location = new System.Drawing.Point(262, 13);
             this.chartGrafics.Name = "chartGrafics";
             this.chartGrafics.Size = new System.Drawing.Size(503, 418);
@@ -958,11 +964,17 @@
             this.groupBoxCPU.Controls.Add(this.labelCPUKeyboardValue);
             this.groupBoxCPU.Controls.Add(this.labelCPUTotalTimeValue);
             this.groupBoxCPU.Controls.Add(this.labelCPUPrinterValue);
+            this.groupBoxCPU.Controls.Add(this.labelCPUAvgLengthQueque);
+            this.groupBoxCPU.Controls.Add(this.labelCPUMaxLengthQueque);
             this.groupBoxCPU.Controls.Add(this.labelCPUcpuSetValue);
             this.groupBoxCPU.Controls.Add(this.labelCPUMonitorValue);
             this.groupBoxCPU.Controls.Add(this.labelCPUKeyboardSetValue);
             this.groupBoxCPU.Controls.Add(this.labelText);
             this.groupBoxCPU.Controls.Add(this.labelCPUPrinterSetValue);
+            this.groupBoxCPU.Controls.Add(this.labelCPUcpuValuePercent);
+            this.groupBoxCPU.Controls.Add(this.labelCPUKeyboardValuePercent);
+            this.groupBoxCPU.Controls.Add(this.labelCPUPrinterValuePercent);
+            this.groupBoxCPU.Controls.Add(this.labelCPUMonitorValuePercent);
             this.groupBoxCPU.Controls.Add(this.labelCPUAllottedTime);
             this.groupBoxCPU.Controls.Add(this.labelCPUMonitorSetValue);
             this.groupBoxCPU.Controls.Add(this.labelCPUMonitor);
@@ -982,6 +994,94 @@
             this.buttonCPUStartModeling.Text = "Начать моделирование";
             this.buttonCPUStartModeling.UseVisualStyleBackColor = true;
             this.buttonCPUStartModeling.Click += new System.EventHandler(this.buttonCPUStartModeling_Click);
+            // 
+            // numericUpDownCPU
+            // 
+            this.numericUpDownCPU.Location = new System.Drawing.Point(555, 269);
+            this.numericUpDownCPU.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownCPU.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownCPU.Name = "numericUpDownCPU";
+            this.numericUpDownCPU.Size = new System.Drawing.Size(120, 25);
+            this.numericUpDownCPU.TabIndex = 1;
+            this.numericUpDownCPU.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numericUpDownKeyboard
+            // 
+            this.numericUpDownKeyboard.Location = new System.Drawing.Point(555, 225);
+            this.numericUpDownKeyboard.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownKeyboard.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownKeyboard.Name = "numericUpDownKeyboard";
+            this.numericUpDownKeyboard.Size = new System.Drawing.Size(120, 25);
+            this.numericUpDownKeyboard.TabIndex = 1;
+            this.numericUpDownKeyboard.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numericUpDownPrinter
+            // 
+            this.numericUpDownPrinter.Location = new System.Drawing.Point(555, 176);
+            this.numericUpDownPrinter.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownPrinter.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownPrinter.Name = "numericUpDownPrinter";
+            this.numericUpDownPrinter.Size = new System.Drawing.Size(120, 25);
+            this.numericUpDownPrinter.TabIndex = 1;
+            this.numericUpDownPrinter.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numericUpDownMonitor
+            // 
+            this.numericUpDownMonitor.Location = new System.Drawing.Point(555, 135);
+            this.numericUpDownMonitor.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownMonitor.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownMonitor.Name = "numericUpDownMonitor";
+            this.numericUpDownMonitor.Size = new System.Drawing.Size(120, 25);
+            this.numericUpDownMonitor.TabIndex = 1;
+            this.numericUpDownMonitor.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // numericUpDownCPUAllottedTime
             // 
@@ -1015,11 +1115,21 @@
             this.labelCPUcpu.TabIndex = 0;
             this.labelCPUcpu.Text = "Процессор";
             // 
+            // labelCPUSpentTime
+            // 
+            this.labelCPUSpentTime.AutoSize = true;
+            this.labelCPUSpentTime.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUSpentTime.Location = new System.Drawing.Point(446, 349);
+            this.labelCPUSpentTime.Name = "labelCPUSpentTime";
+            this.labelCPUSpentTime.Size = new System.Drawing.Size(159, 21);
+            this.labelCPUSpentTime.TabIndex = 0;
+            this.labelCPUSpentTime.Text = "Потерянное время";
+            // 
             // labelCPUTotalTime
             // 
             this.labelCPUTotalTime.AutoSize = true;
             this.labelCPUTotalTime.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCPUTotalTime.Location = new System.Drawing.Point(39, 346);
+            this.labelCPUTotalTime.Location = new System.Drawing.Point(98, 349);
             this.labelCPUTotalTime.Name = "labelCPUTotalTime";
             this.labelCPUTotalTime.Size = new System.Drawing.Size(127, 23);
             this.labelCPUTotalTime.TabIndex = 0;
@@ -1045,6 +1155,16 @@
             this.labelCPUcpuValue.TabIndex = 0;
             this.labelCPUcpuValue.Text = "0";
             // 
+            // labelCPUSpentTimeValue
+            // 
+            this.labelCPUSpentTimeValue.AutoSize = true;
+            this.labelCPUSpentTimeValue.Font = new System.Drawing.Font("Mistral", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUSpentTimeValue.Location = new System.Drawing.Point(607, 326);
+            this.labelCPUSpentTimeValue.Name = "labelCPUSpentTimeValue";
+            this.labelCPUSpentTimeValue.Size = new System.Drawing.Size(62, 76);
+            this.labelCPUSpentTimeValue.TabIndex = 0;
+            this.labelCPUSpentTimeValue.Text = "0";
+            // 
             // labelCPUKeyboardValue
             // 
             this.labelCPUKeyboardValue.AutoSize = true;
@@ -1059,7 +1179,7 @@
             // 
             this.labelCPUTotalTimeValue.AutoSize = true;
             this.labelCPUTotalTimeValue.Font = new System.Drawing.Font("Mistral", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCPUTotalTimeValue.Location = new System.Drawing.Point(175, 323);
+            this.labelCPUTotalTimeValue.Location = new System.Drawing.Point(234, 326);
             this.labelCPUTotalTimeValue.Name = "labelCPUTotalTimeValue";
             this.labelCPUTotalTimeValue.Size = new System.Drawing.Size(62, 76);
             this.labelCPUTotalTimeValue.TabIndex = 0;
@@ -1075,6 +1195,36 @@
             this.labelCPUPrinterValue.TabIndex = 0;
             this.labelCPUPrinterValue.Text = "0";
             // 
+            // labelCPUAvgLengthQueque
+            // 
+            this.labelCPUAvgLengthQueque.AutoSize = true;
+            this.labelCPUAvgLengthQueque.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUAvgLengthQueque.Location = new System.Drawing.Point(48, 312);
+            this.labelCPUAvgLengthQueque.Name = "labelCPUAvgLengthQueque";
+            this.labelCPUAvgLengthQueque.Size = new System.Drawing.Size(51, 15);
+            this.labelCPUAvgLengthQueque.TabIndex = 0;
+            this.labelCPUAvgLengthQueque.Text = "-----------";
+            // 
+            // labelCPUMaxLengthQueque
+            // 
+            this.labelCPUMaxLengthQueque.AutoSize = true;
+            this.labelCPUMaxLengthQueque.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUMaxLengthQueque.Location = new System.Drawing.Point(48, 286);
+            this.labelCPUMaxLengthQueque.Name = "labelCPUMaxLengthQueque";
+            this.labelCPUMaxLengthQueque.Size = new System.Drawing.Size(51, 15);
+            this.labelCPUMaxLengthQueque.TabIndex = 0;
+            this.labelCPUMaxLengthQueque.Text = "-----------";
+            // 
+            // labelCPUcpuSetValue
+            // 
+            this.labelCPUcpuSetValue.AutoSize = true;
+            this.labelCPUcpuSetValue.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUcpuSetValue.Location = new System.Drawing.Point(442, 269);
+            this.labelCPUcpuSetValue.Name = "labelCPUcpuSetValue";
+            this.labelCPUcpuSetValue.Size = new System.Drawing.Size(99, 21);
+            this.labelCPUcpuSetValue.TabIndex = 0;
+            this.labelCPUcpuSetValue.Text = "Процессор";
+            // 
             // labelCPUMonitorValue
             // 
             this.labelCPUMonitorValue.AutoSize = true;
@@ -1085,6 +1235,71 @@
             this.labelCPUMonitorValue.TabIndex = 0;
             this.labelCPUMonitorValue.Text = "0";
             // 
+            // labelCPUKeyboardSetValue
+            // 
+            this.labelCPUKeyboardSetValue.AutoSize = true;
+            this.labelCPUKeyboardSetValue.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUKeyboardSetValue.Location = new System.Drawing.Point(442, 225);
+            this.labelCPUKeyboardSetValue.Name = "labelCPUKeyboardSetValue";
+            this.labelCPUKeyboardSetValue.Size = new System.Drawing.Size(102, 21);
+            this.labelCPUKeyboardSetValue.TabIndex = 0;
+            this.labelCPUKeyboardSetValue.Text = "Клавиатура";
+            // 
+            // labelText
+            // 
+            this.labelText.AutoSize = true;
+            this.labelText.Location = new System.Drawing.Point(368, 88);
+            this.labelText.Name = "labelText";
+            this.labelText.Size = new System.Drawing.Size(323, 17);
+            this.labelText.TabIndex = 0;
+            this.labelText.Text = "Укажите максимальное время работы устройства";
+            // 
+            // labelCPUPrinterSetValue
+            // 
+            this.labelCPUPrinterSetValue.AutoSize = true;
+            this.labelCPUPrinterSetValue.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUPrinterSetValue.Location = new System.Drawing.Point(442, 176);
+            this.labelCPUPrinterSetValue.Name = "labelCPUPrinterSetValue";
+            this.labelCPUPrinterSetValue.Size = new System.Drawing.Size(79, 21);
+            this.labelCPUPrinterSetValue.TabIndex = 0;
+            this.labelCPUPrinterSetValue.Text = "Принтер";
+            // 
+            // labelCPUcpuValuePercent
+            // 
+            this.labelCPUcpuValuePercent.AutoSize = true;
+            this.labelCPUcpuValuePercent.Location = new System.Drawing.Point(210, 250);
+            this.labelCPUcpuValuePercent.Name = "labelCPUcpuValuePercent";
+            this.labelCPUcpuValuePercent.Size = new System.Drawing.Size(37, 17);
+            this.labelCPUcpuValuePercent.TabIndex = 0;
+            this.labelCPUcpuValuePercent.Text = "- 0%";
+            // 
+            // labelCPUKeyboardValuePercent
+            // 
+            this.labelCPUKeyboardValuePercent.AutoSize = true;
+            this.labelCPUKeyboardValuePercent.Location = new System.Drawing.Point(210, 200);
+            this.labelCPUKeyboardValuePercent.Name = "labelCPUKeyboardValuePercent";
+            this.labelCPUKeyboardValuePercent.Size = new System.Drawing.Size(37, 17);
+            this.labelCPUKeyboardValuePercent.TabIndex = 0;
+            this.labelCPUKeyboardValuePercent.Text = "- 0%";
+            // 
+            // labelCPUPrinterValuePercent
+            // 
+            this.labelCPUPrinterValuePercent.AutoSize = true;
+            this.labelCPUPrinterValuePercent.Location = new System.Drawing.Point(210, 150);
+            this.labelCPUPrinterValuePercent.Name = "labelCPUPrinterValuePercent";
+            this.labelCPUPrinterValuePercent.Size = new System.Drawing.Size(37, 17);
+            this.labelCPUPrinterValuePercent.TabIndex = 0;
+            this.labelCPUPrinterValuePercent.Text = "- 0%";
+            // 
+            // labelCPUMonitorValuePercent
+            // 
+            this.labelCPUMonitorValuePercent.AutoSize = true;
+            this.labelCPUMonitorValuePercent.Location = new System.Drawing.Point(210, 100);
+            this.labelCPUMonitorValuePercent.Name = "labelCPUMonitorValuePercent";
+            this.labelCPUMonitorValuePercent.Size = new System.Drawing.Size(37, 17);
+            this.labelCPUMonitorValuePercent.TabIndex = 0;
+            this.labelCPUMonitorValuePercent.Text = "- 0%";
+            // 
             // labelCPUAllottedTime
             // 
             this.labelCPUAllottedTime.AutoSize = true;
@@ -1093,6 +1308,16 @@
             this.labelCPUAllottedTime.Size = new System.Drawing.Size(127, 17);
             this.labelCPUAllottedTime.TabIndex = 0;
             this.labelCPUAllottedTime.Text = "Выделенное время";
+            // 
+            // labelCPUMonitorSetValue
+            // 
+            this.labelCPUMonitorSetValue.AutoSize = true;
+            this.labelCPUMonitorSetValue.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUMonitorSetValue.Location = new System.Drawing.Point(442, 135);
+            this.labelCPUMonitorSetValue.Name = "labelCPUMonitorSetValue";
+            this.labelCPUMonitorSetValue.Size = new System.Drawing.Size(84, 21);
+            this.labelCPUMonitorSetValue.TabIndex = 0;
+            this.labelCPUMonitorSetValue.Text = "Монитор";
             // 
             // labelCPUMonitor
             // 
@@ -1449,163 +1674,6 @@
             this.buttonWaterhouseStartModeling.UseVisualStyleBackColor = true;
             this.buttonWaterhouseStartModeling.Click += new System.EventHandler(this.buttonWaterhouseStartModeling_Click);
             // 
-            // labelText
-            // 
-            this.labelText.AutoSize = true;
-            this.labelText.Location = new System.Drawing.Point(368, 88);
-            this.labelText.Name = "labelText";
-            this.labelText.Size = new System.Drawing.Size(323, 17);
-            this.labelText.TabIndex = 0;
-            this.labelText.Text = "Укажите максимальное время работы устройства";
-            // 
-            // numericUpDownMonitor
-            // 
-            this.numericUpDownMonitor.Location = new System.Drawing.Point(555, 135);
-            this.numericUpDownMonitor.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.numericUpDownMonitor.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDownMonitor.Name = "numericUpDownMonitor";
-            this.numericUpDownMonitor.Size = new System.Drawing.Size(120, 25);
-            this.numericUpDownMonitor.TabIndex = 1;
-            this.numericUpDownMonitor.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // labelCPUMonitorSetValue
-            // 
-            this.labelCPUMonitorSetValue.AutoSize = true;
-            this.labelCPUMonitorSetValue.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCPUMonitorSetValue.Location = new System.Drawing.Point(442, 135);
-            this.labelCPUMonitorSetValue.Name = "labelCPUMonitorSetValue";
-            this.labelCPUMonitorSetValue.Size = new System.Drawing.Size(84, 21);
-            this.labelCPUMonitorSetValue.TabIndex = 0;
-            this.labelCPUMonitorSetValue.Text = "Монитор";
-            // 
-            // labelCPUPrinterSetValue
-            // 
-            this.labelCPUPrinterSetValue.AutoSize = true;
-            this.labelCPUPrinterSetValue.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCPUPrinterSetValue.Location = new System.Drawing.Point(442, 176);
-            this.labelCPUPrinterSetValue.Name = "labelCPUPrinterSetValue";
-            this.labelCPUPrinterSetValue.Size = new System.Drawing.Size(79, 21);
-            this.labelCPUPrinterSetValue.TabIndex = 0;
-            this.labelCPUPrinterSetValue.Text = "Принтер";
-            // 
-            // numericUpDownPrinter
-            // 
-            this.numericUpDownPrinter.Location = new System.Drawing.Point(555, 176);
-            this.numericUpDownPrinter.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.numericUpDownPrinter.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDownPrinter.Name = "numericUpDownPrinter";
-            this.numericUpDownPrinter.Size = new System.Drawing.Size(120, 25);
-            this.numericUpDownPrinter.TabIndex = 1;
-            this.numericUpDownPrinter.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // labelCPUKeyboardSetValue
-            // 
-            this.labelCPUKeyboardSetValue.AutoSize = true;
-            this.labelCPUKeyboardSetValue.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCPUKeyboardSetValue.Location = new System.Drawing.Point(442, 225);
-            this.labelCPUKeyboardSetValue.Name = "labelCPUKeyboardSetValue";
-            this.labelCPUKeyboardSetValue.Size = new System.Drawing.Size(102, 21);
-            this.labelCPUKeyboardSetValue.TabIndex = 0;
-            this.labelCPUKeyboardSetValue.Text = "Клавиатура";
-            // 
-            // numericUpDownKeyboard
-            // 
-            this.numericUpDownKeyboard.Location = new System.Drawing.Point(555, 225);
-            this.numericUpDownKeyboard.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.numericUpDownKeyboard.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDownKeyboard.Name = "numericUpDownKeyboard";
-            this.numericUpDownKeyboard.Size = new System.Drawing.Size(120, 25);
-            this.numericUpDownKeyboard.TabIndex = 1;
-            this.numericUpDownKeyboard.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // labelCPUcpuSetValue
-            // 
-            this.labelCPUcpuSetValue.AutoSize = true;
-            this.labelCPUcpuSetValue.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCPUcpuSetValue.Location = new System.Drawing.Point(442, 269);
-            this.labelCPUcpuSetValue.Name = "labelCPUcpuSetValue";
-            this.labelCPUcpuSetValue.Size = new System.Drawing.Size(99, 21);
-            this.labelCPUcpuSetValue.TabIndex = 0;
-            this.labelCPUcpuSetValue.Text = "Процессор";
-            // 
-            // numericUpDownCPU
-            // 
-            this.numericUpDownCPU.Location = new System.Drawing.Point(555, 269);
-            this.numericUpDownCPU.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.numericUpDownCPU.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDownCPU.Name = "numericUpDownCPU";
-            this.numericUpDownCPU.Size = new System.Drawing.Size(120, 25);
-            this.numericUpDownCPU.TabIndex = 1;
-            this.numericUpDownCPU.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // labelCPUSpentTimeValue
-            // 
-            this.labelCPUSpentTimeValue.AutoSize = true;
-            this.labelCPUSpentTimeValue.Font = new System.Drawing.Font("Mistral", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCPUSpentTimeValue.Location = new System.Drawing.Point(593, 323);
-            this.labelCPUSpentTimeValue.Name = "labelCPUSpentTimeValue";
-            this.labelCPUSpentTimeValue.Size = new System.Drawing.Size(62, 76);
-            this.labelCPUSpentTimeValue.TabIndex = 0;
-            this.labelCPUSpentTimeValue.Text = "0";
-            // 
-            // labelCPUSpentTime
-            // 
-            this.labelCPUSpentTime.AutoSize = true;
-            this.labelCPUSpentTime.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCPUSpentTime.Location = new System.Drawing.Point(432, 346);
-            this.labelCPUSpentTime.Name = "labelCPUSpentTime";
-            this.labelCPUSpentTime.Size = new System.Drawing.Size(159, 21);
-            this.labelCPUSpentTime.TabIndex = 0;
-            this.labelCPUSpentTime.Text = "Потерянное время";
-            // 
             // Body
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1647,6 +1715,10 @@
             this.groupBoxTotalRasp.ResumeLayout(false);
             this.groupBoxCPU.ResumeLayout(false);
             this.groupBoxCPU.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCPU)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownKeyboard)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrinter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMonitor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCPUAllottedTime)).EndInit();
             this.groupBoxWaterhouse.ResumeLayout(false);
             this.groupBoxWaterhouse.PerformLayout();
@@ -1666,10 +1738,6 @@
             this.tabPageWaterhouseStatistic.ResumeLayout(false);
             this.tabPageWaterhouseStatistic.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWaterhouseDays)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMonitor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrinter)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownKeyboard)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCPU)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1801,6 +1869,12 @@
         private System.Windows.Forms.Label labelCPUMonitorSetValue;
         private System.Windows.Forms.Label labelCPUSpentTime;
         private System.Windows.Forms.Label labelCPUSpentTimeValue;
+        private System.Windows.Forms.Label labelCPUcpuValuePercent;
+        private System.Windows.Forms.Label labelCPUKeyboardValuePercent;
+        private System.Windows.Forms.Label labelCPUPrinterValuePercent;
+        private System.Windows.Forms.Label labelCPUMonitorValuePercent;
+        private System.Windows.Forms.Label labelCPUAvgLengthQueque;
+        private System.Windows.Forms.Label labelCPUMaxLengthQueque;
     }
 }
 
