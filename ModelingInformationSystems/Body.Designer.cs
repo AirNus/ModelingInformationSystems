@@ -98,9 +98,53 @@
             this.toolStripTopPanel = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonRasp = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonWaterhouse = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonCPU = new System.Windows.Forms.ToolStripButton();
             this.groupBoxTotalRasp = new System.Windows.Forms.GroupBox();
+            this.groupBoxCPU = new System.Windows.Forms.GroupBox();
+            this.buttonCPUStartModeling = new System.Windows.Forms.Button();
+            this.numericUpDownCPU = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownKeyboard = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownPrinter = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownMonitor = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownCPUAllottedTime = new System.Windows.Forms.NumericUpDown();
+            this.labelCPUKeyboard = new System.Windows.Forms.Label();
+            this.labelCPUcpu = new System.Windows.Forms.Label();
+            this.labelCPUSpentTime = new System.Windows.Forms.Label();
+            this.labelCPUTotalTime = new System.Windows.Forms.Label();
+            this.labelCPUPrinter = new System.Windows.Forms.Label();
+            this.labelCPUcpuValue = new System.Windows.Forms.Label();
+            this.labelCPUSpentTimeValue = new System.Windows.Forms.Label();
+            this.labelCPUKeyboardValue = new System.Windows.Forms.Label();
+            this.labelCPUTotalTimeValue = new System.Windows.Forms.Label();
+            this.labelCPUPrinterValue = new System.Windows.Forms.Label();
+            this.labelCPUAvgLengthQueque = new System.Windows.Forms.Label();
+            this.labelCPUMaxLengthQueque = new System.Windows.Forms.Label();
+            this.labelCPUcpuSetValue = new System.Windows.Forms.Label();
+            this.labelCPUMonitorValue = new System.Windows.Forms.Label();
+            this.labelCPUKeyboardSetValue = new System.Windows.Forms.Label();
+            this.labelText = new System.Windows.Forms.Label();
+            this.labelCPUPrinterSetValue = new System.Windows.Forms.Label();
+            this.labelCPUcpuValuePercent = new System.Windows.Forms.Label();
+            this.labelCPUKeyboardValuePercent = new System.Windows.Forms.Label();
+            this.labelCPUPrinterValuePercent = new System.Windows.Forms.Label();
+            this.labelCPUAvgLengthQuequeCPU = new System.Windows.Forms.Label();
+            this.labelCPUAvgLengthQuequeKeyboard = new System.Windows.Forms.Label();
+            this.labelCPUAvgLengthQuequePrinter = new System.Windows.Forms.Label();
+            this.labelCPUAvgLengthQuequeMonitor = new System.Windows.Forms.Label();
+            this.labelCPUMaxLengthQuequeCPU = new System.Windows.Forms.Label();
+            this.labelCPUMaxLengthQuequeKeyboard = new System.Windows.Forms.Label();
+            this.labelCPUMaxLengthQuequePrinter = new System.Windows.Forms.Label();
+            this.labelCPUMaxLengthQuequeMonitor = new System.Windows.Forms.Label();
+            this.labelCPUMonitorValuePercent = new System.Windows.Forms.Label();
+            this.labelCPUAllottedTime = new System.Windows.Forms.Label();
+            this.labelCPUMonitorSetValue = new System.Windows.Forms.Label();
+            this.labelCPUMonitor = new System.Windows.Forms.Label();
             this.groupBoxWaterhouse = new System.Windows.Forms.GroupBox();
+            this.groupBoxWaterhouseRasp = new System.Windows.Forms.GroupBox();
+            this.radioButtonWaterhouseNormal = new System.Windows.Forms.RadioButton();
+            this.radioButtonWaterhouseTriangle = new System.Windows.Forms.RadioButton();
+            this.radioButtonWaterhouseUniform = new System.Windows.Forms.RadioButton();
+            this.checkBoxSetMethodGenerate = new System.Windows.Forms.CheckBox();
             this.numericUpDownPredelPurchase = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownWaterhouseCustomerCount = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownPurchaseInStorage = new System.Windows.Forms.NumericUpDown();
@@ -123,11 +167,6 @@
             this.labelWaterhouseTypesGoods = new System.Windows.Forms.Label();
             this.labelWaterhouseDays = new System.Windows.Forms.Label();
             this.buttonWaterhouseStartModeling = new System.Windows.Forms.Button();
-            this.checkBoxSetMethodGenerate = new System.Windows.Forms.CheckBox();
-            this.groupBoxWaterhouseRasp = new System.Windows.Forms.GroupBox();
-            this.radioButtonWaterhouseUniform = new System.Windows.Forms.RadioButton();
-            this.radioButtonWaterhouseTriangle = new System.Windows.Forms.RadioButton();
-            this.radioButtonWaterhouseNormal = new System.Windows.Forms.RadioButton();
             this.tabControl.SuspendLayout();
             this.tabPageFirstQuest.SuspendLayout();
             this.groupBoxPage1Methods.SuspendLayout();
@@ -141,7 +180,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartGrafics)).BeginInit();
             this.toolStripTopPanel.SuspendLayout();
             this.groupBoxTotalRasp.SuspendLayout();
+            this.groupBoxCPU.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCPU)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownKeyboard)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrinter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMonitor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCPUAllottedTime)).BeginInit();
             this.groupBoxWaterhouse.SuspendLayout();
+            this.groupBoxWaterhouseRasp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPredelPurchase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWaterhouseCustomerCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPurchaseInStorage)).BeginInit();
@@ -153,7 +199,6 @@
             this.tabPageWaterhouseInfoGoods.SuspendLayout();
             this.tabPageWaterhouseStatistic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWaterhouseDays)).BeginInit();
-            this.groupBoxWaterhouseRasp.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -864,7 +909,7 @@
             this.toolStripTopPanel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonRasp,
             this.toolStripButtonWaterhouse,
-            this.toolStripButton3});
+            this.toolStripButtonCPU});
             this.toolStripTopPanel.Location = new System.Drawing.Point(0, 0);
             this.toolStripTopPanel.Name = "toolStripTopPanel";
             this.toolStripTopPanel.Size = new System.Drawing.Size(778, 25);
@@ -889,23 +934,488 @@
             this.toolStripButtonWaterhouse.Text = "Оптовый склад";
             this.toolStripButtonWaterhouse.Click += new System.EventHandler(this.toolStripButtonWaterhouse_Click);
             // 
-            // toolStripButton3
+            // toolStripButtonCPU
             // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(83, 22);
-            this.toolStripButton3.Text = "В разработке";
+            this.toolStripButtonCPU.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonCPU.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonCPU.Name = "toolStripButtonCPU";
+            this.toolStripButtonCPU.Size = new System.Drawing.Size(73, 22);
+            this.toolStripButtonCPU.Text = "Процессор";
+            this.toolStripButtonCPU.Click += new System.EventHandler(this.toolStripButtonCPU_Click);
             // 
             // groupBoxTotalRasp
             // 
             this.groupBoxTotalRasp.Controls.Add(this.tabControl);
             this.groupBoxTotalRasp.Controls.Add(this.chartGrafics);
-            this.groupBoxTotalRasp.Location = new System.Drawing.Point(0, 28);
+            this.groupBoxTotalRasp.Location = new System.Drawing.Point(4, 32);
             this.groupBoxTotalRasp.Name = "groupBoxTotalRasp";
             this.groupBoxTotalRasp.Size = new System.Drawing.Size(774, 441);
             this.groupBoxTotalRasp.TabIndex = 5;
             this.groupBoxTotalRasp.TabStop = false;
+            // 
+            // groupBoxCPU
+            // 
+            this.groupBoxCPU.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBoxCPU.Controls.Add(this.buttonCPUStartModeling);
+            this.groupBoxCPU.Controls.Add(this.numericUpDownCPU);
+            this.groupBoxCPU.Controls.Add(this.numericUpDownKeyboard);
+            this.groupBoxCPU.Controls.Add(this.numericUpDownPrinter);
+            this.groupBoxCPU.Controls.Add(this.numericUpDownMonitor);
+            this.groupBoxCPU.Controls.Add(this.numericUpDownCPUAllottedTime);
+            this.groupBoxCPU.Controls.Add(this.labelCPUKeyboard);
+            this.groupBoxCPU.Controls.Add(this.labelCPUcpu);
+            this.groupBoxCPU.Controls.Add(this.labelCPUSpentTime);
+            this.groupBoxCPU.Controls.Add(this.labelCPUTotalTime);
+            this.groupBoxCPU.Controls.Add(this.labelCPUPrinter);
+            this.groupBoxCPU.Controls.Add(this.labelCPUcpuValue);
+            this.groupBoxCPU.Controls.Add(this.labelCPUSpentTimeValue);
+            this.groupBoxCPU.Controls.Add(this.labelCPUKeyboardValue);
+            this.groupBoxCPU.Controls.Add(this.labelCPUTotalTimeValue);
+            this.groupBoxCPU.Controls.Add(this.labelCPUPrinterValue);
+            this.groupBoxCPU.Controls.Add(this.labelCPUAvgLengthQueque);
+            this.groupBoxCPU.Controls.Add(this.labelCPUMaxLengthQueque);
+            this.groupBoxCPU.Controls.Add(this.labelCPUcpuSetValue);
+            this.groupBoxCPU.Controls.Add(this.labelCPUMonitorValue);
+            this.groupBoxCPU.Controls.Add(this.labelCPUKeyboardSetValue);
+            this.groupBoxCPU.Controls.Add(this.labelText);
+            this.groupBoxCPU.Controls.Add(this.labelCPUPrinterSetValue);
+            this.groupBoxCPU.Controls.Add(this.labelCPUcpuValuePercent);
+            this.groupBoxCPU.Controls.Add(this.labelCPUKeyboardValuePercent);
+            this.groupBoxCPU.Controls.Add(this.labelCPUPrinterValuePercent);
+            this.groupBoxCPU.Controls.Add(this.labelCPUAvgLengthQuequeCPU);
+            this.groupBoxCPU.Controls.Add(this.labelCPUAvgLengthQuequeKeyboard);
+            this.groupBoxCPU.Controls.Add(this.labelCPUAvgLengthQuequePrinter);
+            this.groupBoxCPU.Controls.Add(this.labelCPUAvgLengthQuequeMonitor);
+            this.groupBoxCPU.Controls.Add(this.labelCPUMaxLengthQuequeCPU);
+            this.groupBoxCPU.Controls.Add(this.labelCPUMaxLengthQuequeKeyboard);
+            this.groupBoxCPU.Controls.Add(this.labelCPUMaxLengthQuequePrinter);
+            this.groupBoxCPU.Controls.Add(this.labelCPUMaxLengthQuequeMonitor);
+            this.groupBoxCPU.Controls.Add(this.labelCPUMonitorValuePercent);
+            this.groupBoxCPU.Controls.Add(this.labelCPUAllottedTime);
+            this.groupBoxCPU.Controls.Add(this.labelCPUMonitorSetValue);
+            this.groupBoxCPU.Controls.Add(this.labelCPUMonitor);
+            this.groupBoxCPU.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBoxCPU.Location = new System.Drawing.Point(0, 23);
+            this.groupBoxCPU.Name = "groupBoxCPU";
+            this.groupBoxCPU.Size = new System.Drawing.Size(774, 441);
+            this.groupBoxCPU.TabIndex = 14;
+            this.groupBoxCPU.TabStop = false;
+            // 
+            // buttonCPUStartModeling
+            // 
+            this.buttonCPUStartModeling.Location = new System.Drawing.Point(446, 40);
+            this.buttonCPUStartModeling.Name = "buttonCPUStartModeling";
+            this.buttonCPUStartModeling.Size = new System.Drawing.Size(229, 23);
+            this.buttonCPUStartModeling.TabIndex = 2;
+            this.buttonCPUStartModeling.Text = "Начать моделирование";
+            this.buttonCPUStartModeling.UseVisualStyleBackColor = true;
+            this.buttonCPUStartModeling.Click += new System.EventHandler(this.buttonCPUStartModeling_Click);
+            // 
+            // numericUpDownCPU
+            // 
+            this.numericUpDownCPU.Location = new System.Drawing.Point(555, 269);
+            this.numericUpDownCPU.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownCPU.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownCPU.Name = "numericUpDownCPU";
+            this.numericUpDownCPU.Size = new System.Drawing.Size(120, 25);
+            this.numericUpDownCPU.TabIndex = 1;
+            this.numericUpDownCPU.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numericUpDownKeyboard
+            // 
+            this.numericUpDownKeyboard.Location = new System.Drawing.Point(555, 225);
+            this.numericUpDownKeyboard.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownKeyboard.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownKeyboard.Name = "numericUpDownKeyboard";
+            this.numericUpDownKeyboard.Size = new System.Drawing.Size(120, 25);
+            this.numericUpDownKeyboard.TabIndex = 1;
+            this.numericUpDownKeyboard.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numericUpDownPrinter
+            // 
+            this.numericUpDownPrinter.Location = new System.Drawing.Point(555, 176);
+            this.numericUpDownPrinter.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownPrinter.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownPrinter.Name = "numericUpDownPrinter";
+            this.numericUpDownPrinter.Size = new System.Drawing.Size(120, 25);
+            this.numericUpDownPrinter.TabIndex = 1;
+            this.numericUpDownPrinter.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numericUpDownMonitor
+            // 
+            this.numericUpDownMonitor.Location = new System.Drawing.Point(555, 135);
+            this.numericUpDownMonitor.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownMonitor.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownMonitor.Name = "numericUpDownMonitor";
+            this.numericUpDownMonitor.Size = new System.Drawing.Size(120, 25);
+            this.numericUpDownMonitor.TabIndex = 1;
+            this.numericUpDownMonitor.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numericUpDownCPUAllottedTime
+            // 
+            this.numericUpDownCPUAllottedTime.Location = new System.Drawing.Point(159, 37);
+            this.numericUpDownCPUAllottedTime.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownCPUAllottedTime.Name = "numericUpDownCPUAllottedTime";
+            this.numericUpDownCPUAllottedTime.Size = new System.Drawing.Size(120, 25);
+            this.numericUpDownCPUAllottedTime.TabIndex = 1;
+            // 
+            // labelCPUKeyboard
+            // 
+            this.labelCPUKeyboard.AutoSize = true;
+            this.labelCPUKeyboard.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUKeyboard.Location = new System.Drawing.Point(6, 235);
+            this.labelCPUKeyboard.Name = "labelCPUKeyboard";
+            this.labelCPUKeyboard.Size = new System.Drawing.Size(102, 21);
+            this.labelCPUKeyboard.TabIndex = 0;
+            this.labelCPUKeyboard.Text = "Клавиатура";
+            // 
+            // labelCPUcpu
+            // 
+            this.labelCPUcpu.AutoSize = true;
+            this.labelCPUcpu.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUcpu.Location = new System.Drawing.Point(6, 285);
+            this.labelCPUcpu.Name = "labelCPUcpu";
+            this.labelCPUcpu.Size = new System.Drawing.Size(99, 21);
+            this.labelCPUcpu.TabIndex = 0;
+            this.labelCPUcpu.Text = "Процессор";
+            // 
+            // labelCPUSpentTime
+            // 
+            this.labelCPUSpentTime.AutoSize = true;
+            this.labelCPUSpentTime.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUSpentTime.Location = new System.Drawing.Point(446, 349);
+            this.labelCPUSpentTime.Name = "labelCPUSpentTime";
+            this.labelCPUSpentTime.Size = new System.Drawing.Size(159, 21);
+            this.labelCPUSpentTime.TabIndex = 0;
+            this.labelCPUSpentTime.Text = "Потерянное время";
+            // 
+            // labelCPUTotalTime
+            // 
+            this.labelCPUTotalTime.AutoSize = true;
+            this.labelCPUTotalTime.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUTotalTime.Location = new System.Drawing.Point(98, 349);
+            this.labelCPUTotalTime.Name = "labelCPUTotalTime";
+            this.labelCPUTotalTime.Size = new System.Drawing.Size(127, 23);
+            this.labelCPUTotalTime.TabIndex = 0;
+            this.labelCPUTotalTime.Text = "Общее время";
+            // 
+            // labelCPUPrinter
+            // 
+            this.labelCPUPrinter.AutoSize = true;
+            this.labelCPUPrinter.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUPrinter.Location = new System.Drawing.Point(6, 185);
+            this.labelCPUPrinter.Name = "labelCPUPrinter";
+            this.labelCPUPrinter.Size = new System.Drawing.Size(79, 21);
+            this.labelCPUPrinter.TabIndex = 0;
+            this.labelCPUPrinter.Text = "Принтер";
+            // 
+            // labelCPUcpuValue
+            // 
+            this.labelCPUcpuValue.AutoSize = true;
+            this.labelCPUcpuValue.Font = new System.Drawing.Font("Mistral", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUcpuValue.Location = new System.Drawing.Point(104, 280);
+            this.labelCPUcpuValue.Name = "labelCPUcpuValue";
+            this.labelCPUcpuValue.Size = new System.Drawing.Size(63, 33);
+            this.labelCPUcpuValue.TabIndex = 0;
+            this.labelCPUcpuValue.Text = "0000";
+            // 
+            // labelCPUSpentTimeValue
+            // 
+            this.labelCPUSpentTimeValue.AutoSize = true;
+            this.labelCPUSpentTimeValue.Font = new System.Drawing.Font("Mistral", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUSpentTimeValue.Location = new System.Drawing.Point(607, 326);
+            this.labelCPUSpentTimeValue.Name = "labelCPUSpentTimeValue";
+            this.labelCPUSpentTimeValue.Size = new System.Drawing.Size(62, 76);
+            this.labelCPUSpentTimeValue.TabIndex = 0;
+            this.labelCPUSpentTimeValue.Text = "0";
+            // 
+            // labelCPUKeyboardValue
+            // 
+            this.labelCPUKeyboardValue.AutoSize = true;
+            this.labelCPUKeyboardValue.Font = new System.Drawing.Font("Mistral", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUKeyboardValue.Location = new System.Drawing.Point(104, 230);
+            this.labelCPUKeyboardValue.Name = "labelCPUKeyboardValue";
+            this.labelCPUKeyboardValue.Size = new System.Drawing.Size(63, 33);
+            this.labelCPUKeyboardValue.TabIndex = 0;
+            this.labelCPUKeyboardValue.Text = "0000";
+            // 
+            // labelCPUTotalTimeValue
+            // 
+            this.labelCPUTotalTimeValue.AutoSize = true;
+            this.labelCPUTotalTimeValue.Font = new System.Drawing.Font("Mistral", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUTotalTimeValue.Location = new System.Drawing.Point(234, 326);
+            this.labelCPUTotalTimeValue.Name = "labelCPUTotalTimeValue";
+            this.labelCPUTotalTimeValue.Size = new System.Drawing.Size(62, 76);
+            this.labelCPUTotalTimeValue.TabIndex = 0;
+            this.labelCPUTotalTimeValue.Text = "0";
+            // 
+            // labelCPUPrinterValue
+            // 
+            this.labelCPUPrinterValue.AutoSize = true;
+            this.labelCPUPrinterValue.Font = new System.Drawing.Font("Mistral", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUPrinterValue.Location = new System.Drawing.Point(104, 180);
+            this.labelCPUPrinterValue.Name = "labelCPUPrinterValue";
+            this.labelCPUPrinterValue.Size = new System.Drawing.Size(63, 33);
+            this.labelCPUPrinterValue.TabIndex = 0;
+            this.labelCPUPrinterValue.Text = "0000";
+            // 
+            // labelCPUAvgLengthQueque
+            // 
+            this.labelCPUAvgLengthQueque.AutoSize = true;
+            this.labelCPUAvgLengthQueque.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUAvgLengthQueque.Location = new System.Drawing.Point(289, 90);
+            this.labelCPUAvgLengthQueque.Name = "labelCPUAvgLengthQueque";
+            this.labelCPUAvgLengthQueque.Size = new System.Drawing.Size(56, 15);
+            this.labelCPUAvgLengthQueque.TabIndex = 0;
+            this.labelCPUAvgLengthQueque.Text = "Средняя:";
+            // 
+            // labelCPUMaxLengthQueque
+            // 
+            this.labelCPUMaxLengthQueque.AutoSize = true;
+            this.labelCPUMaxLengthQueque.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUMaxLengthQueque.Location = new System.Drawing.Point(185, 90);
+            this.labelCPUMaxLengthQueque.Name = "labelCPUMaxLengthQueque";
+            this.labelCPUMaxLengthQueque.Size = new System.Drawing.Size(93, 15);
+            this.labelCPUMaxLengthQueque.TabIndex = 0;
+            this.labelCPUMaxLengthQueque.Text = "Максимальная:";
+            // 
+            // labelCPUcpuSetValue
+            // 
+            this.labelCPUcpuSetValue.AutoSize = true;
+            this.labelCPUcpuSetValue.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUcpuSetValue.Location = new System.Drawing.Point(442, 269);
+            this.labelCPUcpuSetValue.Name = "labelCPUcpuSetValue";
+            this.labelCPUcpuSetValue.Size = new System.Drawing.Size(99, 21);
+            this.labelCPUcpuSetValue.TabIndex = 0;
+            this.labelCPUcpuSetValue.Text = "Процессор";
+            // 
+            // labelCPUMonitorValue
+            // 
+            this.labelCPUMonitorValue.AutoSize = true;
+            this.labelCPUMonitorValue.Font = new System.Drawing.Font("Mistral", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUMonitorValue.Location = new System.Drawing.Point(104, 130);
+            this.labelCPUMonitorValue.Name = "labelCPUMonitorValue";
+            this.labelCPUMonitorValue.Size = new System.Drawing.Size(63, 33);
+            this.labelCPUMonitorValue.TabIndex = 0;
+            this.labelCPUMonitorValue.Text = "0000";
+            // 
+            // labelCPUKeyboardSetValue
+            // 
+            this.labelCPUKeyboardSetValue.AutoSize = true;
+            this.labelCPUKeyboardSetValue.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUKeyboardSetValue.Location = new System.Drawing.Point(442, 225);
+            this.labelCPUKeyboardSetValue.Name = "labelCPUKeyboardSetValue";
+            this.labelCPUKeyboardSetValue.Size = new System.Drawing.Size(102, 21);
+            this.labelCPUKeyboardSetValue.TabIndex = 0;
+            this.labelCPUKeyboardSetValue.Text = "Клавиатура";
+            // 
+            // labelText
+            // 
+            this.labelText.AutoSize = true;
+            this.labelText.Location = new System.Drawing.Point(368, 88);
+            this.labelText.Name = "labelText";
+            this.labelText.Size = new System.Drawing.Size(323, 17);
+            this.labelText.TabIndex = 0;
+            this.labelText.Text = "Укажите максимальное время работы устройства";
+            // 
+            // labelCPUPrinterSetValue
+            // 
+            this.labelCPUPrinterSetValue.AutoSize = true;
+            this.labelCPUPrinterSetValue.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUPrinterSetValue.Location = new System.Drawing.Point(442, 176);
+            this.labelCPUPrinterSetValue.Name = "labelCPUPrinterSetValue";
+            this.labelCPUPrinterSetValue.Size = new System.Drawing.Size(79, 21);
+            this.labelCPUPrinterSetValue.TabIndex = 0;
+            this.labelCPUPrinterSetValue.Text = "Принтер";
+            // 
+            // labelCPUcpuValuePercent
+            // 
+            this.labelCPUcpuValuePercent.AutoSize = true;
+            this.labelCPUcpuValuePercent.Location = new System.Drawing.Point(170, 285);
+            this.labelCPUcpuValuePercent.Name = "labelCPUcpuValuePercent";
+            this.labelCPUcpuValuePercent.Size = new System.Drawing.Size(37, 17);
+            this.labelCPUcpuValuePercent.TabIndex = 0;
+            this.labelCPUcpuValuePercent.Text = "- 0%";
+            // 
+            // labelCPUKeyboardValuePercent
+            // 
+            this.labelCPUKeyboardValuePercent.AutoSize = true;
+            this.labelCPUKeyboardValuePercent.Location = new System.Drawing.Point(170, 235);
+            this.labelCPUKeyboardValuePercent.Name = "labelCPUKeyboardValuePercent";
+            this.labelCPUKeyboardValuePercent.Size = new System.Drawing.Size(37, 17);
+            this.labelCPUKeyboardValuePercent.TabIndex = 0;
+            this.labelCPUKeyboardValuePercent.Text = "- 0%";
+            // 
+            // labelCPUPrinterValuePercent
+            // 
+            this.labelCPUPrinterValuePercent.AutoSize = true;
+            this.labelCPUPrinterValuePercent.Location = new System.Drawing.Point(170, 185);
+            this.labelCPUPrinterValuePercent.Name = "labelCPUPrinterValuePercent";
+            this.labelCPUPrinterValuePercent.Size = new System.Drawing.Size(37, 17);
+            this.labelCPUPrinterValuePercent.TabIndex = 0;
+            this.labelCPUPrinterValuePercent.Text = "- 0%";
+            // 
+            // labelCPUAvgLengthQuequeCPU
+            // 
+            this.labelCPUAvgLengthQuequeCPU.AutoSize = true;
+            this.labelCPUAvgLengthQuequeCPU.Location = new System.Drawing.Point(310, 285);
+            this.labelCPUAvgLengthQuequeCPU.Name = "labelCPUAvgLengthQuequeCPU";
+            this.labelCPUAvgLengthQuequeCPU.Size = new System.Drawing.Size(38, 17);
+            this.labelCPUAvgLengthQuequeCPU.TabIndex = 0;
+            this.labelCPUAvgLengthQuequeCPU.Text = "- 000";
+            // 
+            // labelCPUAvgLengthQuequeKeyboard
+            // 
+            this.labelCPUAvgLengthQuequeKeyboard.AutoSize = true;
+            this.labelCPUAvgLengthQuequeKeyboard.Location = new System.Drawing.Point(310, 235);
+            this.labelCPUAvgLengthQuequeKeyboard.Name = "labelCPUAvgLengthQuequeKeyboard";
+            this.labelCPUAvgLengthQuequeKeyboard.Size = new System.Drawing.Size(38, 17);
+            this.labelCPUAvgLengthQuequeKeyboard.TabIndex = 0;
+            this.labelCPUAvgLengthQuequeKeyboard.Text = "- 000";
+            // 
+            // labelCPUAvgLengthQuequePrinter
+            // 
+            this.labelCPUAvgLengthQuequePrinter.AutoSize = true;
+            this.labelCPUAvgLengthQuequePrinter.Location = new System.Drawing.Point(310, 185);
+            this.labelCPUAvgLengthQuequePrinter.Name = "labelCPUAvgLengthQuequePrinter";
+            this.labelCPUAvgLengthQuequePrinter.Size = new System.Drawing.Size(38, 17);
+            this.labelCPUAvgLengthQuequePrinter.TabIndex = 0;
+            this.labelCPUAvgLengthQuequePrinter.Text = "- 000";
+            // 
+            // labelCPUAvgLengthQuequeMonitor
+            // 
+            this.labelCPUAvgLengthQuequeMonitor.AutoSize = true;
+            this.labelCPUAvgLengthQuequeMonitor.Location = new System.Drawing.Point(310, 135);
+            this.labelCPUAvgLengthQuequeMonitor.Name = "labelCPUAvgLengthQuequeMonitor";
+            this.labelCPUAvgLengthQuequeMonitor.Size = new System.Drawing.Size(38, 17);
+            this.labelCPUAvgLengthQuequeMonitor.TabIndex = 0;
+            this.labelCPUAvgLengthQuequeMonitor.Text = "- 000";
+            // 
+            // labelCPUMaxLengthQuequeCPU
+            // 
+            this.labelCPUMaxLengthQuequeCPU.AutoSize = true;
+            this.labelCPUMaxLengthQuequeCPU.Location = new System.Drawing.Point(240, 285);
+            this.labelCPUMaxLengthQuequeCPU.Name = "labelCPUMaxLengthQuequeCPU";
+            this.labelCPUMaxLengthQuequeCPU.Size = new System.Drawing.Size(38, 17);
+            this.labelCPUMaxLengthQuequeCPU.TabIndex = 0;
+            this.labelCPUMaxLengthQuequeCPU.Text = "- 000";
+            // 
+            // labelCPUMaxLengthQuequeKeyboard
+            // 
+            this.labelCPUMaxLengthQuequeKeyboard.AutoSize = true;
+            this.labelCPUMaxLengthQuequeKeyboard.Location = new System.Drawing.Point(240, 235);
+            this.labelCPUMaxLengthQuequeKeyboard.Name = "labelCPUMaxLengthQuequeKeyboard";
+            this.labelCPUMaxLengthQuequeKeyboard.Size = new System.Drawing.Size(38, 17);
+            this.labelCPUMaxLengthQuequeKeyboard.TabIndex = 0;
+            this.labelCPUMaxLengthQuequeKeyboard.Text = "- 000";
+            // 
+            // labelCPUMaxLengthQuequePrinter
+            // 
+            this.labelCPUMaxLengthQuequePrinter.AutoSize = true;
+            this.labelCPUMaxLengthQuequePrinter.Location = new System.Drawing.Point(240, 185);
+            this.labelCPUMaxLengthQuequePrinter.Name = "labelCPUMaxLengthQuequePrinter";
+            this.labelCPUMaxLengthQuequePrinter.Size = new System.Drawing.Size(38, 17);
+            this.labelCPUMaxLengthQuequePrinter.TabIndex = 0;
+            this.labelCPUMaxLengthQuequePrinter.Text = "- 000";
+            // 
+            // labelCPUMaxLengthQuequeMonitor
+            // 
+            this.labelCPUMaxLengthQuequeMonitor.AutoSize = true;
+            this.labelCPUMaxLengthQuequeMonitor.Location = new System.Drawing.Point(240, 135);
+            this.labelCPUMaxLengthQuequeMonitor.Name = "labelCPUMaxLengthQuequeMonitor";
+            this.labelCPUMaxLengthQuequeMonitor.Size = new System.Drawing.Size(38, 17);
+            this.labelCPUMaxLengthQuequeMonitor.TabIndex = 0;
+            this.labelCPUMaxLengthQuequeMonitor.Text = "- 000";
+            // 
+            // labelCPUMonitorValuePercent
+            // 
+            this.labelCPUMonitorValuePercent.AutoSize = true;
+            this.labelCPUMonitorValuePercent.Location = new System.Drawing.Point(170, 135);
+            this.labelCPUMonitorValuePercent.Name = "labelCPUMonitorValuePercent";
+            this.labelCPUMonitorValuePercent.Size = new System.Drawing.Size(37, 17);
+            this.labelCPUMonitorValuePercent.TabIndex = 0;
+            this.labelCPUMonitorValuePercent.Text = "- 0%";
+            // 
+            // labelCPUAllottedTime
+            // 
+            this.labelCPUAllottedTime.AutoSize = true;
+            this.labelCPUAllottedTime.Location = new System.Drawing.Point(26, 40);
+            this.labelCPUAllottedTime.Name = "labelCPUAllottedTime";
+            this.labelCPUAllottedTime.Size = new System.Drawing.Size(127, 17);
+            this.labelCPUAllottedTime.TabIndex = 0;
+            this.labelCPUAllottedTime.Text = "Выделенное время";
+            // 
+            // labelCPUMonitorSetValue
+            // 
+            this.labelCPUMonitorSetValue.AutoSize = true;
+            this.labelCPUMonitorSetValue.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUMonitorSetValue.Location = new System.Drawing.Point(442, 135);
+            this.labelCPUMonitorSetValue.Name = "labelCPUMonitorSetValue";
+            this.labelCPUMonitorSetValue.Size = new System.Drawing.Size(84, 21);
+            this.labelCPUMonitorSetValue.TabIndex = 0;
+            this.labelCPUMonitorSetValue.Text = "Монитор";
+            // 
+            // labelCPUMonitor
+            // 
+            this.labelCPUMonitor.AutoSize = true;
+            this.labelCPUMonitor.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCPUMonitor.Location = new System.Drawing.Point(6, 135);
+            this.labelCPUMonitor.Name = "labelCPUMonitor";
+            this.labelCPUMonitor.Size = new System.Drawing.Size(84, 21);
+            this.labelCPUMonitor.TabIndex = 0;
+            this.labelCPUMonitor.Text = "Монитор";
             // 
             // groupBoxWaterhouse
             // 
@@ -928,12 +1438,66 @@
             this.groupBoxWaterhouse.Controls.Add(this.labelWaterhouseDays);
             this.groupBoxWaterhouse.Controls.Add(this.buttonWaterhouseStartModeling);
             this.groupBoxWaterhouse.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBoxWaterhouse.Location = new System.Drawing.Point(4, 28);
+            this.groupBoxWaterhouse.Location = new System.Drawing.Point(4, 22);
             this.groupBoxWaterhouse.Name = "groupBoxWaterhouse";
             this.groupBoxWaterhouse.Size = new System.Drawing.Size(774, 441);
             this.groupBoxWaterhouse.TabIndex = 4;
             this.groupBoxWaterhouse.TabStop = false;
             this.groupBoxWaterhouse.Visible = false;
+            // 
+            // groupBoxWaterhouseRasp
+            // 
+            this.groupBoxWaterhouseRasp.Controls.Add(this.radioButtonWaterhouseNormal);
+            this.groupBoxWaterhouseRasp.Controls.Add(this.radioButtonWaterhouseTriangle);
+            this.groupBoxWaterhouseRasp.Controls.Add(this.radioButtonWaterhouseUniform);
+            this.groupBoxWaterhouseRasp.Location = new System.Drawing.Point(13, 18);
+            this.groupBoxWaterhouseRasp.Name = "groupBoxWaterhouseRasp";
+            this.groupBoxWaterhouseRasp.Size = new System.Drawing.Size(240, 172);
+            this.groupBoxWaterhouseRasp.TabIndex = 13;
+            this.groupBoxWaterhouseRasp.TabStop = false;
+            this.groupBoxWaterhouseRasp.Text = "Распределения:";
+            this.groupBoxWaterhouseRasp.Visible = false;
+            // 
+            // radioButtonWaterhouseNormal
+            // 
+            this.radioButtonWaterhouseNormal.AutoSize = true;
+            this.radioButtonWaterhouseNormal.Location = new System.Drawing.Point(24, 128);
+            this.radioButtonWaterhouseNormal.Name = "radioButtonWaterhouseNormal";
+            this.radioButtonWaterhouseNormal.Size = new System.Drawing.Size(103, 21);
+            this.radioButtonWaterhouseNormal.TabIndex = 2;
+            this.radioButtonWaterhouseNormal.Text = "Нормальное";
+            this.radioButtonWaterhouseNormal.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonWaterhouseTriangle
+            // 
+            this.radioButtonWaterhouseTriangle.AutoSize = true;
+            this.radioButtonWaterhouseTriangle.Location = new System.Drawing.Point(24, 90);
+            this.radioButtonWaterhouseTriangle.Name = "radioButtonWaterhouseTriangle";
+            this.radioButtonWaterhouseTriangle.Size = new System.Drawing.Size(103, 21);
+            this.radioButtonWaterhouseTriangle.TabIndex = 1;
+            this.radioButtonWaterhouseTriangle.Text = "Треугольное";
+            this.radioButtonWaterhouseTriangle.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonWaterhouseUniform
+            // 
+            this.radioButtonWaterhouseUniform.AutoSize = true;
+            this.radioButtonWaterhouseUniform.Location = new System.Drawing.Point(24, 52);
+            this.radioButtonWaterhouseUniform.Name = "radioButtonWaterhouseUniform";
+            this.radioButtonWaterhouseUniform.Size = new System.Drawing.Size(108, 21);
+            this.radioButtonWaterhouseUniform.TabIndex = 0;
+            this.radioButtonWaterhouseUniform.Text = "Равномерное";
+            this.radioButtonWaterhouseUniform.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxSetMethodGenerate
+            // 
+            this.checkBoxSetMethodGenerate.AutoSize = true;
+            this.checkBoxSetMethodGenerate.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBoxSetMethodGenerate.Location = new System.Drawing.Point(12, 410);
+            this.checkBoxSetMethodGenerate.Name = "checkBoxSetMethodGenerate";
+            this.checkBoxSetMethodGenerate.Size = new System.Drawing.Size(203, 19);
+            this.checkBoxSetMethodGenerate.TabIndex = 12;
+            this.checkBoxSetMethodGenerate.Text = "Выбрать способ генерации продаж";
+            this.checkBoxSetMethodGenerate.UseVisualStyleBackColor = true;
             // 
             // numericUpDownPredelPurchase
             // 
@@ -1198,66 +1762,13 @@
             this.buttonWaterhouseStartModeling.UseVisualStyleBackColor = true;
             this.buttonWaterhouseStartModeling.Click += new System.EventHandler(this.buttonWaterhouseStartModeling_Click);
             // 
-            // checkBoxSetMethodGenerate
-            // 
-            this.checkBoxSetMethodGenerate.AutoSize = true;
-            this.checkBoxSetMethodGenerate.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBoxSetMethodGenerate.Location = new System.Drawing.Point(12, 410);
-            this.checkBoxSetMethodGenerate.Name = "checkBoxSetMethodGenerate";
-            this.checkBoxSetMethodGenerate.Size = new System.Drawing.Size(203, 19);
-            this.checkBoxSetMethodGenerate.TabIndex = 12;
-            this.checkBoxSetMethodGenerate.Text = "Выбрать способ генерации продаж";
-            this.checkBoxSetMethodGenerate.UseVisualStyleBackColor = true;
-            // 
-            // groupBoxWaterhouseRasp
-            // 
-            this.groupBoxWaterhouseRasp.Controls.Add(this.radioButtonWaterhouseNormal);
-            this.groupBoxWaterhouseRasp.Controls.Add(this.radioButtonWaterhouseTriangle);
-            this.groupBoxWaterhouseRasp.Controls.Add(this.radioButtonWaterhouseUniform);
-            this.groupBoxWaterhouseRasp.Location = new System.Drawing.Point(13, 18);
-            this.groupBoxWaterhouseRasp.Name = "groupBoxWaterhouseRasp";
-            this.groupBoxWaterhouseRasp.Size = new System.Drawing.Size(240, 172);
-            this.groupBoxWaterhouseRasp.TabIndex = 13;
-            this.groupBoxWaterhouseRasp.TabStop = false;
-            this.groupBoxWaterhouseRasp.Text = "Распределения:";
-            this.groupBoxWaterhouseRasp.Visible = false;
-            // 
-            // radioButtonWaterhouseUniform
-            // 
-            this.radioButtonWaterhouseUniform.AutoSize = true;
-            this.radioButtonWaterhouseUniform.Location = new System.Drawing.Point(24, 52);
-            this.radioButtonWaterhouseUniform.Name = "radioButtonWaterhouseUniform";
-            this.radioButtonWaterhouseUniform.Size = new System.Drawing.Size(108, 21);
-            this.radioButtonWaterhouseUniform.TabIndex = 0;
-            this.radioButtonWaterhouseUniform.Text = "Равномерное";
-            this.radioButtonWaterhouseUniform.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonWaterhouseTriangle
-            // 
-            this.radioButtonWaterhouseTriangle.AutoSize = true;
-            this.radioButtonWaterhouseTriangle.Location = new System.Drawing.Point(24, 90);
-            this.radioButtonWaterhouseTriangle.Name = "radioButtonWaterhouseTriangle";
-            this.radioButtonWaterhouseTriangle.Size = new System.Drawing.Size(103, 21);
-            this.radioButtonWaterhouseTriangle.TabIndex = 1;
-            this.radioButtonWaterhouseTriangle.Text = "Треугольное";
-            this.radioButtonWaterhouseTriangle.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonWaterhouseNormal
-            // 
-            this.radioButtonWaterhouseNormal.AutoSize = true;
-            this.radioButtonWaterhouseNormal.Location = new System.Drawing.Point(24, 128);
-            this.radioButtonWaterhouseNormal.Name = "radioButtonWaterhouseNormal";
-            this.radioButtonWaterhouseNormal.Size = new System.Drawing.Size(103, 21);
-            this.radioButtonWaterhouseNormal.TabIndex = 2;
-            this.radioButtonWaterhouseNormal.Text = "Нормальное";
-            this.radioButtonWaterhouseNormal.UseVisualStyleBackColor = true;
-            // 
             // Body
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 471);
+            this.ClientSize = new System.Drawing.Size(778, 461);
             this.Controls.Add(this.toolStripTopPanel);
+            this.Controls.Add(this.groupBoxCPU);
             this.Controls.Add(this.groupBoxWaterhouse);
             this.Controls.Add(this.groupBoxTotalRasp);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -1290,8 +1801,17 @@
             this.toolStripTopPanel.ResumeLayout(false);
             this.toolStripTopPanel.PerformLayout();
             this.groupBoxTotalRasp.ResumeLayout(false);
+            this.groupBoxCPU.ResumeLayout(false);
+            this.groupBoxCPU.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCPU)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownKeyboard)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrinter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMonitor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCPUAllottedTime)).EndInit();
             this.groupBoxWaterhouse.ResumeLayout(false);
             this.groupBoxWaterhouse.PerformLayout();
+            this.groupBoxWaterhouseRasp.ResumeLayout(false);
+            this.groupBoxWaterhouseRasp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPredelPurchase)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWaterhouseCustomerCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPurchaseInStorage)).EndInit();
@@ -1306,8 +1826,6 @@
             this.tabPageWaterhouseStatistic.ResumeLayout(false);
             this.tabPageWaterhouseStatistic.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWaterhouseDays)).EndInit();
-            this.groupBoxWaterhouseRasp.ResumeLayout(false);
-            this.groupBoxWaterhouseRasp.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1385,7 +1903,7 @@
         private System.Windows.Forms.GroupBox groupBoxTotalRasp;
         private System.Windows.Forms.ToolStripButton toolStripButtonRasp;
         private System.Windows.Forms.ToolStripButton toolStripButtonWaterhouse;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripButton toolStripButtonCPU;
         private System.Windows.Forms.GroupBox groupBoxWaterhouse;
         private System.Windows.Forms.Label labelWaterhouseStartKolGoods;
         private System.Windows.Forms.Label labelWaterhousePredelPurchase;
@@ -1414,6 +1932,45 @@
         private System.Windows.Forms.RadioButton radioButtonWaterhouseTriangle;
         private System.Windows.Forms.RadioButton radioButtonWaterhouseUniform;
         private System.Windows.Forms.CheckBox checkBoxSetMethodGenerate;
+        private System.Windows.Forms.GroupBox groupBoxCPU;
+        private System.Windows.Forms.NumericUpDown numericUpDownCPUAllottedTime;
+        private System.Windows.Forms.Label labelCPUKeyboard;
+        private System.Windows.Forms.Label labelCPUPrinter;
+        private System.Windows.Forms.Label labelCPUKeyboardValue;
+        private System.Windows.Forms.Label labelCPUPrinterValue;
+        private System.Windows.Forms.Label labelCPUMonitorValue;
+        private System.Windows.Forms.Label labelCPUAllottedTime;
+        private System.Windows.Forms.Label labelCPUMonitor;
+        private System.Windows.Forms.Button buttonCPUStartModeling;
+        private System.Windows.Forms.Label labelCPUTotalTime;
+        private System.Windows.Forms.Label labelCPUTotalTimeValue;
+        private System.Windows.Forms.Label labelCPUcpu;
+        private System.Windows.Forms.Label labelCPUcpuValue;
+        private System.Windows.Forms.NumericUpDown numericUpDownCPU;
+        private System.Windows.Forms.NumericUpDown numericUpDownKeyboard;
+        private System.Windows.Forms.NumericUpDown numericUpDownPrinter;
+        private System.Windows.Forms.NumericUpDown numericUpDownMonitor;
+        private System.Windows.Forms.Label labelCPUcpuSetValue;
+        private System.Windows.Forms.Label labelCPUKeyboardSetValue;
+        private System.Windows.Forms.Label labelText;
+        private System.Windows.Forms.Label labelCPUPrinterSetValue;
+        private System.Windows.Forms.Label labelCPUMonitorSetValue;
+        private System.Windows.Forms.Label labelCPUSpentTime;
+        private System.Windows.Forms.Label labelCPUSpentTimeValue;
+        private System.Windows.Forms.Label labelCPUcpuValuePercent;
+        private System.Windows.Forms.Label labelCPUKeyboardValuePercent;
+        private System.Windows.Forms.Label labelCPUPrinterValuePercent;
+        private System.Windows.Forms.Label labelCPUMonitorValuePercent;
+        private System.Windows.Forms.Label labelCPUAvgLengthQueque;
+        private System.Windows.Forms.Label labelCPUMaxLengthQueque;
+        private System.Windows.Forms.Label labelCPUAvgLengthQuequeCPU;
+        private System.Windows.Forms.Label labelCPUAvgLengthQuequeKeyboard;
+        private System.Windows.Forms.Label labelCPUAvgLengthQuequePrinter;
+        private System.Windows.Forms.Label labelCPUAvgLengthQuequeMonitor;
+        private System.Windows.Forms.Label labelCPUMaxLengthQuequeCPU;
+        private System.Windows.Forms.Label labelCPUMaxLengthQuequeKeyboard;
+        private System.Windows.Forms.Label labelCPUMaxLengthQuequePrinter;
+        private System.Windows.Forms.Label labelCPUMaxLengthQuequeMonitor;
     }
 }
 

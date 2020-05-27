@@ -11,8 +11,7 @@ namespace ModelingInformationSystems
         static Random random = new Random();
         static public double[] GenerateNumberErlang(int kol, int lambda, int order)
         {
-            const int b = 1;
-            const int c = 0;
+
             double[] dotes = new double[kol];
             double tmp;
             for (int i = 0; i < kol; i++)

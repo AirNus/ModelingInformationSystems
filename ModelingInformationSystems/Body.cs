@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ModelingInformationSystems;
+using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading;
@@ -321,13 +323,22 @@ namespace ModelingInformationSystems
         private void toolStripButtonRasp_Click(object sender, EventArgs e)
         {
             groupBoxTotalRasp.Visible = true;
-            groupBoxWaterhouse.Visible = false;
+            groupBoxWaterhouse.Visible = false; 
+            groupBoxCPU.Visible = false;
         }
 
         private void toolStripButtonWaterhouse_Click(object sender, EventArgs e)
         {
             groupBoxTotalRasp.Visible = false;
             groupBoxWaterhouse.Visible = true;
+            groupBoxCPU.Visible = false;
+        }
+
+        private void toolStripButtonCPU_Click(object sender, EventArgs e)
+        {
+            groupBoxTotalRasp.Visible = false;
+            groupBoxWaterhouse.Visible = false;
+            groupBoxCPU.Visible = true;
         }
 
         private async void buttonWaterhouseStartModeling_Click(object sender, EventArgs e)
@@ -380,5 +391,41 @@ namespace ModelingInformationSystems
             else
                 groupBoxWaterhouseRasp.Visible = false;
         }
+
+        private void buttonCPUStartModeling_Click(object sender, EventArgs e)
+        {
+            int TotalTime = Convert.ToInt32(numericUpDownCPUAllottedTime.Value);
+
+            Dictionary<string, int> timeParam = new Dictionary<string, int>();
+            timeParam.Add("Monitor", Convert.ToInt32(numericUpDownMonitor.Value));
+            timeParam.Add("Printer", Convert.ToInt32(numericUpDownPrinter.Value));
+            timeParam.Add("Keyboard", Convert.ToInt32(numericUpDownKeyboard.Value));
+            timeParam.Add("CPU", Convert.ToInt32(numericUpDownCPU.Value));
+
+
+            var answer = CPUModel.ModellingWorkCPU(TotalTime,timeParam);
+            labelCPUKeyboardValue.Text = answer["Keyboard"].totalTime.ToString();
+            labelCPUMonitorValue.Text = answer["Monitor"].totalTime.ToString();
+            labelCPUPrinterValue.Text = answer["Printer"].totalTime.ToString();
+            labelCPUcpuValue.Text = answer["CPU"].totalTime.ToString();
+            labelCPUTotalTimeValue.Text = answer["total"].totalTime.ToString();
+
+            labelCPUMonitorValuePercent.Text =  "- " + (answer["Monitor"].totalTime / (TotalTime * 2 / 100)).ToString() + "%";
+            labelCPUPrinterValuePercent.Text = "- " + (answer["Printer"].totalTime / (TotalTime * 2 / 100)).ToString() + "%";
+            labelCPUKeyboardValuePercent.Text = "- " + (answer["Keyboard"].totalTime / (TotalTime * 2 / 100)).ToString() + "%";
+            labelCPUcpuValuePercent.Text = "- " + (answer["CPU"].totalTime / (TotalTime * 2 / 100)).ToString() + "%";
+
+            labelCPUMaxLengthQuequeMonitor.Text = answer["Monitor"].maxLengthQueque.ToString();
+            labelCPUAvgLengthQuequeMonitor.Text = answer["Monitor"].avgLengthQueque.ToString();
+            labelCPUMaxLengthQuequePrinter.Text = answer["Printer"].maxLengthQueque.ToString();
+            labelCPUAvgLengthQuequePrinter.Text = answer["Printer"].avgLengthQueque.ToString();
+            labelCPUMaxLengthQuequeKeyboard.Text = answer["Keyboard"].maxLengthQueque.ToString();
+            labelCPUAvgLengthQuequeKeyboard.Text = answer["Keyboard"].avgLengthQueque.ToString();
+            labelCPUMaxLengthQuequeCPU.Text = answer["CPU"].maxLengthQueque.ToString();
+            labelCPUAvgLengthQuequeCPU.Text = answer["CPU"].avgLengthQueque.ToString();
+
+            labelCPUSpentTimeValue.Text = (TotalTime * 2 - answer["total"].totalTime).ToString();
+        }
+
     }
 }
