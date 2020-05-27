@@ -404,22 +404,28 @@ namespace ModelingInformationSystems
 
 
             var answer = CPUModel.ModellingWorkCPU(TotalTime,timeParam);
-            labelCPUKeyboardValue.Text = answer["Keyboard"].ToString();
-            labelCPUMonitorValue.Text = answer["Monitor"].ToString();
-            labelCPUPrinterValue.Text = answer["Printer"].ToString();
-            labelCPUcpuValue.Text = answer["CPU"].ToString();
-            labelCPUTotalTimeValue.Text = answer["total"].ToString();
+            labelCPUKeyboardValue.Text = answer["Keyboard"].totalTime.ToString();
+            labelCPUMonitorValue.Text = answer["Monitor"].totalTime.ToString();
+            labelCPUPrinterValue.Text = answer["Printer"].totalTime.ToString();
+            labelCPUcpuValue.Text = answer["CPU"].totalTime.ToString();
+            labelCPUTotalTimeValue.Text = answer["total"].totalTime.ToString();
 
-            labelCPUMonitorValuePercent.Text =  "- " + (answer["Monitor"] / (TotalTime * 2 / 100)).ToString() + "%";
-            labelCPUPrinterValuePercent.Text = "- " + (answer["Printer"] / (TotalTime * 2 / 100)).ToString() + "%";
-            labelCPUKeyboardValuePercent.Text = "- " + (answer["Keyboard"] / (TotalTime * 2 / 100)).ToString() + "%";
-            labelCPUcpuValuePercent.Text = "- " + (answer["CPU"] / (TotalTime * 2 / 100)).ToString() + "%";
+            labelCPUMonitorValuePercent.Text =  "- " + (answer["Monitor"].totalTime / (TotalTime * 2 / 100)).ToString() + "%";
+            labelCPUPrinterValuePercent.Text = "- " + (answer["Printer"].totalTime / (TotalTime * 2 / 100)).ToString() + "%";
+            labelCPUKeyboardValuePercent.Text = "- " + (answer["Keyboard"].totalTime / (TotalTime * 2 / 100)).ToString() + "%";
+            labelCPUcpuValuePercent.Text = "- " + (answer["CPU"].totalTime / (TotalTime * 2 / 100)).ToString() + "%";
 
-            labelCPUMaxLengthQueque.Text = "Максимальная длина очереди: " + answer["maxLengthQueque"].ToString();
-            labelCPUAvgLengthQueque.Text = "Средняя длина очереди: " + answer["avgLengthQueque"].ToString();
+            labelCPUMaxLengthQuequeMonitor.Text = answer["Monitor"].maxLengthQueque.ToString();
+            labelCPUAvgLengthQuequeMonitor.Text = answer["Monitor"].avgLengthQueque.ToString();
+            labelCPUMaxLengthQuequePrinter.Text = answer["Printer"].maxLengthQueque.ToString();
+            labelCPUAvgLengthQuequePrinter.Text = answer["Printer"].avgLengthQueque.ToString();
+            labelCPUMaxLengthQuequeKeyboard.Text = answer["Keyboard"].maxLengthQueque.ToString();
+            labelCPUAvgLengthQuequeKeyboard.Text = answer["Keyboard"].avgLengthQueque.ToString();
+            labelCPUMaxLengthQuequeCPU.Text = answer["CPU"].maxLengthQueque.ToString();
+            labelCPUAvgLengthQuequeCPU.Text = answer["CPU"].avgLengthQueque.ToString();
 
-            labelCPUSpentTimeValue.Text = (TotalTime * 2 - answer["total"]).ToString();
+            labelCPUSpentTimeValue.Text = (TotalTime * 2 - answer["total"].totalTime).ToString();
         }
-     
+
     }
 }

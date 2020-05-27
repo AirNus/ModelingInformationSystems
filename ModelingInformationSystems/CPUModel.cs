@@ -38,12 +38,14 @@ namespace ModelingInformationSystems
         internal bool ready;
         internal int totalTime;
         internal int timeFinish;
+        internal int maxLengthQueque;
+        internal int avgLengthQueque;
     }
     class CPUModel
     {
         static Random random = new Random();
         
-        static internal Dictionary<string,int> ModellingWorkCPU(int timeDuration, Dictionary<string,int> param)
+        static internal Dictionary<string,MyTask> ModellingWorkCPU(int timeDuration, Dictionary<string,int> param)
         {
 
             MyThread frstPool = new MyThread(new Queue<int>()) { Name = "first" };
@@ -105,7 +107,7 @@ namespace ModelingInformationSystems
                                     time = task.timeFinish - i,
                                     timeEndCurrTask = task.timeFinish
                                 });                                    
-                            }
+                            }                         
                             int deferredTask = thread.pool.Dequeue();
                             thread.pool.Enqueue(deferredTask);
                         }
@@ -126,30 +128,37 @@ namespace ModelingInformationSystems
                 }               
             }
 
-            Dictionary<string, int> answer = new Dictionary<string, int>();
+            Dictionary<string, MyTask> answer = new Dictionary<string, MyTask>();
             int mainTotalTime = 0;
             foreach(MyTask task in tasks)
             {
                 mainTotalTime += task.totalTime;
-                answer.Add(task.Name, task.totalTime);
+                answer.Add(task.Name, task);
             }
-            answer.Add("total", mainTotalTime);
+            answer.Add("total", new MyTask() { totalTime = mainTotalTime , Name = "total" });
 
             
             int maxLengthQueque = 0;
             int avgLengthQueque = 0;
             if (queques.Count > 0)
-            {                
-                foreach(MyQueque queque in queques)
+            {
+                foreach (MyTask task in tasks)
                 {
-                    if (queque.time > maxLengthQueque)
-                        maxLengthQueque = queque.time;
-                    avgLengthQueque += queque.time;
+                    int quequesCount = 0;
+                    foreach (MyQueque queque in queques)
+                    {
+                        if (queque.nameTask == task.Name)
+                        {
+                            if (queque.time > task.maxLengthQueque)
+                                task.maxLengthQueque = queque.time;
+                            task.avgLengthQueque += queque.time;
+                            quequesCount++;
+                        }
+                    }
+                    if(quequesCount > 0)
+                        task.avgLengthQueque = task.avgLengthQueque / quequesCount;
                 }
-                avgLengthQueque = avgLengthQueque / queques.Count;
             }
-            answer.Add("maxLengthQueque", maxLengthQueque);
-            answer.Add("avgLengthQueque", avgLengthQueque);
             return answer;
         }
     }

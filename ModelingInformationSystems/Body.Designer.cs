@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageFirstQuest = new System.Windows.Forms.TabPage();
             this.groupBoxPage1Methods = new System.Windows.Forms.GroupBox();
@@ -127,6 +127,14 @@
             this.labelCPUcpuValuePercent = new System.Windows.Forms.Label();
             this.labelCPUKeyboardValuePercent = new System.Windows.Forms.Label();
             this.labelCPUPrinterValuePercent = new System.Windows.Forms.Label();
+            this.labelCPUAvgLengthQuequeCPU = new System.Windows.Forms.Label();
+            this.labelCPUAvgLengthQuequeKeyboard = new System.Windows.Forms.Label();
+            this.labelCPUAvgLengthQuequePrinter = new System.Windows.Forms.Label();
+            this.labelCPUAvgLengthQuequeMonitor = new System.Windows.Forms.Label();
+            this.labelCPUMaxLengthQuequeCPU = new System.Windows.Forms.Label();
+            this.labelCPUMaxLengthQuequeKeyboard = new System.Windows.Forms.Label();
+            this.labelCPUMaxLengthQuequePrinter = new System.Windows.Forms.Label();
+            this.labelCPUMaxLengthQuequeMonitor = new System.Windows.Forms.Label();
             this.labelCPUMonitorValuePercent = new System.Windows.Forms.Label();
             this.labelCPUAllottedTime = new System.Windows.Forms.Label();
             this.labelCPUMonitorSetValue = new System.Windows.Forms.Label();
@@ -888,8 +896,8 @@
             // 
             // chartGrafics
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartGrafics.ChartAreas.Add(chartArea1);
+            chartArea2.Name = "ChartArea1";
+            this.chartGrafics.ChartAreas.Add(chartArea2);
             this.chartGrafics.Location = new System.Drawing.Point(262, 13);
             this.chartGrafics.Name = "chartGrafics";
             this.chartGrafics.Size = new System.Drawing.Size(503, 418);
@@ -974,6 +982,14 @@
             this.groupBoxCPU.Controls.Add(this.labelCPUcpuValuePercent);
             this.groupBoxCPU.Controls.Add(this.labelCPUKeyboardValuePercent);
             this.groupBoxCPU.Controls.Add(this.labelCPUPrinterValuePercent);
+            this.groupBoxCPU.Controls.Add(this.labelCPUAvgLengthQuequeCPU);
+            this.groupBoxCPU.Controls.Add(this.labelCPUAvgLengthQuequeKeyboard);
+            this.groupBoxCPU.Controls.Add(this.labelCPUAvgLengthQuequePrinter);
+            this.groupBoxCPU.Controls.Add(this.labelCPUAvgLengthQuequeMonitor);
+            this.groupBoxCPU.Controls.Add(this.labelCPUMaxLengthQuequeCPU);
+            this.groupBoxCPU.Controls.Add(this.labelCPUMaxLengthQuequeKeyboard);
+            this.groupBoxCPU.Controls.Add(this.labelCPUMaxLengthQuequePrinter);
+            this.groupBoxCPU.Controls.Add(this.labelCPUMaxLengthQuequeMonitor);
             this.groupBoxCPU.Controls.Add(this.labelCPUMonitorValuePercent);
             this.groupBoxCPU.Controls.Add(this.labelCPUAllottedTime);
             this.groupBoxCPU.Controls.Add(this.labelCPUMonitorSetValue);
@@ -1099,7 +1115,7 @@
             // 
             this.labelCPUKeyboard.AutoSize = true;
             this.labelCPUKeyboard.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCPUKeyboard.Location = new System.Drawing.Point(40, 200);
+            this.labelCPUKeyboard.Location = new System.Drawing.Point(6, 235);
             this.labelCPUKeyboard.Name = "labelCPUKeyboard";
             this.labelCPUKeyboard.Size = new System.Drawing.Size(102, 21);
             this.labelCPUKeyboard.TabIndex = 0;
@@ -1109,7 +1125,7 @@
             // 
             this.labelCPUcpu.AutoSize = true;
             this.labelCPUcpu.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCPUcpu.Location = new System.Drawing.Point(40, 250);
+            this.labelCPUcpu.Location = new System.Drawing.Point(6, 285);
             this.labelCPUcpu.Name = "labelCPUcpu";
             this.labelCPUcpu.Size = new System.Drawing.Size(99, 21);
             this.labelCPUcpu.TabIndex = 0;
@@ -1139,7 +1155,7 @@
             // 
             this.labelCPUPrinter.AutoSize = true;
             this.labelCPUPrinter.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCPUPrinter.Location = new System.Drawing.Point(40, 150);
+            this.labelCPUPrinter.Location = new System.Drawing.Point(6, 185);
             this.labelCPUPrinter.Name = "labelCPUPrinter";
             this.labelCPUPrinter.Size = new System.Drawing.Size(79, 21);
             this.labelCPUPrinter.TabIndex = 0;
@@ -1149,11 +1165,11 @@
             // 
             this.labelCPUcpuValue.AutoSize = true;
             this.labelCPUcpuValue.Font = new System.Drawing.Font("Mistral", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCPUcpuValue.Location = new System.Drawing.Point(150, 245);
+            this.labelCPUcpuValue.Location = new System.Drawing.Point(104, 280);
             this.labelCPUcpuValue.Name = "labelCPUcpuValue";
-            this.labelCPUcpuValue.Size = new System.Drawing.Size(27, 33);
+            this.labelCPUcpuValue.Size = new System.Drawing.Size(63, 33);
             this.labelCPUcpuValue.TabIndex = 0;
-            this.labelCPUcpuValue.Text = "0";
+            this.labelCPUcpuValue.Text = "0000";
             // 
             // labelCPUSpentTimeValue
             // 
@@ -1169,11 +1185,11 @@
             // 
             this.labelCPUKeyboardValue.AutoSize = true;
             this.labelCPUKeyboardValue.Font = new System.Drawing.Font("Mistral", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCPUKeyboardValue.Location = new System.Drawing.Point(150, 195);
+            this.labelCPUKeyboardValue.Location = new System.Drawing.Point(104, 230);
             this.labelCPUKeyboardValue.Name = "labelCPUKeyboardValue";
-            this.labelCPUKeyboardValue.Size = new System.Drawing.Size(27, 33);
+            this.labelCPUKeyboardValue.Size = new System.Drawing.Size(63, 33);
             this.labelCPUKeyboardValue.TabIndex = 0;
-            this.labelCPUKeyboardValue.Text = "0";
+            this.labelCPUKeyboardValue.Text = "0000";
             // 
             // labelCPUTotalTimeValue
             // 
@@ -1189,31 +1205,31 @@
             // 
             this.labelCPUPrinterValue.AutoSize = true;
             this.labelCPUPrinterValue.Font = new System.Drawing.Font("Mistral", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCPUPrinterValue.Location = new System.Drawing.Point(150, 145);
+            this.labelCPUPrinterValue.Location = new System.Drawing.Point(104, 180);
             this.labelCPUPrinterValue.Name = "labelCPUPrinterValue";
-            this.labelCPUPrinterValue.Size = new System.Drawing.Size(27, 33);
+            this.labelCPUPrinterValue.Size = new System.Drawing.Size(63, 33);
             this.labelCPUPrinterValue.TabIndex = 0;
-            this.labelCPUPrinterValue.Text = "0";
+            this.labelCPUPrinterValue.Text = "0000";
             // 
             // labelCPUAvgLengthQueque
             // 
             this.labelCPUAvgLengthQueque.AutoSize = true;
             this.labelCPUAvgLengthQueque.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCPUAvgLengthQueque.Location = new System.Drawing.Point(48, 312);
+            this.labelCPUAvgLengthQueque.Location = new System.Drawing.Point(289, 90);
             this.labelCPUAvgLengthQueque.Name = "labelCPUAvgLengthQueque";
-            this.labelCPUAvgLengthQueque.Size = new System.Drawing.Size(51, 15);
+            this.labelCPUAvgLengthQueque.Size = new System.Drawing.Size(56, 15);
             this.labelCPUAvgLengthQueque.TabIndex = 0;
-            this.labelCPUAvgLengthQueque.Text = "-----------";
+            this.labelCPUAvgLengthQueque.Text = "Средняя:";
             // 
             // labelCPUMaxLengthQueque
             // 
             this.labelCPUMaxLengthQueque.AutoSize = true;
             this.labelCPUMaxLengthQueque.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCPUMaxLengthQueque.Location = new System.Drawing.Point(48, 286);
+            this.labelCPUMaxLengthQueque.Location = new System.Drawing.Point(185, 90);
             this.labelCPUMaxLengthQueque.Name = "labelCPUMaxLengthQueque";
-            this.labelCPUMaxLengthQueque.Size = new System.Drawing.Size(51, 15);
+            this.labelCPUMaxLengthQueque.Size = new System.Drawing.Size(93, 15);
             this.labelCPUMaxLengthQueque.TabIndex = 0;
-            this.labelCPUMaxLengthQueque.Text = "-----------";
+            this.labelCPUMaxLengthQueque.Text = "Максимальная:";
             // 
             // labelCPUcpuSetValue
             // 
@@ -1229,11 +1245,11 @@
             // 
             this.labelCPUMonitorValue.AutoSize = true;
             this.labelCPUMonitorValue.Font = new System.Drawing.Font("Mistral", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCPUMonitorValue.Location = new System.Drawing.Point(150, 95);
+            this.labelCPUMonitorValue.Location = new System.Drawing.Point(104, 130);
             this.labelCPUMonitorValue.Name = "labelCPUMonitorValue";
-            this.labelCPUMonitorValue.Size = new System.Drawing.Size(27, 33);
+            this.labelCPUMonitorValue.Size = new System.Drawing.Size(63, 33);
             this.labelCPUMonitorValue.TabIndex = 0;
-            this.labelCPUMonitorValue.Text = "0";
+            this.labelCPUMonitorValue.Text = "0000";
             // 
             // labelCPUKeyboardSetValue
             // 
@@ -1267,7 +1283,7 @@
             // labelCPUcpuValuePercent
             // 
             this.labelCPUcpuValuePercent.AutoSize = true;
-            this.labelCPUcpuValuePercent.Location = new System.Drawing.Point(210, 250);
+            this.labelCPUcpuValuePercent.Location = new System.Drawing.Point(170, 285);
             this.labelCPUcpuValuePercent.Name = "labelCPUcpuValuePercent";
             this.labelCPUcpuValuePercent.Size = new System.Drawing.Size(37, 17);
             this.labelCPUcpuValuePercent.TabIndex = 0;
@@ -1276,7 +1292,7 @@
             // labelCPUKeyboardValuePercent
             // 
             this.labelCPUKeyboardValuePercent.AutoSize = true;
-            this.labelCPUKeyboardValuePercent.Location = new System.Drawing.Point(210, 200);
+            this.labelCPUKeyboardValuePercent.Location = new System.Drawing.Point(170, 235);
             this.labelCPUKeyboardValuePercent.Name = "labelCPUKeyboardValuePercent";
             this.labelCPUKeyboardValuePercent.Size = new System.Drawing.Size(37, 17);
             this.labelCPUKeyboardValuePercent.TabIndex = 0;
@@ -1285,16 +1301,88 @@
             // labelCPUPrinterValuePercent
             // 
             this.labelCPUPrinterValuePercent.AutoSize = true;
-            this.labelCPUPrinterValuePercent.Location = new System.Drawing.Point(210, 150);
+            this.labelCPUPrinterValuePercent.Location = new System.Drawing.Point(170, 185);
             this.labelCPUPrinterValuePercent.Name = "labelCPUPrinterValuePercent";
             this.labelCPUPrinterValuePercent.Size = new System.Drawing.Size(37, 17);
             this.labelCPUPrinterValuePercent.TabIndex = 0;
             this.labelCPUPrinterValuePercent.Text = "- 0%";
             // 
+            // labelCPUAvgLengthQuequeCPU
+            // 
+            this.labelCPUAvgLengthQuequeCPU.AutoSize = true;
+            this.labelCPUAvgLengthQuequeCPU.Location = new System.Drawing.Point(310, 285);
+            this.labelCPUAvgLengthQuequeCPU.Name = "labelCPUAvgLengthQuequeCPU";
+            this.labelCPUAvgLengthQuequeCPU.Size = new System.Drawing.Size(38, 17);
+            this.labelCPUAvgLengthQuequeCPU.TabIndex = 0;
+            this.labelCPUAvgLengthQuequeCPU.Text = "- 000";
+            // 
+            // labelCPUAvgLengthQuequeKeyboard
+            // 
+            this.labelCPUAvgLengthQuequeKeyboard.AutoSize = true;
+            this.labelCPUAvgLengthQuequeKeyboard.Location = new System.Drawing.Point(310, 235);
+            this.labelCPUAvgLengthQuequeKeyboard.Name = "labelCPUAvgLengthQuequeKeyboard";
+            this.labelCPUAvgLengthQuequeKeyboard.Size = new System.Drawing.Size(38, 17);
+            this.labelCPUAvgLengthQuequeKeyboard.TabIndex = 0;
+            this.labelCPUAvgLengthQuequeKeyboard.Text = "- 000";
+            // 
+            // labelCPUAvgLengthQuequePrinter
+            // 
+            this.labelCPUAvgLengthQuequePrinter.AutoSize = true;
+            this.labelCPUAvgLengthQuequePrinter.Location = new System.Drawing.Point(310, 185);
+            this.labelCPUAvgLengthQuequePrinter.Name = "labelCPUAvgLengthQuequePrinter";
+            this.labelCPUAvgLengthQuequePrinter.Size = new System.Drawing.Size(38, 17);
+            this.labelCPUAvgLengthQuequePrinter.TabIndex = 0;
+            this.labelCPUAvgLengthQuequePrinter.Text = "- 000";
+            // 
+            // labelCPUAvgLengthQuequeMonitor
+            // 
+            this.labelCPUAvgLengthQuequeMonitor.AutoSize = true;
+            this.labelCPUAvgLengthQuequeMonitor.Location = new System.Drawing.Point(310, 135);
+            this.labelCPUAvgLengthQuequeMonitor.Name = "labelCPUAvgLengthQuequeMonitor";
+            this.labelCPUAvgLengthQuequeMonitor.Size = new System.Drawing.Size(38, 17);
+            this.labelCPUAvgLengthQuequeMonitor.TabIndex = 0;
+            this.labelCPUAvgLengthQuequeMonitor.Text = "- 000";
+            // 
+            // labelCPUMaxLengthQuequeCPU
+            // 
+            this.labelCPUMaxLengthQuequeCPU.AutoSize = true;
+            this.labelCPUMaxLengthQuequeCPU.Location = new System.Drawing.Point(240, 285);
+            this.labelCPUMaxLengthQuequeCPU.Name = "labelCPUMaxLengthQuequeCPU";
+            this.labelCPUMaxLengthQuequeCPU.Size = new System.Drawing.Size(38, 17);
+            this.labelCPUMaxLengthQuequeCPU.TabIndex = 0;
+            this.labelCPUMaxLengthQuequeCPU.Text = "- 000";
+            // 
+            // labelCPUMaxLengthQuequeKeyboard
+            // 
+            this.labelCPUMaxLengthQuequeKeyboard.AutoSize = true;
+            this.labelCPUMaxLengthQuequeKeyboard.Location = new System.Drawing.Point(240, 235);
+            this.labelCPUMaxLengthQuequeKeyboard.Name = "labelCPUMaxLengthQuequeKeyboard";
+            this.labelCPUMaxLengthQuequeKeyboard.Size = new System.Drawing.Size(38, 17);
+            this.labelCPUMaxLengthQuequeKeyboard.TabIndex = 0;
+            this.labelCPUMaxLengthQuequeKeyboard.Text = "- 000";
+            // 
+            // labelCPUMaxLengthQuequePrinter
+            // 
+            this.labelCPUMaxLengthQuequePrinter.AutoSize = true;
+            this.labelCPUMaxLengthQuequePrinter.Location = new System.Drawing.Point(240, 185);
+            this.labelCPUMaxLengthQuequePrinter.Name = "labelCPUMaxLengthQuequePrinter";
+            this.labelCPUMaxLengthQuequePrinter.Size = new System.Drawing.Size(38, 17);
+            this.labelCPUMaxLengthQuequePrinter.TabIndex = 0;
+            this.labelCPUMaxLengthQuequePrinter.Text = "- 000";
+            // 
+            // labelCPUMaxLengthQuequeMonitor
+            // 
+            this.labelCPUMaxLengthQuequeMonitor.AutoSize = true;
+            this.labelCPUMaxLengthQuequeMonitor.Location = new System.Drawing.Point(240, 135);
+            this.labelCPUMaxLengthQuequeMonitor.Name = "labelCPUMaxLengthQuequeMonitor";
+            this.labelCPUMaxLengthQuequeMonitor.Size = new System.Drawing.Size(38, 17);
+            this.labelCPUMaxLengthQuequeMonitor.TabIndex = 0;
+            this.labelCPUMaxLengthQuequeMonitor.Text = "- 000";
+            // 
             // labelCPUMonitorValuePercent
             // 
             this.labelCPUMonitorValuePercent.AutoSize = true;
-            this.labelCPUMonitorValuePercent.Location = new System.Drawing.Point(210, 100);
+            this.labelCPUMonitorValuePercent.Location = new System.Drawing.Point(170, 135);
             this.labelCPUMonitorValuePercent.Name = "labelCPUMonitorValuePercent";
             this.labelCPUMonitorValuePercent.Size = new System.Drawing.Size(37, 17);
             this.labelCPUMonitorValuePercent.TabIndex = 0;
@@ -1323,7 +1411,7 @@
             // 
             this.labelCPUMonitor.AutoSize = true;
             this.labelCPUMonitor.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCPUMonitor.Location = new System.Drawing.Point(40, 100);
+            this.labelCPUMonitor.Location = new System.Drawing.Point(6, 135);
             this.labelCPUMonitor.Name = "labelCPUMonitor";
             this.labelCPUMonitor.Size = new System.Drawing.Size(84, 21);
             this.labelCPUMonitor.TabIndex = 0;
@@ -1875,6 +1963,14 @@
         private System.Windows.Forms.Label labelCPUMonitorValuePercent;
         private System.Windows.Forms.Label labelCPUAvgLengthQueque;
         private System.Windows.Forms.Label labelCPUMaxLengthQueque;
+        private System.Windows.Forms.Label labelCPUAvgLengthQuequeCPU;
+        private System.Windows.Forms.Label labelCPUAvgLengthQuequeKeyboard;
+        private System.Windows.Forms.Label labelCPUAvgLengthQuequePrinter;
+        private System.Windows.Forms.Label labelCPUAvgLengthQuequeMonitor;
+        private System.Windows.Forms.Label labelCPUMaxLengthQuequeCPU;
+        private System.Windows.Forms.Label labelCPUMaxLengthQuequeKeyboard;
+        private System.Windows.Forms.Label labelCPUMaxLengthQuequePrinter;
+        private System.Windows.Forms.Label labelCPUMaxLengthQuequeMonitor;
     }
 }
 
